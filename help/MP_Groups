@@ -1,0 +1,13 @@
+Use 'group' var
+
+That somewhat cryptic label means that if this button is on,
+moving a point will result in all points with the same glyph and
+color being moved along with it.
+
+The 'group' variable is the indicator variable that identifies
+the group membership of each point according to the current
+brushing states; it's defined on the brush panel.
+
+However, you don't need to turn brushing on in order to define or
+adjust the 'group' variable; that will be done for you here when
+you select this button.

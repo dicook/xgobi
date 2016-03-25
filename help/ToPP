@@ -1,0 +1,36 @@
+ProjPursuit
+
+Selecting this button generates a window in which the projection
+pursuit index for the current two dimensional view of the data is
+plotted.  As the tour progresses the index is plotted continuously.
+The value is also displayed directly beneath this button.
+
+Selecting this button also turns on the "PrnCmp Basis" button and
+spheres the data by principal components.  Three of the projection
+pursuit indices are polynomial-based.  These indices are measures of
+the difference between the empirical density and the standard normal
+density.  There is no restriction in the software for running the
+projection pursuit with "PrnCmp Basis" turned off, but beware that this
+may not give sensible results for the polynomial indices.
+
+When "Optimz" is selected, the tour is guided by the gradient of the
+projection pursuit index, so that XGobi begins to search for views with
+high index values.  Hopefully these views will expose interesting
+features of the data.  When a maximum value of the projection pursuit
+index is reached the tour may turn itself off (this occurs when the
+gradients are all close to zero, meaning we have gone as far as
+possible in this direction to capture a maximum, and it is not possible
+to find any better direction).  To restart the tour turn "Optimz" off.
+
+There are three types of indices currently implemented.  One type is
+based on density estimation using expansions in orthogonal polynomials
+(Natural Hermite, Hermite, Legendre), another is based on kernel
+density estimations (Friedman-Tukey, Entropy).  In each of these
+methods there is a parameter which it is desirable to alter from time
+to time.  The scrollbar allows the interactive changing of these
+parameters.  For the polynomials it controls the number of terms used
+in the expansions.  For the kernel density estimation it controls the
+window width of the kernel. A third index type is based on detecting
+particular types of structure (Holes, Central Mass, Skewness). There
+are no parameter inputs to these indices.
+

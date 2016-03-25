@@ -1,0 +1,24 @@
+Jitter 
+
+Degree of jitter
+  This scrollbar controls the degree of jitter; that is,
+  how widely spread are the jittered points.
+
+Rejitter
+  Each time this is clicked, a new random jittering is performed.
+
+Uniform or Normal
+  Jittering can either be uniform or univariate normal.
+
+Jitter vgroup
+  If you defined a .vgroups file as part of your input data, then
+  you have the option whether it should be used here or not.
+
+  The .vgroups file is used to force some set of variables to have
+  the same axes and to be transformed together.  They could also be
+  jittered together here.
+
+  The .groups file is a single row containing an integer for each
+  variable in the data matrix.  If variables are to be grouped together,
+  give them the same integer.
+

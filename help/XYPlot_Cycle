@@ -1,0 +1,24 @@
+Cycle
+
+Selecting the "Cycle" button will start XGobi cycling through the
+two-variable plots.  You can select "Fix X" or "Fix Y" to force one of
+the axes to be held constant, or you can fix neither, in which case the
+plots will cycle over all Y variables for the current X, and then move
+to the next X, and so forth.
+
+The 'p' key turns cycling on and off, as well as toggling Pause
+in the rotation modes.
+
+The scrollbar allows control of the delay between plots:  moving the
+scrollbar to the right will shorten the delay.
+
+To control the scrollbar, position the cursor about where you'd like
+the new delay to be, then click the left or middle mouse button.  You
+can also move the cursor with the mouse button held down to adjust the
+delay interactively.
+
+Change Direction
+
+Click on this button to change the direction of the cycling:  that is,
+the next X or Y variable to be plotted is either the one before or the
+one after the currently plotted variable.

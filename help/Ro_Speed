@@ -1,0 +1,10 @@
+Speed scrollbar
+
+The first element in the rotation panel is a scrollbar which is used to
+control the apparent speed of rotation.  (In fact it sets the angle of
+rotation between successive replots of the data.)
+
+To control the scrollbar, position the cursor about where you'd like
+the new speed to be, then click the left or middle mouse button.  You
+can also move the cursor with the mouse button held down to adjust the
+speed interactively.

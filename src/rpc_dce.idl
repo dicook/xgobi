@@ -1,0 +1,239 @@
+/* rpc_dce.idl */
+/***********************************************************************
+ * Permission is hereby granted to any individual or institution       *
+ * for use, copying, or redistribution of the rpc_dce C code           *
+ * and associated documentation, provided such code and documentation  *
+ * are not sold for profit and the following copyright notice is       *
+ * retained in the code and documentation:                             *
+ *                                                                     *
+ *   Copyright (c) 1999 George Mason University                        *
+ *                                                                     *
+ * We encourage you to share questions, comments and modifications.    *
+ *                                                                     *
+ *   Martin Schneider (maschn@informatik.uni-marburg.de)               *
+ *   Juergen Symanzik (symanzik@galaxy.gmu.edu)                        *
+ ***********************************************************************/
+
+[
+uuid(b32b5c76-cf33-1022-8901-0800690559d0),
+version(1.0)
+]
+
+#define STR_OUTSIZE 100
+/* Ein kritischer Wert! */
+#define STR_OUTSIZE_BIGGER 10000
+
+interface xgobi_goes_dce
+{
+
+/*
+   Usage:     In - colp[ncols] : ncols x Str[COLLABLEN]
+   Function:  01
+*/
+void RPC_Send_Colnames ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - rowp[nrows] : nrows x Str[ROWLABLEN]
+   Function:  02
+*/
+void RPC_Send_Rownames ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - NULL	
+   Function:  03
+*/
+void RPC_Clone_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - NULL	
+   Function:  04
+*/
+void RPC_Xfer_Colornames ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - (name, ncols, nrows) : (String, int, int)
+   Function:  11
+*/
+void RPC_Init_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - datap[nrows, ncols] : (nrows * ncols) x float
+   Function:  12
+*/
+void RPC_Send_Init_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - size_color_glyph[nrows] : nrows x int	
+   Function:  13
+*/
+void RPC_Send_Init_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - NULL	
+   Function:  14
+*/
+void RPC_Make_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - size_color_glyph[nrows] : nrows x int
+   Function:  15
+*/
+void RPC_Update_All_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - list of index:size_color_glyph : list of (int:int)
+   Function:  16
+*/
+void RPC_Update_Some_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - (name, ncols, nrows) : (String, int, int)
+   Function:  21
+*/
+void RPC_Init_CDF_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - datap[nrows, ncols - 1] : (nrows * (ncols - 1)) x float
+   Function:  22
+*/
+void RPC_Send_Init_CDF_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - size_color_glyph[NCDFTYPES] : NCDFTYPES x int	
+   Function:  23
+*/
+void RPC_Send_Init_CDF_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - NULL	
+   Function:  24
+*/
+void RPC_Make_CDF_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - (pointcolor, cdf_bitmap[pointcolor][nrows]) : (int, nrows x {0,1}) 
+   Function:  25
+*/
+void RPC_Add_CDF_Bitmap ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - (pointcolor, cdftype) : (int, {0,1,2})
+   Function:  26
+*/
+void RPC_Add_CDF_Type ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - pointcolor : int
+   Function:  27
+*/
+void RPC_Delete_CDF_Bitmap_and_Type ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - cdf_brush_bitmap[nrows] : nrows x {0,1}
+   Function:  28
+*/
+void RPC_Brush_All_CDF_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - cdf_weights[nrows] : nrows x double
+   Function:  29
+*/
+void RPC_Send_CDF_Weights ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - (name, p, n, distance) : (String, int, int, double)
+   Function:  31
+*/
+void RPC_Init_VARIO_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - datap[n, p + 2] : (n * (p + 2)) x float
+   Function:  32
+*/
+void RPC_Send_Init_VARIO_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - size_color_glyph : int	
+   Function:  33
+*/
+void RPC_Send_Init_VARIO_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - NULL	
+   Function:  34
+*/
+void RPC_Make_VARIO_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - brushtype, list of index:size_color_glyph : int, list of (int:int)
+   Function:  35
+*/
+void RPC_Update_Some_VARIO_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE_BIGGER]); 
+
+/*
+   Usage:     In - (name, p, n, distance) : (String, int, int, double)
+   Function:  41
+*/
+void RPC_Init_LAG_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - datap[n, p + 2] : (n * (p + 2)) x float
+   Function:  42
+*/
+void RPC_Send_Init_LAG_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - size_color_glyph : int	
+   Function:  43
+*/
+void RPC_Send_Init_LAG_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - NULL	
+   Function:  44
+*/
+void RPC_Make_LAG_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - brushtype, list of index:size_color_glyph : int, list of (int:int)
+   Function:  45
+*/
+void RPC_Update_Some_LAG_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE_BIGGER]); 
+
+/*
+   Usage:     In - colp[lag_p] : lag_p x Str[COLLABLEN]
+   Function:  46
+*/
+void RPC_Send_LAG_Colnames ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - (name, p, n, distance) : (String, int, int, double)
+   Function:  51
+*/
+void RPC_Init_VARIO2_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - datap[n, p + 2] : (n * (p + 2)) x float
+   Function:  52
+*/
+void RPC_Send_Init_VARIO2_Data ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - size_color_glyph : int	
+   Function:  53
+*/
+void RPC_Send_Init_VARIO2_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]); 
+
+/*
+   Usage:     In - NULL	
+   Function:  54
+*/
+void RPC_Make_VARIO2_XGobi ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE]);
+
+/*
+   Usage:     In - brushtype, list of index:size_color_glyph : int, list of (int:int)
+   Function:  55
+*/
+void RPC_Update_Some_VARIO2_Symbols ([in, string, ref] char *instr,[out, string, ref] char outstr[STR_OUTSIZE_BIGGER]); 
+
+} /* von Interface */

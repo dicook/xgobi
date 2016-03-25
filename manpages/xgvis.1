@@ -1,0 +1,157 @@
+.TH XGVis 1 "20 November 1998"
+.SH NAME
+.B xgvis
+\- interactive multidimensional scaling using xgobi for display
+.SH SYNOPSIS
+.B xgvis
+[
+.B \-dims
+n
+] [
+.B \-stepsize
+x
+]
+fname
+.SH DESCRIPTION
+.I xgvis
+is an interactive multidimensional scaling (MDS) program that
+consists of a control panel to manipulate the parameters of the
+MDS stress function and an xgobi window for data display.  It
+can be used either for visualization of dissimilarity data, for
+dimension reduction, or for graph layout.  Graph layout is
+usually done in 2D, but xgvis allows layouts in arbitrary
+dimensions, 3D being the default.  It permits missing values,
+which can be used to implement multidimensional unfolding.
+
+It is used as follows:
+.RS .25i
+.IP o 2
+Start up with a user-supplied or random starting configuration.
+.IP o 2
+Initiate MDS optimization.  As the optimization algorithm does
+its work, observe both the changing stress values and the animated point
+configuration.
+.IP o 2
+Examine the optimized configuration with 3D rotations and
+grand tours and drill-down operations such as labeling and linked brushing.
+.IP o 2
+Enhance the configuration with glyphs, colors and lines for interpretation.
+.IP o 2
+Modifiy the dissimilarities, the stress function, and/or the 
+configuration by
+.RE
+.RS .6i
+.IP - 2
+transforming the dissimilarities
+.IP - 2
+choosing weights or cutting extreme dissimilarities
+.IP - 2
+restricting MDS to subsets
+.IP - 2
+hand editing the existing configuration or
+.IP - 2
+selecting a new random configuration
+.RE
+.SH OPTIONS
+
+.B \-dims
+n
+.LP
+.RS .25i
+Specify n, the dimensionality of the embedding space.
+By default, its value is 3.
+.RE
+
+.B \-stepsize
+x
+.LP
+.RS .25i
+Specify the initial stepsize; its default value is 0.1.
+.RE
+
+.SH FILES
+XGVis uses a set of input files with a common root (which we'll call
+.B fname
+in the man page) and a suffix.  First, each set must contain a file
+with the suffix .edges, .dat or .dist.
+.RE
+
+.nf
+.B  fname.dist
+.fi
+.RS .25i
+Distance matrix: an n x n matrix, with entries separated by
+white space and one row per line.
+.RE
+
+.nf
+.B  fname.edges
+.fi
+.RS .25i
+Line segments: specifications for the pattern of line segments which
+connect pairs of points.  The file must contain at least two numbers per
+line.  The first two numbers represent the row numbers of the two
+points that should be connected.  (This is exactly like the structure
+of a fname.lines file in xgobi.)  In addition, if a third number is
+present, it is taken to be an edge weight.
+
+If this line is present and the distance matrix is absent, then
+the distance matrix is computed from it, with each
+edge representing a distance of one.
+.RE
+
+.nf
+.B fname.dat
+.B fname.pos
+.fi
+.RS .25i
+Starting positions:  an n x p matrix, with entries separated by
+white space and one row per line. 
+
+If this file is present and a distance file is absent, the
+distance matrix is computed from it.
+.RE
+
+.nf
+.B fname.lines
+.fi
+.RS .25i
+
+Line segments: specifications for the pattern of line segments which
+connect pairs of points.  If this file is present, then the edges
+file is used to create the distance matrix but the lines file is
+used to draw the edges.
+.RE
+
+Many additional files can be specified.  See the xgobi man
+page for descriptions of 
+.B fname.col
+(variable labels),
+.B fname.row
+(case labels),
+.B fname.colors
+(glyph colors), and
+.B fname.linecolors
+(line colors),
+in particular.
+
+.RE
+.SH AUTHORS
+.nf
+Andreas Buja (andreas@research.att.com)
+Deborah Swayne (dfs@research.att.com)
+.fi
+.SH CONTACT
+Deborah Swayne (dfs@research.att.com)
+.SH SEE ALSO
+Sample data files are included in the XGVis distribution.
+
+For papers and further pointers, check the following web page:
+.nf
+http://www.research.att.com/areas/stat/xgobi/
+.fi
+
+.SH BUGS
+Probably too numerous to mention, but you do the authors a favor if
+you report the ones you notice.
+

@@ -1,0 +1,12 @@
+Add
+
+Click here to enable the interactive addition of connecting line
+segments.  As you move the cursor in the plot window, the nearest
+point is marked with a diamond.  To add a line between two points,
+press and hold the left button when one of the points is the nearest
+point.  As you drag the cursor, a dotted line connects that point to
+the nearest point.  When the dotted line is where you want the final
+line to me, release the mouse button.
+
+If you realize that you didn't want that point after all, then click
+middle and it will be deleted.

@@ -1,0 +1,47 @@
+Variable Labels
+
+This panel has three main sections:
+
+  Transformations, divided into two stages
+  Variable checkboxes, letting you specify variables to be
+    transformed
+  Variable labels, telling you the current transformation for
+    each variable
+
+Transformations:
+
+The first stage offers very simple adjustments to the data,
+intended primarily to allow you to shift the variables into the
+domain of the transformation function you're interested in applying.
+
+The second stage includes:
+
+  Restore Variable: remove transformation (second stage only)
+  Box-Cox power transformations, ( (x^exponent) - 1) / exponent
+  Absolute value
+  Inverse : 1 / x_j
+  Base 10 logarithm
+  Scale to [0,1]
+  Standardize : (x_j - mean(x)) / sigma(x)
+  Discretize, 2 levels: x_j > median(x) = 1; x_j <= median(x) = 0
+  Normal score
+
+The transformation selected will be applied to all selected variables.
+
+Caution:  If one of the selected variables is in a "variable
+group," as defined upon initialization, but not all members of
+that group are selected, then this action will reset the groups.
+See the man page for a description of variable groups.
+
+Other notes:
+
+If you try to select a transformation that can't be applied to a
+particular variable (If, for example, you try to take a square
+root of a variable which has some negative values ...), nothing will
+be changed and an error message will be printed.
+
+It is possible to transform variables during rotation, grand tour, or
+in any other mode or action.
+
+The column labels can be supplied in a file named fname.col, where fname
+or fname.dat is the name of the data file, one label per row.

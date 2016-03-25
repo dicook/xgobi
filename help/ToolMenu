@@ -1,0 +1,54 @@
+Tools Menu
+
+Each of these buttons opens some window or panel.
+
+Hide or exclude 
+
+Smooth ...
+  Add smoothed curves to the current view in the plotting window.
+
+Subset Data ...
+  Subset the data in five different ways.
+
+Jitter ...
+  Jitter the data in the plotting window.
+
+Graphical inference ...
+  Under construction.
+
+Parallel Coordinates Plot ...
+  Open a parallel coordinates plot (called the case profile
+  in earlier releases of XGobi).  You could either show all
+  profiles -- that is, parallel coordinates for all cases --
+  or you could use the fact that this plot is linked to
+  identification so that you can see the par coords plot for
+  any set of variables you specify in the Identify view.
+
+Clone XGobi
+  Generate a new XGobi process containing a replicate of
+  the current one, as identical as we can make it.
+
+Scatterplot matrix 
+  Generate a new XGobi process containing a scatterplot matrix
+  of the currently selected variables.
+
+Variable List ...
+  Open a list of variables which can be used to define the
+  variables that are used in the parallel coordinates plot.
+  
+Case List ...
+  Open a list of cases which provides another method for
+  labelling points in the plotting window.
+
+Launch Missing Data XGobi ...
+  For data with missing values, start a new XGobi process
+  containing jittered zeroes and ones, representing the presence
+  and absence of measured data.
+
+  Missing data can be provided to XGobi either by setting missings
+  to na (or NA) in the data file, or by supplying a fname.missing
+  file in which 1=missing and 0=present.
+
+Impute Missing Values ...
+  For data with missing values, the imputation control panel.
+

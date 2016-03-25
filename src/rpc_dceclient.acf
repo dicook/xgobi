@@ -1,0 +1,10 @@
+/*************************************************************/
+/**                                                         **/
+/**  xgobi DCE-ACF-Datei Client                             **/
+/**                                                         **/
+/*************************************************************/
+
+[ implicit_handle(handle_t xgobi_client_binding_handle) ]
+interface xgobi_dceclient
+{
+}

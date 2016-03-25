@@ -1,0 +1,9 @@
+Rock
+
+While the plot is rotating, selecting Rock causes the rotation to
+change direction after each ten subsequent replots.  During rocking,
+increasing the speed using the scrollbar causes the angle described by
+the rocking motion to be wider.
+
+The states set by the Rock and Interpolate buttons are mutually
+exclusive, that is, selecting one causes the other to be 'deselected.'

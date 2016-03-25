@@ -1,0 +1,12 @@
+As an example, I am plotting the proportions of times the Greek word
+"kai" (and) occurs in ten epistles of Paul.  These data are in
+E. J. Snell's (1987) book, Applied Statistics: A Handbook of BMDP Analyses,
+Chapman Hall, page 22.
+
+I'm using this type of display of quadruples of proportions for 
+displaying the performance of test items.   Points correspond to 
+probabilities of choosing among item options as a function of various
+levels of performance on the test as a whole.
+
+Jim Ramsey
+ramsay@ramsay2.psych.mcgill.ca

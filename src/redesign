@@ -1,0 +1,222 @@
+Since we're planning to allow multiple plot windows, we can think
+of them as displays.  Some of the display types are then the
+usual scatterplot, the parallel coordinates plot, and the
+scatterplot matrix.  It turns out that it's very convenient if we
+add a sphered display -- that is, a display of the principal
+components, the only display that would be pp-capable.  It would
+then also be possible to look at xyplots (etc) of the principal 
+components.  (The sphered display could also somehow provide the
+factor loadings of the principal components; we haven't thought 
+about how to do that yet.)
+
+The pipeline now needs to be staged a bit more.  Every
+display will use the first stage: 
+
+   raw_data -> tform_data
+   
+Here it splits into
+
+   sphered_data -> sphered_world_data
+ and
+   -> world_data
+   
+This is just about what it does now, except that we currently
+use the same world_data array for each branch of the tree.
+
+These different legs of the pipeline should probably also
+have their own lims[] array instead of having to overwrite
+each others' as they do now.  I believe they share most of
+the standardization code, except that the sphered pipeline
+has some of its own.
+
+Jittering stays where it is, as a final step in creating the
+world_data and the sphered_world_data.
+
+We thought about incorporating permutation and subsetting into
+the pipeline, but we decided to handle them essentially as they
+are handled now.  Subsetting will continue to be handled with a
+rows_in_plot vector.  Permutation will be handled as a
+transformation step -- the new transformation panel can handle
+stages, and it can handle arbitrary variable groups, so   
+permutation can be added as a third transformation stage,
+allowing such things taking the log of 3 variables and then 
+permuting them. 
+
+The end of the pipeline is display-specific, with each display  
+being responsible for the final stage:
+
+  -> planar_data -> screen_data
+
+Brushing will work in a similar way:  there's a single vector of
+brushing colors and glyphs, just as there is now, and each
+display is responsible for getting data in and out of that
+vector, transforming it to the form needed by the display --
+hence the parallel coordinates plot will be brushable (yi), and
+it will be responsible for turning the normal brushing data into
+a form it can use. 
+
+... we could imagine making sphering be a
+3rd-stage transformation, like permutation.  I won't typing it
+all in, but I can show you a sketch the next time we talk.
+
+Sorting is another 3rd-stage transformation.  It also needs to have
+a "use color groups" or not toggle -- maybe other transformations
+could use it, too. 
+
+And don't forget to make sure the colors and glyphs get sorted, too.
+
+___
+
+Questions:
+
+It seems to me that the routine mean_lgdist, which resets the
+limits for sphering, could be viewed as doing another kind of
+standardization -- indeed, resetting the limits is primarily what
+the different standardization methods do.  How do you imagine
+this happening in a single pipeline, Di?
+
+Andreas suggested that we might set the default standardization
+method to mean/stddev when the data are sphered, and reset to  
+min/max otherwise.  This is a bit kludgey, but it could work.  
+
+Could the standardization menu be disabled for sphered data?
+And what should happen when there's a mix of sphered and
+non-sphered data?
+
+Another conflict between the current sphering pipeline and
+the default pipeline is the use of vgroups, but that could
+be solved by hanging onto vgroups_raw but writing vgroups_actual
+as part of the sphering transformation.
+
+Actually, the presence of vgroups raises another question:  how
+do we envision the interaction between vgroups and the
+transformation panel?  Maybe the the transformation panel can
+overwrite vgroups_actual as well.
+
+_______
+
+Hm, come to think of it, let me ask what the function of PC subsetting
+is.  If you run PP on sphered variables in the new scheme, you specify
+in the gt the PC variables you want run on, right?  In the new scheme,
+selection of variables for sphering and selection of variables for
+gt/pp are two separate things.  As I interpret it, it is no longer so
+that the selection of variables to be sphered determines that all PCs
+are included in gt/pp.  So, what is the function of subsetting PCs?  
+
+The issue that arises in my mind is to somehow offer a default of
+sphered coordinates to the user when she is about to run PP on the
+currently selected variables.  This could be solved with a pop up 
+window that asks the user whether she wants the currently selected
+variables sphered, and if yes, how many of the largest few PCs should
+be selected for gt/pp in view of the eigenvalue profile at hand.
+Alternatively, we could offer an automatic default selection of PCs,
+e.g., by the rule sqrt(lambda_i) > sqrt(lambda_1)/20, implying that 
+PCs with less than 1/20th the top standard deviation are deselected.
+If the user doesn't like 1/20, she can always select or deselect PCs
+by clicking on the variable circles.
+
+I'm in favor of a human interface that does not force decision making
+on the user when it can be avoided.  Instead, the HI should have
+reasonable defaults so the choices don't get in the way.
+
+_____
+
+Di and I just agreed, for now, that we would make it impossible
+to paint the unlinkable points.  It will continue to be possible
+to define their appearance in .colors and .glyphs files, but
+not paint them.  For that matter, it will be impossible to assign
+them to a row group.
+
+we do want to keep identification running over all xg->nrows. that
+is important. but we might want transformation only to run on the
+nlinkable - that matters for things like sorting - also for 
+projection pursuit we only want to operate on the nlinkable points,
+but touring we want to tour all points!! i think this list could grow.
+
+....i find that there are some points that i can't brush. there
+must be some interaction between nlinkable, and rgroups, and rows-in-plot.
+
+_____
+
+1.  The more I think about it, the more I like the idea of
+eliminating vgroups in favor of a panel like the variable
+transformation panel that allows axis ranges to be specified.
+It's not a difficult thing to do; I could build it in a couple
+of hours, I'm sure.  
+
+Does that idea have any tricky implications for sphering?
+
+2.  nlinkable was a kludge in the first place, a lazy way to
+handle the goal of being able to distinguish between data points
+and non-data points.  Let's do it right this time, and add a
+parallel set of matrices to hold the non-data points.  They can
+be used when setting default variable ranges, and run through the
+usual pipeline.
+
+Users could specify whether they want to perform the interactive
+operation on data or non-data or both -- with some exceptions.
+(Scaling should always operate on both, I assume.)
+
+Presumably we don't include them in the Hide/Exclude operations;
+instead, there's just a button somewhere that allows users to
+either show or hide the non-data.
+
+This should help with the nlinkable/rgroups/rows_in_plot confusion,
+since these guys would now be outside the rgroups and rows_in_plot
+structure, and play no role in linking.
+
+____
+
+
+lims *lim0, *lim, *lim_tform, *lim_raw;
+
+without sphering:
+
+lim0:      created by applying min_max to tform_data using vgroups
+lim_raw:   created by applying min_max to raw_data using vgroups
+
+lim_tform: ...  min_max/mean_stddev/med_mad to tform_data using vgroups
+lim:       lim_tform
+
+sphering requires standardization:
+
+lim and lim0 are both reset (equal to each other) by mean_lgdist,
+  which is applied to sphered_data and doesn't use vgroups
+/*
+ * Find the minimum and maximum values of each column,
+ * scaling by mean and std_width standard deviations.
+*/
+
+--------------------------
+When are the limits reset?
+--------------------------
+update_lims is called a lot!
+ * when excluding cases
+ * in corr_tour_on, dotplot_on, grand_tour_on, etc
+ * turning princ_comp on and off
+ * in update_imputation
+ * with every loop in xgvis
+
+--------------------------
+How are the limits used?
+--------------------------
+ * in tform_to_world and in sphered_to_world (lim)
+ * for saving the coefficients in rotation or touring (lim)
+ * missing (lim)
+ * for the reverse pipeline in point motion  (lim)
+
+ * for parallel coordinates (lim_tform)
+
+ * make_axes (lim and lim0)
+
+ * transformw (lim0, lim_raw)
+
+--------------------------
+How is lim_tform used?
+--------------------------
+ * It is used exclusively in parcoords.c
+--------------------------
+How is lim_raw used?
+--------------------------
+ * It is used exclusively in transformw.c, to reinitiate a
+   transformation -- does transformation precede standardization? yes

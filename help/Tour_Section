@@ -1,0 +1,12 @@
+Section
+
+Clicking this button initiates a section tour rather than a
+projection tour.  That is, data points outside a distance (given
+by the Eps scrollbar) from the projection plane are shown as
+single pixel points.
+
+Useful for identifying point clouds that have a hollow center.
+For example, with this section facility it is easy to distinguish
+between a data set containing points on the surface of a sphere,
+from a data set containing points placed anywhere within a
+sphere.

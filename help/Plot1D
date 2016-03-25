@@ -1,0 +1,15 @@
+Plot1D
+
+In this plotting mode, the selected variable is displayed in one
+of two ways:
+
+  1) as a vertical strip chart, like a jittered dot plot.  The method
+     used is described in "Strips Displaying Empirical Distributions:
+     I. Textured Dot Strips" by John Tukey and Paul Tukey.
+
+  2) as an average shifted histogram (ASH), as designed by David W.
+     Scott.  The ASH has a smoothness parameter, which is the ratio
+     of the number of shifted histograms to the number of bins.
+
+This view can be activated from the keyboard by typing d or D.
+

@@ -1,0 +1,14 @@
+Update brushing continuously
+
+If this button is on, then brushing updates are performed
+continously:  that is, whenever a brushing action is performed in
+the active window, any linked windows are updated immediately.
+
+If it is off, then the updates only occur when you lift your
+finger off the mouse button.  This helps make it possible to
+perform linked brushing on data with many thousands of cases.
+
+This can be set in the XGobi resource file.  The default is
+
+*syncBrush:   True
+

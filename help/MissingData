@@ -1,0 +1,56 @@
+Missing data ** New **
+
+XGobi can now handle missing values.  In the data file, the missing
+values are represented by the character '.' or by the words na or NA.
+(Sounds like Sesame Street, no?)  To be quite clear, here are three sample
+rows:
+
+467 585 na   43   NA
+ .  580 86   na   12
+425   . 77   38    4
+
+______________________ Imputation _________________________
+
+Rescale when imputing
+  A toggle button that controls whether the view should be rescaled
+  when a new imputation is performed or read.
+
+Perform random imputation
+  Use 'group' variable
+
+  Instruct XGobi to sample from the present values for each variable
+  to populate the missing values.  If you have done some brushing to
+  partition the cases, you could turn on the button "Use 'group' variable",
+  and then the sampling will only be done using cases brushed with the
+  same color and glyph.
+
+Assign fixed value
+  10% above max
+  10% below min
+  Specify:
+
+  An alternative to imputation:  assign a fixed value which is either
+  some fixed percentage above (below) the maximum for each variable, or
+  specify some fixed value for the missings in the entire data set.
+
+Imputation menu
+
+  If you have calculated one or more sets of imputed values that
+  you would like to view and explore using XGobi, you must construct
+  two files, datafile.imp (containing the imputed data) and datafile.impnames
+  (a list of imputation names, one to a line, to be used in the menu).
+
+  The structure of the data in datafile.imp is as follows:
+  Each column is an entire set of imputed data, ordered such that
+  they will be used to fill in the missing data in column-wise fashion.
+
+  Let's use the example above, but start by numbering the missing values:
+
+  467 585 na_1  43  na_3
+  463 580  86  na_2  12
+
+  Each column of datafile.imp will contain 
+
+  imputed_value_1
+  imputed_value_2
+  imputed_value_3

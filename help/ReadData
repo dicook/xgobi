@@ -1,0 +1,76 @@
+Read data
+
+This panel allows you to read in one or more files that change
+XGobi's visual characteristics.  You might want, for example, to
+store several .lines files for a single fname.dat file.  You might
+then name them fname1.lines, fname2.lines, and read them in one at
+a time during an XGobi session.
+
+Root file name
+ Specify the root name for the file(s) to be read.
+
+ You can erase typed characters using the delete or backspace
+ operation you are used to.
+
+ The editing behavior in this window follows emacs conventions.
+ These instructions may help you if you aren't familiar with emacs:
+   Use the cursor to position the caret between two letters; as
+   you type, characters are entered at that position.  Use
+   "Control-k" to delete all characters from the caret to the
+   end of the line.
+
+
+Read .colors file
+ Read in a file whose name is rootname.colors
+
+ Info about color names: The color names are defined in the XGobi
+ resources, which can be general or data-specific.  The names are
+ chosen from a file called rgb.txt that lives in a directory called
+ Xlib somewhere in your include files or toward the top of your X
+ file hierarchy.  The color names in the .colors file should
+ correspond to the colors specified in the resources.
+
+Read .glyphs file
+ Read in a file whose name is rootname.glyphs.
+
+ Reasonable numbers to use are the same numbers that can be found at
+ the right of the glyph menu.  (Thus plusses are 1-5, Xes are 6-10,
+ open rectangles are 11-15, filled rectangles are 16-20, open circles
+ are 21-25, filled circles are 26-30, and the point is 31.);
+
+Read .erase file
+ Read in a file whose name is rootname.erase.  The file should
+ contain 1s and 0s, where 1s are erased points.
+
+Read .row file
+ Read in a file whose name is rootname.row.  This file contains
+ labels, one line per row.
+
+Read .col file
+ Read in a file whose name is rootname.co.  This file contains
+ labels, one line per column.
+
+Read .lines file
+  Read in a file whose name is rootname.lines.
+
+  The file consists of pairs of numbers on separate lines, where the
+  pair indicates the row numbers of the points to be connected, for
+  example:
+
+  1 3
+  1 4
+  2 5
+
+Read .linecolors file
+  Read in a file whose name is rootname.linecolors
+
+Read .vgroups file
+  Read a file whose name is rootname.vgroups.  Reset the axes to
+  correspond to the new variable grouping information.
+
+Read .jit file
+  Read in a set of jittered values.
+
+Read n x p .dat file
+  Read in a set of data values, of the same size as the currently
+  read data.

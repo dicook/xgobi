@@ -1,0 +1,15 @@
+Points
+
+When this button is on, a rectangular brush is used to
+change the color or glyph of points that are contained by
+the brush.
+
+Lines
+
+When this button is on, a crosshair brush is used to change
+the color of line segments.  If either the horizontal or
+vertical arm of the crosshair intersects a line segments, it
+will be brushed.
+
+If both Points and Lines are on, then both point and line
+brushing are done at the same time.

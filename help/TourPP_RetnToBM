@@ -1,0 +1,12 @@
+Return To Bitmap
+
+When Return To Bitmap is on, clicking with the left or middle
+button on a bitmap in the projection pursuit window forces the
+tour to return to this view and to pause.  Turn off the Pause
+button to restart the tour.  (The 'p' key turns Pause on and off.)
+
+If either Record Bitmap or Return to Bitmap is on, the cursor in
+the projection pursuit window is drawn as a crosshair; when
+neither is on, the cursor is an arrow.
+
+If Optimz is on the facility is not available.

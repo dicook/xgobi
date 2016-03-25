@@ -1,0 +1,312 @@
+September 2001:
+
+  A great many extensions were added to xgvis, and
+  a few bugs repaired in xgobi.
+
+August 5 2000:
+
+  Sphering is handled as a transformation instead of being
+  buried inside the touring code.
+
+January 3 2000:
+
+  The initial CVS repository on franz, really just a developer's
+  version.  The CORBA functionality is working, but still needs
+  work, and is not yet documented.  There is a problem with the
+  combination of Imakefile/GNUmakefile.
+
+  The menus on each variable are now variable selection menus
+  rather than transformation menus.
+
+late November 1999:
+
+  Variable transformations have been moved from the variable
+  labels and given their own panel.  A variety of power transformations
+  have been replaced by the Box-Cox family of transformations.  
+  Transformation has been given a preparatory stage, too, which
+  we're calling "domain adjustment:"  ie, ensure that the data
+  you want to transform is within the domain of the transformation
+  function.  (We're preparing to break transformation into two
+  stages, with permutation, sorting and sphering moved to the
+  second stage.)
+
+  1D plotting:  David Scott's 1D ASH (Average Shifted Histogram)
+  has been added to the textured dotplot as an alternative 1D plot.
+  You can now display these plots either horizontally or vertically
+
+  Axes:  The axes will now behave a bit better -- the labels should
+  be smart enough not to draw on top of each other.  In addition,
+  the Display menu has one more option, for displaying gridlines
+  when in the 1D and 2D plots when axes are shown.
+
+  Identify:  no label will be drawn unless you're within a few
+  hundred pixels of some point.
+
+  Linked brushing in the presence of both row groups and nlinkable: 
+  few of you will have discovered these options, so even fewer of
+  you will know that there were tremendous bugs and limitations
+  if you wanted to use them together.  It was even worse if you used
+  both of those options in conjunction with either subsetting or
+  excluding points.  All this should now work.
+
+  CORBA:  If you go so far as to read the source code, you'll notice
+  references to CORBA.  This reflects work done by Duncan Temple
+  Lang and Ross Ihaka to make xgobi available from omegahat
+  (www.omegahat.org); we expect to test and release this work
+  in a few weeks.
+
+late June 1999:
+  There are more revisions of the parallel coordinates display -- finally
+  it can display labels instead of variable indices.  Long labels will
+  be truncated to fit.  If you'd like to supply shorter labels, add them
+  to the fname.col file like this:  longname|shortname
+  
+  Erase brushing has been completely redesigned.  There's no longer an
+  erase operation on the brushing panel.  Instead, you brush the points
+  you'd like to erase with some chosen glyph/color, and then open the
+  "Hide or exclude" tool.  Using that tool, you can hide cases (ie,
+  don't draw them) or exclude them (ie, don't draw them <and> don't
+  include them in calculations for scaling or sphering or projection
+  pursuit.)  If that seems too elaborate for a quick-and-dirty erase,
+  just brush them in the background color.
+
+early June 1999:
+  There are some revisions in the parallel coordinates display --
+  there are now actual parallel coordinates drawn.
+
+  There's a new pair of command line arguments:
+   -only n/N : read only a sample of n of N lines
+   -only a,n : read only from line a to a+n
+
+  The subset panel has been redesigned in the hope that it
+  will be easier to use; its functionality has not changed.
+
+  A couple of new transformations have been added; some of
+  these will eventually migrate to a new panel entitled
+  "Inference."
+
+  The label of the currently identified point can be captured
+  using the 'w' key, and then pasted into another window.
+
+  xgvis changes:
+  
+  New command line arguments:
+    -dims n   specify the dimensionality of the embedding space
+    -stepsize x  specify the initial stepsize, a value between 0 and 1
+  
+March 1999:
+  The biggest change in this distribution is the addition
+  of the -scatmat command line argument, which instructs
+  xgobi to display the input data as a scatterplot matrix,
+  which can be linked to other xgobis.
+
+This release (November 1998) has the
+following changes:
+
+ Probably the biggest change in this distribution is that
+ another program, xgvis, has been included.  xgvis is an
+ interactive multidimensional scaling program which has
+ its own control panel but uses xgobi as its main data
+ display.
+
+
+This release (March 1998) has the following changes:
+
+ XGobi supports Remote Procedure Calls (RPCs) as a means
+ forinterprocess communication (IPC). For example, a link among
+ XGobi, ArcView, and XploRe is currently being supported.  See
+ http://www.galaxy.gmu.edu/~symanzik/AXX/ for more details.
+
+ There's a new mode on the view menu -- moving points.  This
+ is not intended as a way to fix outliers; rather, it's useful
+ for graph viewing or manipulating maps or other structures
+ that are drawn along with data.
+
+ rgroups, lgroups:  a method for grouping rows so that brushing
+ one member causes all other members of the same group to be
+ brushed at the same time.  The method is extended to lines, too:
+ all lines between points in the same group form a lines group.
+
+This release (October, 1997) has the following changes:
+
+  There is a new command line option, -subset n, that allows
+  a subset of the data to be specified:  that is, all the data
+  is read in, but an intial subset is used for display.
+
+  The main control panel has been redesigned, so that it
+  now uses several menus.  Everything on the View menu
+  has been there for a while, while much of what's on the
+  Tools menu is new:  Smoothing, jittering, the variable
+  and case lists, and some methods for working with missing
+  data.
+
+  The case profile has been renamed 'parallel coordinates
+  plot,' since that's what it is if all profiles are displayed.
+
+  The file I/O has been gathered from here and there on
+  various sub-panels and placed into the File menu --
+  unfortunately, not everything there is complete yet.
+
+  The user's manual is quite far behind now, but the help
+  files are intended to be current.
+
+The September, 1995 release had the following changes:
+
+  The key additions are the manual controls for the grand
+  tour and correlation tour.  Read the help files attached
+  to the new menus entitled "Manip" in both Tour and Corr
+  mode for instructions.
+
+  On the I/O menu, you'll find two new buttons:  'Clone
+  XGobi' and 'Copy XGobi data'.  Each of these starts a
+  new XGobi process on the same data, complete with
+  brushing.  Again, read the help associated help file for
+  details.
+
+  There's one new brushing option on the Options menu,
+  'Update brushing continuously.'  When this is off, linked
+  brushing changes are only transmitted when you stop
+  pressing the mouse button -- it should make it possible
+  to perform linked brushing on more cases.
+
+The November, 1994 release had the following changes:
+
+  In Tour mode, several new projection pursuit indices have been
+  added.  The indices based on kernel density estimation now show
+  the bandwidth in relation to the data on the plot window as it
+  is changed with the scrollbar and also while the tour is paused.
+  A linked tour has been added -- it's controlled using a menu on
+  the tour control panel. It allows comparable sets of data to be
+  toured together, supporting, for example, cross-validation.
+  Also, linking can be used to compare the performance of two
+  projection pursuit indices.
+
+  A correlation tour has been added as a separate plotting mode.
+
+  Control panels have been changed in small ways:  Some controls
+  have been removed from the Options panel and organized in a I/O
+  panel instead.  The subsetting button has been moved to the
+  brushing panel.
+
+  A few more transformations are available on the variable
+  transformation menus.
+
+  A new user's manual has been written, but we're not
+  able to give this one away; read Readme.doc to learn
+  how to buy it.
+
+The April, 1994 release had the following changes:
+
+  It's now possible to read in your data once in ascii, then use
+  the options menu to write it back out in binary.  After that,
+  the binary file will be read in.  With large data files, there
+  is a significant speedup in reading.
+
+  There's now a new input file type, a .nlinkables file.  This
+  file contains a single integer specifying the number of rows
+  (starting with row 1) that should be used for linked brushing
+  and identification.  This makes it possible to link an
+  ordinary scatterplot and another sort of plot that uses other
+  points to build some sort of decoration -- we are using linked
+  brushing between scatterplots and clustering trees, for
+  example.  (Call us if you'd like the S function that makes
+  that possible.)
+
+  The man page, S function and S help page are new.
+  We owe you a new user's manual soon.
+
+The January 1994 release had various bug fixes but little
+new functionality.
+
+  For example, there's a workaround for an X bug that made xgobi
+  fail when it tried to draw some tens of thousands of circles.
+
+  We have decided to change some of the brushing behavior, and to
+  use transient brushing as the default.  A few brushing bugs
+  have been repaired -- for instance, transformation during
+  brushing wasn't working.
+
+  A bug has been fixed so that now xgobi can handle data when a
+  column contains nothing but many replications of the same
+  negative number; not many people seem to have encountered that
+  one.
+
+  We've changed the appearance of the variable selection panel
+  a bit in the hope that it will make it easier for new users
+  to realize that they should click on the variable circles.
+
+  And so on; as usual, we don't really document this stuff.
+
+  We've got a bit of new functionality in the wings, and we
+  hope to release some of it later this year.
+
+The March 1993 release had the following changes:
+ 
+ * Ability to read .linecolors file. (See data example.)
+ * Ability to read .erase file.
+ * Ability to write out the data file (See Options menu.)
+   Useful for saving transformed or sphered data.
+ * Case profile plotting. (See Identify control panel.)
+   Especially useful for panel data; write to dfs@research.att.com
+   for more information and documentation.
+ * Speedups to brushing that make it possible to brush
+   many thousands of points. (Thanks for Werner Stuetzle for
+   suggestions.)
+ * Speedups to identification, again to better handle big
+   data sets.
+ * Bug fix to S command that enables it once again to accept
+   the output of an S command as data input.
+ * More glyph types. (See Glyph menu on Brush control panel.)
+   This may make old .glyph files no longer suitable; sorry.
+ * Data-specific resource files. (See Options menu.)
+ * Ability to subset data in three different ways. (See
+   Options menu.)  The default method allows you to choose
+   a random sample of your data w/o replacement.
+ * Beginning to add keyboard controls:  most of the
+   buttons in the main panel can now be activated from
+   the keyboard.  D or d = Dotplot, X or x = XYPlot, ...
+   up through O or o = Options.
+
+ Many extensions to touring (See Tour control panel.)
+ See help files for basic information and write to
+ dcook@stat.rutgers.edu for more information and documentation.
+
+ * Linked touring. (See Options menu as well as Tour control panel.)
+   Useful to compare related data sets or for cross validation.
+ * Section tour
+ * A menu of interpolation methods is available.
+ * Several new projection pursuit indices have been added.
+   (See the PP Index menu.)
+ * Notations in the code in tour_pp.c tell an adventurous
+   user how to add a new projection pursuit index.
+ * A set of methods to tailor and interact with the projection
+   pursuit window has been added.  (They're on the left side of
+   the projection pursuit window.)  In particular, you might
+   want to read the help files for 'Return to Bitmp' and 'Record
+   Bitmap' if you use the projection pursuit guided tour.
+
+ In the template directory, you will find a heavily commented
+ example of the use of XGobi as a function.  This hasn't yet
+ been used by anyone, so it's quite rough, but it should be
+ a reasonable start.  Please tell us about your experiences
+ with these files.
+
+The February 1992 release had these changes:
+
+ * textured dot plotting
+ * dotplot cycling
+ * an interactive line editing mode
+ * ability to read .lines file specifying connected lines
+ * line brushing -- by color but not yet by line type; not yet linked
+ * a first attempt to allow the plot window to be printed
+ * the ability to "delete" and "restore" erased points in brushing
+ * an option for maintaining variable continuity between plotting modes
+
+The October 1991 release was re-implemented using the Athena widgets,
+written and maintained by the MIT X Consortium, rather than the HP
+widgets, which are no longer supported.  It made use of a feature
+called 'fallback resources' which make the default resource file
+unnecessary -- in fact, the old resource file will inhibit the best
+layout, so it should be moved or removed.  In addition, the
+partitioning of space among the plot window and the variable selection
+panel can now be adjusted interactively.

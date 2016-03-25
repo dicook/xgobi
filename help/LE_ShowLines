@@ -1,0 +1,9 @@
+Show lines
+
+When this is on, the connecting line segments are drawn.
+
+This can be set in the XGobi resource file.  The default is
+
+*showLines:   False
+
+This button duplicates a button on the Options menu.

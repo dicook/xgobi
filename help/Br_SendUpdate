@@ -1,0 +1,8 @@
+Send Update
+
+If you initiate a second XGobi window for a set of data, and you want that
+window to acquire the brushing characteristics of an existing window, then
+click on Send Update in the older window.  This causes the second window to
+acquire all the information about color, glyph, and visibility of the
+window in which you click.
+

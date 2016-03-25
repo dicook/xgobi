@@ -1,0 +1,15 @@
+Width
+
+This scrollbar sets the width of the smoothing window. This can be in
+either fixed distance or a fixed number of points. 
+
+Smoothing is done on the world data scale of -32768 to 32768.
+
+In terms of distance the smallest width provided by the scrollbar is
+max(1000,step*10), and the maximum is 32768/3~10923.
+
+In terms of number of points the smallest is 2 and the largest is
+nrows_in_plot/6.
+
+The step size does depend on the actual window size so the two
+scrollbars don't always work independently.

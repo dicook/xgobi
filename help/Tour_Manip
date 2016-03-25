@@ -1,0 +1,31 @@
+Tour Manipulation Constraints
+
+The variable to be manipulated into or out of the plot is indicated by
+an inner circle in the variable circle. The control follows pointer
+movement on the plot window.
+
+Variable to be manipulated is indicated in the variable circle by a
+small circle. 
+
+Oblique: No constraints on manipulating a variable
+
+Vert: Variable manipulation is constrained along a vertical
+latitude line.
+
+Horiz: Variable manipulation is constrained along a horizontal
+latitude line. 
+
+Radial: Variable manipulation is constrained to direction of variable
+contribution in the plane. If the manipulated variable doesn't have
+any current contribution the first mouse movement direction is used.
+
+Angle: Variable manipulation is constrained to rotation in the current
+plane. The angle of rotation is determined by movement around the
+center of the plot window, so mouse motion near the center causes
+dramatic changes!
+
+USAGE WARNING: There is one case where the controls for the manual tour
+is unresolved:
+  When PC Basis is on and the Manip variable is not one of the active
+  variables. The active variables are sphered but the Manip variable is
+  not!

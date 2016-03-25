@@ -1,0 +1,12 @@
+*showAxes: 1
+*showPoints: 1
+*showLines: 1
+*linkTour: 1
+*linkIdentify: 1
+*linkBrush: 1
+*carryVars: 0
+*jumpBrush: 1
+*reshapeBrush: 1
+*XGobi*PlotWindow.height: 320
+*XGobi*PlotWindow.width: 442
+*XGobi*VarPanel.width: 124

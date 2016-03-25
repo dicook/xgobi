@@ -1,0 +1,19 @@
+Terms in Expansion or Window Width scrollbar
+
+There are two types of indices currently implemented.  One type is
+based on density estimation using expansions in orthogonal polynomials,
+and the other is based on kernel density estimations.  In each of these
+methods there is a parameter which it is desirable to alter from time
+to time.  The second scrollbar allows the interactive changing of these
+parameters.  For the polynomials it controls the number of terms used
+in the expansions.  For the kernel density estimation it controls the
+window width of the kernel.
+
+To control the scrollbar, position the cursor about where you'd like
+the new number of terms in the expansion (or window width) to be, then
+click the left or middle mouse button.  You can also move the cursor
+with the mouse button held down to adjust the number of terms in the
+expansion (or window width) interactively.
+
+For finer control, click left on one of the arrows at either end of the
+scrollbar.

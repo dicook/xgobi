@@ -1,0 +1,19 @@
+In one restaurant, a foodserver recorded the following data on all
+customers he had served during an interval of two and a half months in
+early 1990. The restaurant, located in a suburban shopping mall, was
+one of a national chain and served a varied menu.
+
+TOTBILL Total bill, including tax, in dollars
+
+TIP Tip in dollars
+
+SEX Sex of person paying the bill (0=male, 1=female)
+
+SMOKER Smoker in the party? (0=no, 1=yes)
+
+DAY 3=Thursday, 4=Friday, 5=Saturday, 6=Sunday
+
+TIME 0=day, 1=night
+
+SIZE Size of the party
+

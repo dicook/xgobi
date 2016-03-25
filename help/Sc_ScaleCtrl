@@ -1,0 +1,20 @@
+Scale Controls
+
+The six buttons appearing below the Reset Scale button all change the
+scale when they are held down:
+
+up arrow      expand the plot in the vertical direction
+down arrow    contract the plot in the vertical direction
+
+   +          expand the plot in horizontal and vertical
+               directions equally
+   -          contract the plot in horizontal and vertical
+               directions equally
+
+right arrow   expand the plot in the horizontal direction
+left arrow    contract the plot in the horizontal direction
+
+In addition, the data can be expanded and contracted by dragging middle
+inside the plotting window.  This facility allows the reshaping of the
+data in arbitrary ways.  The direction and extent of the change in
+scale depends on the direction and distance the user moves the cursor.

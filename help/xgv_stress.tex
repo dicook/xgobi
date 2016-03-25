@@ -1,0 +1,47 @@
+\input pstricks.tex
+%\documentstyle[portrait,slidesec,fancybox,semcolor,pstricks,epsf,avantegarde,psfonts,mycolors]{seminar}
+\documentstyle[portrait,slidesec,semlayer,fancybox,semcolor,pstricks,epsf,10pt]{seminar}
+
+\slideframe{none}
+
+\newcommand{\Reals}   {{\rm I\! R}}
+\newcommand{\vx}      {{\mbox{\bf x}}}
+\renewcommand\slidetopmargin{2in}
+\setlength\slidewidth{7in}
+
+\begin{document}
+
+\renewcommand{\familydefault}{cmss}
+\DeclareFontFamily{T1}{avantgarde}{}
+
+%----------------------------
+\begin{slide*}
+
+%\slideheading{Stress function}
+
+\begin{eqnarray*}
+&& {\bf Stress} ~=~ 
+    \frac{ 
+      \left( \; 
+        \sum_{ (i,j) \in I }
+        \left| \; D_{i,j}^p - {\| \vx_i - \vx_j \|}_l \; \right|^r  
+      \; \right)^{1/r}
+    }{
+      \left( \;
+        \sum_{ (i,j) \in I }
+        \left| \; D_{i,j}^p \; \right|^r 
+      \; \right)^{1/r}
+    }
+\\
+&& \vx_1,...,\vx_N \in \Reals^k
+\\
+&& I ~=~\{ \; (i,j) \; |~ i \neq j ,~D_{i,j} \neq NA ,~D_{i,j}< T ,~ ...  \}
+\end{eqnarray*}
+
+%\begin{displaymath}
+%Stress ~=~ {\sum_{i,j}~|~{D_{i,j}} ^ p - {||~x_i - x_j~||}_l~|~^ q }
+%\end{displaymath}
+
+\end{slide*}
+\end{document}
+

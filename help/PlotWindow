@@ -1,0 +1,30 @@
+Plotting window
+
+In the center of the XGobi window is the plotting window.  In some
+XGobi modes, there are a few words of instruction displayed above it.
+These instructions describe the mouse operations that are effective
+within the plotting window while that mode is selected.
+
+See the documentation for Brush, Scale, and Identify in the main
+command panel for further information.
+
+The partitioning of the space between the control panels, the plot
+window, the variable selection panel can be made by positioning the
+cursor above the little rectangles (called grips) that are at the
+bottom of the lines separating these regions, then pressing one of the
+mouse buttons and moving the cursor to the left or right.  If this
+still doesn't result in a good division of space between the plot
+window and the variable selection panel, you might want to adjust
+the height and width of PlotWindow or VarPanel using your XGobi
+resource file.
+
+Resources:
+
+These are the defaults you might find useful for tailoring the
+PlotWindow to your specifications
+
+  *plotFont: -*-lucida-medium-r-normal-*-*-120-*
+  *XGobi*PlotWindow.height: 300
+  *XGobi*PlotWindow.width: 300
+  *XGobi*PlotWindow.foreground: White
+  *XGobi*PlotWindow.background: NavyBlue

@@ -1,0 +1,5 @@
+Reinit: Re-initialize tour
+
+Clicking on the "Reinit" button resets the tour to the first
+three variables, with the coefficients as they would be when you
+selected Tour for the very first time in this instance of XGobi.

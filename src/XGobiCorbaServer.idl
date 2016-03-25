@@ -1,0 +1,308 @@
+/**
+ This is an attempt to define an external interface
+ to XGobi.
+
+ The initial functionality is somewhat related to 
+ the methods provided via the RPC mechanism.
+ Additionally, Ross Ihaka and I have identified some other
+ information that may be useful to have in a client (e.g. S)
+ to 
+   1) produce plots locally from the current view in the XGobi
+      application,
+   2) control the XGobi application
+
+
+@author  Ross Ihaka and Duncan Temple Lang 
+@date    July 18th 1999
+*/
+
+
+ /* Get the definition of matrix, etc. from the Omegahat material. */
+#include <Omega.idl>
+#include <Matrix.idl>
+
+module XGobi  {
+
+     /** A basic exception that can be thrown when 
+        not enough information is provided in a call, 
+        e.g when we set the view to an XY plot but there
+        is only on/e variable selected.
+      */
+  exception InsufficientInformationException {
+   };
+
+
+    /** This is the interface defining how clients can communicate
+        with an instance of XGobi.
+      */
+
+  interface XGobi {
+
+       /** 
+          clone the XGobi window, creating a new one.
+
+          linked: true or false indicating whether the new
+                  instance of the server should be linked to the
+                  other.
+          name: the name to use by which it is registered with the
+                CORBA naming. Also, this can be used in the titlebar 
+                of the new window.
+        */
+    XGobi replicate(in boolean linked, in string name);
+
+       /**
+          The current file loaded in XGobi.
+
+          This might be generalized to the identify whether
+          the data was loaded directly from a client's data
+          in the form of a Matrix or Data frame.
+
+           Methods to set and get this value are available.
+           The latter loads a new file.
+        */
+
+    attribute string fileName;
+
+
+
+       /**
+          Load data from a Matrix object. 
+          The variables are taken to be the columns of the matrix
+          and their names are provided in the second argument.
+        */
+    void setData(in Omegahat::BaseMatrix data, in Sequences::StringSequence names);
+
+
+      /**
+         A client can ask for the current data being used by the
+         server. It is returned as a Matrix.
+         The are no names with matrix. This is currently a separate
+         call.  (Synchronization issues are a problem.) We will
+         add methods to return a Data Frame which will contain the
+         names of the variables, etc.
+        */
+    Omegahat::BaseMatrix getData();
+
+
+      /** Add a single variable to the current data being displayed by
+         the server
+       */
+
+    long addVariable(in Sequences::DoubleSequence values, in string name);
+
+      /** Add a collection of variables to the list of variables
+         currently being displayed. The names are given 
+         in the second argument. This works much like the setData
+         method, but augments the existing data if the variables have 
+         the same length. Otherwise, an exception is thrown. It should
+         be specified here.
+       */
+    long addVariables(in Omegahat::BaseMatrix data, in Sequences::StringSequence names);
+
+
+      /** Get the names of the variables currently being displayed. */      
+    Sequences::StringSequence getVariableNames();
+      /* Set the name of the i-th variable. */
+    void                      setVariableName(in long which, in string name);
+
+
+     /** Get the names of the observations in the currently displayed data. */
+    Sequences::StringSequence getRowNames();
+
+     /**
+        Set the names of the observations in the currently displayed
+        data. 
+      */
+    void setRowNames(in Sequences::StringSequence names);
+
+      /**
+         Set an individual observation name.
+        */
+    void setRowName(in long which, in string name);
+
+
+      /** Get the names of the colors currently being used to display
+         each point. 
+         This is useful for being able to reproduce the plot in a
+         client application.
+       */
+    Sequences::StringSequence getRowColors();
+
+ 
+/** The following two methods relate to the XGobi server rather than
+    the data. They are more structural/system capabilities.
+*/
+
+
+      /** Retrieve the list of available colors understood by the XGobi
+         server.  This allows the client to ensure that commands to
+         set a color will be understood since the selection can be
+         made from this list.
+       */
+    Sequences::StringSequence getColorNames();
+
+      /** Return the name of the glyphs understood by the XGobi server.
+       */
+    Sequences::StringSequence getSymbolNames();
+
+
+     /** Set the display color of an individual observation. 
+        The observation is identified by index.
+      */
+    boolean setObservationColor(in string color, in long row);
+
+     /** Set the display color of many individual observations.
+        The observations are identified by index.
+      */
+    boolean setObservationColors(in string color,
+      in Sequences::LongSequence rows);
+
+     /** Set the glyph and glyph size for an individual observation. */
+    boolean setObservationSymbol(in string symbolName, in long size,
+      in long row);
+     /** Set the glyph and glyph size for a vector of observations. */
+    boolean setObservationSymbols(in string symbolName, in long size,
+      in Sequences::LongSequence rows);
+
+      /** Specify the variable identified by the first argument
+         to be considered as a predictor or X variable.
+         The second argument indicate whether this should clear
+         existing values first (false) or simply add this variable
+         to the existing list of predictors.
+       */
+    long setX(in string name, in boolean append);
+
+      /**
+         Similar to setX(), this specifies the appropriate variable
+         as a response.
+       */
+    long setY(in string name, in boolean append);
+
+      /** This turns on or off the selection for the specified
+         variable.
+       */
+    boolean setSelected(in string name, in boolean select);
+
+
+        /** Retrieve the names of the currently selected variables. */ 
+    Sequences::StringSequence getSelectedVariables();
+
+       /** Determine whether the specified variable is currently
+          selected. 
+        */
+    boolean isSelected(in string name);
+
+
+      /**
+         Retrieve a list of indeces identifying which 
+         observations are currently selected.
+       */
+    Sequences::LongSequence getSelectedIndices();
+
+      /**
+         Set the observations identified by index in the 
+         argument sequence to be selected.
+       */
+    void setSelectedIndices(in Sequences::LongSequence rows);
+
+
+      /** 
+         Specify the rotation to use in the current view. 
+         This allows the client to control the current view.
+        */
+    void setRotation(in Omegahat::BaseMatrix rotation);
+
+      /**
+        Get the  rotation matrix for the current view.
+        This can be used in the client to extract useful information
+        either for plotting or for transforming variables locally
+        according to this view, etc.
+       */
+    Omegahat::BaseMatrix getRotation();
+
+      /** This returns the coefficients as they are displayed in the
+          variable dials in the variable panel of the XGobi display.
+       */
+    Sequences::DoubleSequence getCoefficients();
+
+     /** This retrieves the data associated with a given variable. */
+    Omegahat::DataVector getVariable(in string name);              
+
+     /** This is the value on the dial. */
+    double getCurrentVariableValue(in string name);
+      /** List of all values on the dial */
+    Sequences::DoubleSequence getCurrentValues();
+
+
+      /** Sethe view to the specfied type (e.g. xyplot, grand tour,
+           etc.)
+        */
+    boolean setView(in string name);
+      /**
+        Retrieve the name of the  current view type.
+       */
+    string  getView()  raises (InsufficientInformationException);
+      /**
+        Obtain a list of the names of all the possible views
+           understood by the XGobi server.
+       */
+    Sequences::StringSequence getViewTypes();
+
+
+    
+/** For efficiency purposes and ease of use in the client (R and S)
+   we return this as a matrix or two parallel sequences.
+   Alternatively, we can convey type information by returning
+   a sequence of pairs
+*/
+
+
+
+     /** These methods relate to connectivity between observations.  
+        They allow a client to control whether two points are
+        connected and also to get all pairs of connected observations.
+      */
+
+
+      /** Get current collection of connections. */
+    Omegahat::BaseMatrix  getConnectedObservations();
+
+      /** Connect each pair of observations with a line segment 
+         that are identified row-wise in the specified matrix.
+       */
+    void connectObservations(in Omegahat::Matrix pairs);
+
+      /** Remove the connection between the pairs of points
+         identifed in the matrix.
+       */
+    void disconnectObservations(in Omegahat::Matrix pairs);
+
+      /**
+         Clear all connections between observations.
+       */
+    void disconnectAllObservations();
+
+
+/**
+  An alternative of implementing the connections
+  is to use more structure than a simple matrix.
+  We can control the specification to be indices
+  and actually pairs of indices.
+  It is probably easier for the client to use
+  matrices.
+
+    typedef sequence<unsigned long,2> IndexPair;
+    typedef sequence<IndexPair> IndexPairSequence;
+
+    IndexPairSequence getConnectedObservations();
+    boolean  connectObservations(in IndexPairSequence ids);
+*/  
+
+
+/** In the (very) near future, we will add Data Frame support.
+    boolean loadDataFrame(in Omegahat::DataFrame df);
+*/
+  };
+};
+
+

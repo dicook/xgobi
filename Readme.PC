@@ -1,0 +1,41 @@
+People frequently ask whether there's a version of xgobi
+that runs under Windows, and we've never had anything better
+to suggest than to use a product like Hummingbird Exceed to
+start xgobi on a remote machine running UNIX and display
+the window locally on a PC running Windows.
+
+A year ago, though, Brian Ripley put together a version of xgobi
+that works under X servers that run directly on the PC.
+
+   http://www.stats.ox.ac.uk/pub/SWin/xgobi.zip
+
+The two X servers that promise to do this are: MI/X and Vista/Exceed.
+     
+   http://tnt.microimages.com/www/html/freestuf/mix/
+   http://www.hcl.de/products/exceed/
+
+He doesn't offer to help you debug, and we don't know enough
+yet to help, so you're on your own.  We'd love it, though,
+if you'd send us information about your experiences with this
+approach so we can learn.
+
+Comments from Di Cook, on getting this to work:
+    
+    To get it to work, I needed to edit the xgobi.bat file as follows:
+    
+    @echo off
+    rem set PATH to avoid environment overflow
+    PATH=c:\windows\com;c:\ourutils
+    set DISPLAY=localhost:0.0
+    set XGOBIDIR=c:/Di/xgobi-95
+    c:\Di\xgobi-95\xgobi.exe c:\Di\xgobi-95\data\flea
+    rem c:\Di\xgobi-95\xgobi.exe %1 %2 %3 %4 %5 %6 %7 %8 %9
+    
+Then I start the X server, and double-click on the xgobi.bat file icon.
+
+XGobi and gtk:
+
+We're working on a port (and redesign) of xgobi using gtk (see
+www.gtk.org) and there does exist a port of gtk to Windows.  So
+it should be possible, in a few months, to run xgobi on a PC
+without the need for an X server.

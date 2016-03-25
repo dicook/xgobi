@@ -1,0 +1,108 @@
+
+ ###### dfs adding to test ############################
+ifndef OMEGA_HOME
+ OMEGA_HOME=/n/project2/swtoolbin/duncan/org/omegahat
+endif
+
+ifndef INSTALL_HOME
+  INSTALL_HOME=$(OMEGA_HOME)
+endif
+ifndef IDLTYPES_DIR
+  IDLTYPES_DIR=$(OMEGA_HOME)/include/IDL
+endif
+
+
+CXX=g++
+
+ ######################################################
+
+   # Include the CORBA material.
+CORBACONFIG=$(OMEGA_HOME)/Interfaces/CORBA/CORBAConfig
+include $(CORBACONFIG)/Makefile.CORBA
+
+include $(OMEGA_HOME)/Config/GNUmakefile.config
+
+OMEGA_INCLUDES=$(INSTALL_HOME)/include
+
+ # Assume all the omegahat header files have been installed as part
+ # of the omegahat distribution.
+INCLUDES=\
+         -I$(OMEGA_INCLUDES) \
+         -I$(OMEGA_INCLUDES)/Corba \
+         -I/usr/local/include \
+         -I/usr/local/include/OB \
+         -I.
+
+CORBA_LIB_DIR=$(OMEGA_HOME)/lib
+
+CORBA_LIBRARIES= -L$(CORBA_LIB_DIR)  -lCorbaUtils -lOmegaCorba -lCosNaming -lOBX11 -lOB
+IDLCFLAGS=-I. -I$(IDLTYPES_DIR)
+
+#ALL_LIBS:= $(CORBA_LIBRARIES) $(ALL_LIBS)
+
+CPPFLAGS+= -DCORBA_USED=1  $(INCLUDES)
+CXXFLAGS+= $(CPPFLAGS) 
+CFLAGS+= $(CPPFLAGS) 
+
+
+include $(OMEGA_HOME)/Config/GNUmakefile.rules
+
+Corba.o: Corba.h Corba.cc XGobiCorbaServer.h XGobiServer.h
+
+XGobiCorbaServer.h: XGobiCorbaServer.idl
+XGobiCorbaServer.cpp: XGobiCorbaServer.idl
+XGobiCorbaServer_skel.cpp: XGobiCorbaServer.idl
+XGobiCorbaServer_skel.h: XGobiCorbaServer.idl
+
+
+ # xgobi: Corba.o  XGobiCorbaServer.o
+
+CORBASRC=Corba.cc XGobiCorbaServer_skel.cpp  XGobiCorbaServer.cpp
+CORBAOBJ=Corba.o XGobiCorbaServer_skel.o XGobiCorbaServer.o
+
+
+OMEGA_IDL_INCLUDES=$(OMEGA_HOME)/Interfaces/CORBA/IDLTypes
+
+
+IDLCFLAGS=-I$(OMEGA_IDL_INCLUDES)
+
+
+%.cpp: %.idl
+	$(IDLCC) $(IDLCFLAGS) $<
+
+%.c: %.idl
+	$(IDLCC) $(IDLCFLAGS) $<
+
+%.h: %.idl
+	$(IDLCC) $(IDLCFLAGS) $<
+
+%.h: %.nw
+	$(WEB) -RHeader $< > $@
+
+%.cc: %.nw
+	$(WEB) $< > $@
+
+
+%.o: %.cc
+	$(CXX) -g $(CXXFLAGS) -c $< -o $@
+
+%.o: %.cpp
+	$(CXX) -g $(CXXFLAGS) -c $< -o $@
+
+
+XGobiCorbaServer.o: XGobiCorbaServer.cpp XGobiCorbaServer.h
+
+
+
+.PRECIOUS:	Corba.cc Corba.h
+
+Corba.tar.gz:
+	tar zcvf $@ GNUmakefile Imakefile Corba.nw XGobiCorbaServer.idl XGobiServer.h xgobi.c xgobitop.h xgobitypes.h xincludes.h
+
+
+TAGS: $(shell ls *.[ch])
+	etags *.[ch]
+
+irfeed:
+	irfeed -I${OMEGA_HOME}/Interfaces/CORBA/IDLTypes XGobiCorbaServer.idl
+

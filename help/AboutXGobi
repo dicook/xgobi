@@ -1,0 +1,58 @@
+The XGobi software for interactive high-dimensional data analysis was
+written at Bellcore (now Telcordia) by
+
+                     Debby Swayne   dfs@research.att.com
+                          Di Cook   dcook@iastate.edu
+                     Andreas Buja   andreas@research.att.com
+
+______________________________________________________________
+
+Papers:
+
+"Missing Data in Interactive High-Dimensional Data
+Visualization", by D. F. Swayne and A. Buja, Computational
+Statistics, 13 (1) 1998, pp. 15-26.
+
+"XGobi: Interactive Dynamic Data Visualization in the X Window System",
+D. F. Swayne, D. Cook and A. Buja,
+Journal of Computational and Graphical Statistics,
+7 (1) 1998, pp. 113-130.
+
+"Interactive High-Dimensional Data Visualization", by A.  Buja, D.  Cook
+and D. F. Swayne (March 1996), Journal of Computational and Graphical
+Statistics.
+
+"Interactive Graphical Methods in the Analysis of Customer Panel Data
+(with discussion)", by M. A. Koschat and D. F.  Swayne (January 1996),
+Journal of Business and Economic Statistics, 14 (1), pages 113-132.
+
+"Grand Tour and Projection Pursuit", by D. Cook, A. Buja, J.  Cabrera and
+C. Hurley (1995), Journal of Computational and Graphical Statistics, 4
+(3), pages 155-172.
+
+"Projection Pursuit Indices based on Expansions with Orthonormal
+Functions", by D. Cook, A. Buja and J. Cabrera (1993), "Journal of
+Computational and Graphical Statistics", 2 (3), pages 225-250.
+
+"XGobi:  Interactive Dynamic Graphics in the X Window System with a Link
+to S," by D. F. Swayne, D. Cook and A.  Buja (1991), American Statistical
+Association 1991 Proceedings of the Section on Statistical Graphics, pages
+1-8.
+
+For more references, see
+
+  http://research.att.com/areas/stat/xgobi
+  http://www.public.iastate.edu/~dicook/
+
+______________________________________________________________
+
+How to get XGobi:
+
+The source code (copyrighted but freely distributed) is available
+from an AT&T web site, and it's mirrored at statlib, a system for
+distributing statistical software, datasets and information.
+
+   http://research.att.com/areas/stat/xgobi
+   http://lib.stat.cmu.edu/general/XGobi/
+
+There is no user's manual per se.  

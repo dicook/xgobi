@@ -1,0 +1,36 @@
+Linked Tour Menu
+
+When two or more XGobi's are initiated, with the same data or the same number
+of variables they can be linked during tour mode. The default state is
+"Unlink". For linking to begin one XGobi needs to be set to "Send" and the
+other(s) to "Receive". The projection coefficients of the sending XGobi are
+broadcast to the other XGobi's so that each displays identical projections.
+
+There are various types of analyses where this facility is
+envisioned as useful. One is to look at identical projections of
+two different but comparable data sets; for example, one data set
+could be randomly split in two for cross-validation purposes.
+Another is to compare two different projection pursuit indices on
+the same data set.
+
+When the sending XGobi is showing sphered data, two sets of
+projection coefficients are sent, a set appropriate to the sphered
+data space and the other being the first set back-transformed
+through the sphering transformation to give the projection
+coefficients appropriate to the unsphered data space. If the
+receiving XGobi is displaying sphered data it will use the first
+set of projection coefficients, however if it is showing the
+unsphered data it will use the second set. The latter case is
+useful for displaying projection pursuit in the unsphered data
+space as it is proceeding in the sending XGobi.  (The variable bars
+may go out of the circle in the receiving XGobi, which looks a bit
+strange but is quite normal.)
+
+There are some potential pitfalls! For example, if the sending
+XGobi is showing the raw data and the receiving XGobi is showing
+sphered data, then linking doesn't make much sense and a warning
+message is displayed.  It also doesn't make sense to do linked
+touring when two XGobis display different data sets which are
+sphered, unless the sphering has been done identically on each;
+however, the program doesn't detect this case.
+

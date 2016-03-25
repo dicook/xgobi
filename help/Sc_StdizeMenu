@@ -1,0 +1,26 @@
+Standardization menu
+
+This allows a user to choose between three different methods
+used to standardize the view of the data.
+
+Note: These choices apply to all the data, not just to the
+currently selected variables; that is, if new variables are
+subsequently selected for plotting, the same standardization
+method will be used.
+
+Min/Max:  Each variable is centered at the
+  midpoint of the variable group to which it belongs.
+
+Mean/StdDev:  Each variable is scaled using the mean
+  and standard deviation of the variable group to which
+  it belongs.
+
+Median/MAD:  Each variable is scaled using the median
+  and median absolute deviation of the variable group to
+  which it belongs.
+
+The scrollbar affects the second two data standardization
+methods.  It controls the scaling of the plot by increasing or
+decreasing the number of deviations (either standard deviation
+or median absolute deviation) contained within the plotting
+window.

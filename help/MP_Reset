@@ -1,0 +1,6 @@
+Reset all: Reread the input data file and return all points
+to their original positions.
+
+Reset one: Restore the most recently moved data point to the
+position it held before it was last moved.  (Recall that this
+may not be its original position.)

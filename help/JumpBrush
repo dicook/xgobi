@@ -1,0 +1,16 @@
+Brush jumps to pointer
+
+This button allows you to choose between two different 
+relationships between the cursor (or pointer) and the brush
+during brushing.
+
+When you press the left or middle button during brushing,
+either the brush jumps to the pointer or the pointer
+jumps to the brush.  Experience shows that users have 
+exceedingly strong preferences about these behaviors, so
+both have been made available.
+
+This can be set in the XGobi resource file.  The default is
+
+*jumpBrush:   True
+

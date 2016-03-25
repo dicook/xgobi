@@ -1,0 +1,22 @@
+Corr Manipulation Constraints
+
+Two variables can be manipulated, either vertically (arcs on top and
+bottom of variable circle) or horizontally (arcs on left and right of
+variable circle). The control follows pointer movement on the plot
+window.
+
+Vert: Vertical manip variable manipulation is constrained along a
+vertical latitude line.
+
+Horiz: Horizontal manip variable manipulation is constrained along a
+horizontal longtitude line.
+
+Combined: Both variable can be manipulated by mouse movement.
+
+Equal Comb: Both variables can be manipulated but the amount is the
+same horizontally and vertically.
+
+USAGE WARNING: There is one case where the controls for the manual
+correlation tour is unresolved:
+  When the horizontal manip variable is active in the vertical direction
+  or the vertical manip variable is active in the horizontal direction.

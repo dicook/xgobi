@@ -1,0 +1,574 @@
+.TH XGobi 1 "30 September 1997"
+.SH NAME
+.B xgobi 
+\- interactive dynamic graphics program for data visualization
+.SH SYNOPSIS
+.B xgobi
+[ X options ]
+[
+.B \-subset
+n
+] [
+.B \-only
+n/N or a,n
+] [
+.B \-mono
+] [
+.B \-version
+] [
+.B \-std
+mmx|msd|mmd
+] [
+.B \-scatmat
+]
+filename
+.SH DESCRIPTION
+.I xgobi
+is an interactive dynamic graphics program for data
+visualization in the X Window System.  It is especially
+designed for the exploration of multivariate data.
+Its basic plot is a scatterplot, and these are some
+of the tools available for scatterplot display and
+manipulation:
+.RS .25i
+.IP o 2
+Cycling rapidly through two-variable scatter plots.
+.IP o 2
+Three-dimensional rotation, including trackball control, in spaces
+spanned by three variables at a time.
+.IP o 2
+Grand tours and correlation tours: smooth randomized sequences of
+two-dimensional projections in order to explore a higher-dimensional
+point cloud of multivariate data.  Projections can be manually
+controlled and optimized with projection pursuit.
+.IP o 2
+Brushing: the ability to change the color or plotting
+character of a point or a group of points.
+.IP o 2
+Hiding groups:  using checkboxes to specify which brushed
+groups should be plotted, or included in calculations.
+.IP o 2
+Scaling: moving and reshaping the plot interactively.
+.IP o 2
+Identification: displaying a label next to a point in the plot window.
+.IP o 2
+Linked views: Brushing, identification and touring are linked; that
+is, actions in the window of one XGobi process are immediately
+reflected in another XGobi window displaying the same data.
+.IP o 2
+Line editing: Any pair of points can be connected with a line segment.
+.IP o 2
+Moving points:  Points can be moved on the screen.  In
+higher-dimensional views, the motion is interpreted as
+taking place in some plane parallel to the screen.
+.IP o 2
+Smooths: Smooth curves can be drawn through point clouds.
+.IP o 2
+Subsetting: Subsamples can be drawn either systematically or randomly.
+.IP o 2
+Jittering: Variables can be jittered, which is useful for discrete
+variables that take on only few values.
+.IP o 2
+Parallel coordinate display: shown in a separate linked window,
+linked to the main window.
+.IP o 2
+Case label list: shown in a separate window, linked to the main
+window for labeling points.
+.IP o 2
+Missing values: are accepted and can be dealt with by imputation of
+constant values, random values, or user-supplied imputed values.
+Missing value patterns can be examined in a separate linked XGobi
+window.
+.IP o 2
+Variable transformations: A menu of transformations such as logs and a
+few powers is available.
+.IP o 2
+Postscript plotting: The contents of the plot windows can be written
+out to postscript files for high-quality plotting.
+.IP o 2
+Online help: Most of the XGobi buttons and windows have associated
+help files that can be displayed during an XGobi session.  Click on
+the
+.I Info
+button toward the top right of the window for
+instructions.
+.RE
+
+XGobi has a direct manipulation interface, and all the above actions
+are performed using the mouse.
+
+XGobi can be used in conjunction with the S language for
+scientific computing and data analysis.  Execute
+.IR help(xgobi) 
+within S or Splus for information; if the xgobi function
+has not been installed, investigate the XGobi distribution files.
+
+XGobi can also be programmed to use RPC (Remote Procedure Calls)
+to communicate with other software.
+
+.SH OPTIONS
+
+.B \-subset
+n
+.LP
+.RS .25i
+Specify the size n of the random sample of the data to be displayed on
+startup.  Although only the random sample is shown, all the data is
+read in and available during the session.  Use the subset panel in
+Tools to change the sample size and sampling method during the
+session.
+.RE
+
+.B \-only
+n/N
+.LP
+.RS .25i
+Specify the size n of the random sample of the data to be read in on
+startup from a file of N rows.  In constrast to subset, this option does
+.B not
+read in all data.
+.RE
+
+.B \-only
+a,n
+.LP
+.RS .25i
+Specify the initial row a and the number of rows n of the consecutive block
+in data to read in.  In constrast to subset, this option does
+.B not
+read in all data.
+.RE
+
+.B \-std
+mmx|msd|mmd
+.LP
+.RS .25i
+By default, the data are scaled into the plotting window using the
+minimum and maximum values of each variable or variable group, in such
+a way that the midpoint of the variable is at the center of the
+plotting window and no points fall outside the window.  Instead, to
+scale using mean and largest distance, specify
+.IR \-std
+.IR msd;
+to scale using the median and largest distance,
+specify
+.IR \-std
+.IR mmd.
+.RE
+
+.B \-dev
+x
+.LP
+.RS .25i
+If you have specified 
+.IR -std
+.IR msd
+or
+.IR -std
+.IR mmd,
+then you can also specify the number of standard deviations (or median
+absolute deviations) from the mean (or median) to be contained within
+the plotting window, using the argument
+.IR -dev
+.IR x,
+where
+.IR x
+is a real number between 0 and 100.  The default is 2.
+.RE
+
+.B \-mono
+.LP
+.RS .25i
+Emulate a black-and-white display.  This simplifies producing pictures
+for many publications.
+.RE
+
+.B \-version
+.LP
+.RS .25i
+Print a version date, the last date that any file in the release
+was changed.
+.RE
+
+.B \-scatmat
+.LP
+.RS .25i
+Build a scatterplot matrix from the input file, and display it
+in the plotting window.  This matrix is linked by default to
+non-scatmat xgobi windows.
+.RE
+
+X options
+
+.RS .25i
+The standard X command line options can be used with XGobi.  These
+include
+.IR "-display machinename:0",
+used when running an X program on one machine and displaying its
+output on another, and
+.IR "-title Title",
+where
+.IR Title
+is a string you want to appear in the window manager titlebar.
+.RE
+.SH FILES
+XGobi accepts standard input, but is most often used with files,
+partly because of the additional plot control that can be achieved
+using a set of files.  The data input file should be an ASCII file
+with the data matrix arranged in rows and columns; in ASCII, rows must
+be distinguished by carriage returns, and columns can be separated by
+any amount of white space.  Missing values can be coded as ".", "NA"
+or "na".  (The input file can also be a binary file, which
+can be produced within XGobi once the ASCII data has been read in.)
+XGobi accepts other input about the display of the data from files as
+well.  If the data is in a file named
+
+.nf
+.B filename
+.fi
+
+.RS .25i
+or
+.RE
+
+.nf
+.B filename.dat
+.fi
+
+.RS .25i
+(either of which must be an ASCII file), or
+.RE
+
+.nf
+.B filename.bin
+.fi
+.RS .25i
+
+(the binary version of the data), then the other files are as follows:
+.RE
+
+.nf
+.B filename.row
+.B filename.rowlab
+.B filename.case
+.fi
+.RS .25i
+
+Row or case labels: a label for each row of the data matrix, which is
+displayed in the identification mode.  The file should contain one
+label per line.
+
+.RE
+
+.nf
+.B filename.col
+.B filename.collab
+.B filename.column
+.B filename.var
+.fi
+.RS .25i
+
+Column or variable labels: a label for each column of the data matrix,
+which becomes part of the XGobi variable selection panel.  The file
+should contain one label per line. 
+
+To add a short label to be used in the parallel coordinates plot, use
+the vertical bar "|" as a field separator and add the short name, so
+each line looks like this:  fullname|shortname.
+.RE
+
+.nf
+.B filename.colors
+.fi
+.RS .25i
+
+Brushing colors: a color for each point in the plot, representing a
+row or case of the data.  The file should contain one color per line.
+(It is probably best if the colors correspond to the colors used in
+brushing; see the later section on resources.)
+.RE
+
+.nf
+.B filename.glyphs
+.fi
+.RS .25i
+
+Brushing glyphs: a glyph type for each point in the plot, representing
+a row or case of the data.  The file should contain one glyph type per
+line.  The glyph types are as follows:
+.RS .25i
+
+.nf
+1 through 5: Five sizes of '+'
+6 through 10: Five sizes of 'X'
+11 through 15: Five sizes of open rectangle
+16 through 20: Five sizes of filled rectangle
+21 through 25: Five sizes of open circle
+26 through 30: Five sizes of filled circle
+31: A single-pixel point
+.fi
+.RE
+
+.RE
+.nf
+.B filename.erase
+.fi
+.RS .25i
+
+Erase: a column of 1s (to have a point hidden on startup) and 0s (to
+have the point plotted).  There should be one value per line and as
+many lines as there are rows in the data.
+.RE
+
+.nf
+.B filename.lines
+.fi
+.RS .25i
+
+Line segments: specifications for the pattern of line segments which
+connect pairs of points.  The file should contain two numbers per
+line.  The pair of numbers represents the row numbers of the two
+points that should be connected.
+.RE
+
+.nf
+.B filename.linecolors
+.fi
+.RS .25i
+
+Line colors: a color for each line in the .lines file.  The file
+should contain one color per line.  (It is best if the colors
+correspond to the colors used in brushing; see the later section on
+resources.)
+.RE
+
+.nf
+.B filename.nlinkable
+.fi
+.RS .25i
+
+The number of rows to be linked for brushing and identification.  By
+default, nlinkable is equal to the number of rows in the data.  This
+feature can be used to link ordinary scatterplots with plots that have
+some decorations requiring additional points, such as clustering
+trees.
+.RE
+
+.nf
+.B filename.vgroups
+.fi
+.RS .25i
+
+Variable groups: an integer for each column in the data.  Each set of
+columns that is represented by the same integer will grouped together
+for scaling and transformation.  The file is just one long line of
+integers.  For example, an input file with four columns could have
+a .vgroups file containing the line 1 2 2 3.  The second and third
+columns are then grouped together.  The range of their plotting axes
+is be the same, and if column 2 is transformed, column 3 is
+transformed at the same time.
+.RE
+
+.nf
+.B filename.rgroups
+.fi
+.RS .25i
+
+Row groups: an integer for each row in the data.  Each set of
+rows that is represented by the same integer will grouped together
+for brushing.  In addition, line groups will be derived from the
+row groups:  all lines between points in the same row group will
+be in the same line group.  The file is just one column, and the
+numbers don't need to be in any sort of sequence.
+.RE
+
+.nf
+.B filename.missing
+.fi
+.RS .25i
+
+A file identical in structure to filename.dat, where non-zero values
+indicate positions with missing (or censored, or otherwise
+exceptional) values.  This file represents the pattern of missing
+values in the data; it can be examined in a separate XGobi window by
+selecting
+.I Launch missing data XGobi...
+from the
+.I Tools
+menu.
+.RE
+
+.nf
+.B filename.imp
+.fi
+.RS .25i
+
+Multiple imputations of missing values: Each column should have a full
+set of imputed values.  The number of rows needs to be identical to
+the number of non-zero values in filename.missing, or the number of
+missing codes in filename.dat if filename.missing is not provided..
+The imputed values should be given in their order in the data column
+by column.  For example, if filename.dat looks like this:
+
+.nf
+  10 NA 12 -3
+  98  0 10  0
+  77  3 NA -5
+   1  2 NA 10
+  NA NA  5 -8
+   0  0 10 12
+.fi
+
+(six cases, four variables, five missing values), then filename.imp
+with two sets of imputed values could look like this:
+
+.nf
+  54  37
+   3   2
+   4   1
+  11  10
+  13  11 
+.fi
+
+If the second column is selected for imputation (Select 
+.I Impute missing values
+from the
+.I Tools
+menu), the full data matrix with imputations looks like this:
+
+.nf
+  10  2 12 -3
+  98  0 10  0
+  77  3 10 -5
+   1  2 11 10
+  37  1  5 -8
+   0  0 10 12
+.fi
+.RE
+
+.nf
+.B filename.resources
+.fi
+.RS .25i
+
+Resources: a set of datafile-specific XGobi resources, which specify
+the size of the plotting window and some user-selection option
+settings.  The file is in the format of a standard X resource file.
+It can be directly edited so that other resources can be specified.
+See the later section on resource files for more information.
+.RE
+.sp
+All of the above files can be created outside of XGobi, using an
+editor or other UNIX utilities, and several of them (glyphs and
+colors, line segments and line color, resources) can be written out
+during an XGobi session, in which case they represent the results of
+interactions performed during that session.
+.SH X11 RESOURCE FILES
+X11 resource files are used to control size, color, layout,
+labels, and various other windowing features.  The XGobi
+resources you are most likely to find useful set the sizes
+of the plotting window and the variable selection panel,
+the colors available for brushing, the font types and
+sizes, and the title appearing in the title bar of the X
+window.  Some examples follow:
+
+In this example, the first 5 of the 10 brushing colors are
+specified.  These colors should be drawn from the set of
+colors available on your workstation or X terminal, which
+you can probably determine using the X command 'showrgb.'
+
+.RS .5i
+.nf
+*brushColor0: white
+*brushColor1: red
+*brushColor2: green
+*brushColor3: skyblue
+*brushColor4: yellow
+.fi
+.RE
+
+Here, the sizes of the plotting window and variable selection panel
+are set.  All units are in pixels.  This file was created
+interactively during an XGobi session.
+
+.RS .5i
+.nf
+*XGobi*PlotWindow.height: 120
+*XGobi*PlotWindow.width: 490
+*XGobi*VarPanel.width: 390
+.fi
+.RE
+
+These two resources allow the variable widgets to be reduced
+in size, which is helpful when there are many variables
+in the data.
+
+.RS .5i
+.nf
+*XGobi*VarWindow.width: 36
+*XGobi*VarLabel.width:  36
+.fi
+.RE
+
+Here, the title and font have been adjusted for making a videotape.
+An explanatory title and a large font are used.
+
+.RS .5i
+.nf
+*XGobi.title:    XGobi: Experimental Laser Data
+*XGobi.iconName: XGobi: Laser
+*plotFont: -*-lucida-medium-r-normal-sans-20-*-*-*-*-*-*-*
+.fi
+.RE
+
+Several logical variables controlling XGobi's behavior can be defined
+in a resource file.  These are also represented by buttons, most of
+which are found on the Option menu accessed from the main panel.
+Descriptions can be found in the help window for each button.
+
+.RS .5i
+.nf
+*showAxes: True
+*showPoints: True
+*showLines: True
+*linkBrush: True
+*linkLineBrush: True
+*linkIdentify: True
+*linkTour: True
+*plotSquare: True
+*jumpBrush: True
+*reshapeBrush: True
+*carryVars: True
+*glyphType: 6
+*glyphSize: 1
+*defaultPrintCmd: lpr -Pps1
+.fi
+.RE
+.SH AUTHORS
+.nf
+Deborah Swayne (dfs@research.att.com)
+Dianne Cook (dicook@iastate.edu)
+Andreas Buja (andreas@research.att.com)
+.fi
+.SH CONTACT
+Deborah Swayne (dfs@research.att.com)
+.SH SEE ALSO
+Sample data files are included in the XGobi distribution.
+
+For papers and further pointers, check the following web page:
+.nf
+http://www.research.att.com/areas/stat/xgobi/
+.fi
+
+XGobi supports Remote Procedure Calls (RPCs) as a means for
+interprocess communication (IPC). For example, a link among
+XGobi, ArcView, and XploRe is currently being supported.
+For more details, see:
+.nf
+http://www.galaxy.gmu.edu/~symanzik/AXX/
+.fi
+
+.SH BUGS
+Probably too numerous to mention, but you do the authors a favor if
+you report the ones you notice.
+

@@ -1,0 +1,14 @@
+Brushing modes:  Persistent, Transient, Undo
+
+These are three different brushing modes.
+
+Persistent:  When you brush a point, it retains its new color or glyph
+when the brush is no longer over that point.
+
+Transient:  As the brush moves off a point, it returns to the color and
+glyph it had before the brush covered it.
+
+Undo:  When Undo is activated, moving the brush over a point that was
+painted during the preceding Persistent brushing action restores that
+point to the state it had just before it was brushed.
+

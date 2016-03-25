@@ -1,0 +1,7 @@
+Variable List
+
+The variable list controls which variables are included in the
+parallel coordinates plot.  Selected variables are marked with
+a preceding `+'.
+
+Click or drag the left button to toggle selected variables.

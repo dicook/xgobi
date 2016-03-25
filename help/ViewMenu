@@ -1,0 +1,222 @@
+View Menu
+
+Every element in the view menu changes two things:
+  1) the interactions defined for the plot window, and
+  2) the panel displayed to the left of the plotting window.
+
+The elements in top half of the menu in general change the
+dimensionality of the projection in the plotting window, while
+those in the bottom half do not.
+
+Plot1D
+
+A one-variable plotting mode, displaying the data in one of two
+ways:
+
+  1) as a vertical strip chart, like a jittered dot plot.  The method
+     used is described in "Strips Displaying Empirical Distributions: 
+     I. Textured Dot Strips" by John Tukey and Paul Tukey.
+  2) as an average shifted histogram (ASH), as designed by David W.
+     Scott.
+
+This view can be activated from the keyboard by typing d or D.
+
+XYPlot
+
+The familiar two-variable scatterplot ...
+
+A horizontal line is drawn in the variable circle corresponding to the
+X variable plotted and a vertical line in that of the Y variable.  See
+the help file for the variable selection panel for more information.
+
+These plots can be cycled automatically:  see the help file for the
+Cycle button in the XYPlot control panel.
+
+This view can be activated from the keyboard by typing x or X.
+
+Rotate
+
+Selecting Rotate sets XGobi in a three-variable plotting mode.  The
+user can rotate the data about a fixed vertical or horizontal axis, or
+about a floating oblique axis, which is controlled by mouse movements
+on the screen.
+
+To control the rotation with mouse movements, press and hold any mouse
+button while the cursor is in the plotting window.  Now move the
+cursor.  (Note that when the axis is fixed, movement is possible around
+that axis.)
+
+The lines appearing in the variable circles are proportional in length
+and direction to the axes of the three participating variables, and the
+small circle in the center of the variable circle indicates that a
+variable is "last touched." See the help file for the variable
+selection panel for more detail.
+
+If there are fewer than three variables in the data, rotation is
+disabled.
+
+This view can be activated from the keyboard by typing r or R.
+
+Grand Tour: grand tour and projection pursuit guided tour
+
+Initiate a grand tour using the first three variables in the data
+matrix.  The labels of the included variables are highlighted.  (If
+there are fewer than three variables in the data, motion ceases.)
+
+The grand tour method used here successively samples planes in p-space,
+where p is the number of variables presently selected, and connects the
+planes by moving along a geodesic interpolation path between them.
+Motion is smooth between the starting and ending planes, but when the
+ending plane is reached there is a slight delay while the next randomly
+selected ending plane and consequent path are calculated.  By allowing
+the grand tour to run uninterrupted the viewer can get a global view of
+the linear combinations among the variables. As the tour runs, the
+number of base planes passed is displayed in the box to the right of
+the Backtrack button.
+
+A variable may be added to or removed from the tour by clicking on the
+corresponding variable selection box with the left or middle mouse
+button.  There must be three or more variables included in the grand
+tour, so it is not possible to remove a variable when only three are
+active. The bars drawn inside the variable circles represent the
+coefficients of the variables in the current plot.  The projection of a
+bar on the horizontal axis of the variable circle corresponds to the X
+coefficient of that variable, while the projection onto the vertical
+axis of the variable circle corresponds to the Y coefficient.
+
+This view can be activated from the keyboard by typing t or T.
+
+Correlation Tour
+
+Initiate a correlation (alias regression or canonical) tour with
+the first variable as the "dependent" vertical variable and the second
+two variables as "independent" horizontal variables. See Buja, Hurley,
+Asimov and McDonald "Elements of a Viewing Pipeline" in Cleveland and
+McGill (1989?) "Dynamic Graphics for Statistics".
+
+Variables are added or removed with either a left or middle button
+click. Left for X variable, Middle for Y variable. When removed the
+variable will be faded out. To change from an X variable to a Y
+variable one needs to click on the variable circle with the middle
+button, and when the X component is faded out the Y component is
+introduced. Vice versa for changing a Y to an X. 
+
+Set this view from the keyboard by pressing c or C.
+
+Scale
+
+Activate a set of operations for scaling and shifting the data inside
+the plotting window.  The first set of controls in the scale panel
+applies to rescaling operations, and the second set to operations
+that shift the center of the data.
+
+It is also possible to scale and shift the data using mouse operations
+inside the plotting window.  XGobi signals these changes in two ways:
+The cursor changes inside the plotting window and a bit of text appears
+above the window to briefly describe the mouse behavior.  You can shift
+the plot by dragging left and rescale it by dragging middle.  If that
+sentence is too terse for you, read the following paragraph:
+
+ Place the cursor inside the plotting window.  Now hold the left button
+ down while moving the mouse, and notice that the plot moves around
+ inside the plotting region without changing shape.  Now try doing the
+ same with the middle button, and notice that the plot is continuously
+ being rescaled.
+
+Activate this view from the keyboard by typing s or S.
+
+Brush
+
+Activate a set of operations used in brushing.  Brushing can be
+performed with one single XGobi process running, but it is most
+interesting and useful to perform brushing with more than one XGobi
+process active at the same time, with a different view of the same data
+displayed in each.  When brushing operations are performed in any one
+XGobi window, the new current state is instantly broadcast.  Any other
+XGobi window that read the broadcast information promptly updates its
+own window to reflect the changes.  In order to respond to brushing
+events, an XGobi process must be plotting data with the same number of
+rows as the broadcasting window, but it need not be in the Brushing
+mode itself.  (In fact, machine response is best if the passive window
+is in a Pause state or in the XY Plot mode, consuming few computing
+cycles.)  In order to prevent the sending or receiving of brushing
+information, select Unlink in the main panel.
+
+The instruction label that appears above the plotting window is
+there to remind you of the brush use.  As you move the pointer
+inside the plotting window, the "brush," which is drawn in the
+current plotting color, will move with you.  If you are brushing
+points, the brush is a rectangle and points contained inside it
+are brushed; if you are brushing line segments, the brush is a
+crosshair and line segments intersected by either leg of the
+brush are brushed.  It is possible to brush both points and line
+segments at the same time.
+
+To brush points or lines, hold the left button down and move the
+pointer.  To reshape the brush, hold down the middle button and 
+move.  To brush and reshape at the same time, hold down both the
+left and middle buttons.
+
+Active this view from the keyboard by typing b or B.
+
+Identify
+
+This mode is used to identify the case (row) of plotted points.  If
+a file containing case labels has been supplied, those labels are
+used here.  If not, the row number of each point is used.  To see
+these labels, simply move the cursor inside the plotting window.
+The label of the point nearest the cursor will be printed.
+
+To cause a label to become "sticky", click left when the target
+label is printed.  The printing style changes and the label now
+remains printed as the cursor moves off, and even remains printed
+as you leave the Identify mode.  It is possible to rescale or
+rotate data, and the sticky labels will continue to be printed next
+to their associated points.
+
+To cause a label to become "unsticky", return to the Identify mode
+and click left again when the target point is nearest the cursor.
+
+To cut or copy a label so that it can be pasted in elsewhere, type 'w'.
+
+Identification works in a single window or in one or more linked
+windows.
+
+This button can be activated from the keyboard by typing i or I.
+
+Row labels can be supplied in a file named fname.row, where fname
+or fname.data is the name of the data file, one label per row.
+
+LineEdit
+
+This element enables an interactive line editor, allows line
+segments between points to be added or removed interactively.
+When you select LineEdit, if the connecting lines are not
+currently being shown, the "Show lines" option is turned on
+and the connecting lines are plotted.
+(See the help file for the Options button in the main panel.)
+
+The connecting lines can be specified in a startup file named using a
+.lines suffix.  The .lines file consists of pairs of numbers on
+separate lines, where the pair indicates the row numbers of the
+points to be connected, for example:
+
+1 3
+1 4
+2 5
+
+Line colors can be supplied in a file named fname.linecolors,
+where fname or fname.data is the name of the data file, one
+color per row, where the rows correspond to the rows specified
+in the .lines file.
+
+Activate line editing from the keyboard by typing l or L.
+
+Move points
+
+Drag the left mouse button to move points in the plot window.
+In non-orthogonal projections, point motion is taken as occurring
+in a plane parallel to the plane of the screen.
+
+Activate point moving from the keyboard by typing m or M.
+

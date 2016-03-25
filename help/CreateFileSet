@@ -1,0 +1,55 @@
+Create new set of XGobi files
+
+By making selections from a set of menus, you can specify a set
+of parameters to define a new set of files which is derived from
+the current set -- for example, some subset of the current data.
+
+New root file name
+  Specify newfname, the base name for the new file set.  This
+  should probably not be the same as the base name for the
+  current data.
+
+Data stage
+  Save raw data
+    Save the data before any variable transformations that may
+    have been applied.
+  Save transformed data
+    Save the data all variable transformations.
+
+Data format
+  Save data as ascii
+    Write out the file newfname.dat containing ascii data.
+  Save data as binary
+    Write out the file newfname.bin containing binary data.
+    You might want to choose this option for a very large set
+    of data -- or you might write out ascii for now for readability
+    and generate the binary file later using the other 'Save' panel.
+
+Row-wise data
+ Specify which rows are to be saved, which will be applied to all
+ relevant data files:  newfname.dat, newfname.colors, etc.
+  Use the file newfname.rowindx
+    Define a file in the target directory which contains a single
+    column, a list of the rows you'd like to include in the new files,
+    in any order you choose.
+  Save all currently displayed points
+    Save everything that is not currently erased.
+  Save all points
+
+Column-wise data
+ Specify which columns are to be saved, which will be applied to all
+ relevant data files:  newfname.dat, newfname.cols, etc.
+  Use the file newfname.colindx
+    Define a file in the target directory which contains a single
+    column, a list of the columns you'd like to include in the new files,
+    in any order you choose.  This is a simple way to reorder variables.
+  Save all columns
+
+Missing data
+  Write out missings as 'na'
+    This applies only when writing out ascii data:  for each missing
+    value, write out the string 'na'.
+  Write out currently assigned values
+    Write out the currently assigned value for each missing data point.
+    This may be some fixed value assigned to each missing point, or
+    it may be the current set of imputed data.

@@ -1,0 +1,92 @@
+
+INPUT FILES:
+
+One of these three is required: 
+- a file of dissimilarities (NxN),
+- a file of multivariate data (Nxp),
+- a file of edges describing a discrete graph.
+
+USAGE:
+
+- Input based on file extensions:
+
+    xgvis xyz
+
+  If one of the following files is present, it will be read
+  and interpreted as a dissimilarity matrix, a graph, or a
+  multivariate dataset:
+
+    xyz.dist
+    xyz.edges
+    xyz.pos, xyz.dat
+
+  If files of more than one type are present, they have descending 
+  prority in this order: dist, edges, pos
+
+  In the presence of a dist or edges file, the pos file will be used
+  for starting positions.
+
+- Input based on flags:
+
+    xgvis -dist  xyz
+    xgvis -edges xyz
+    xgvis -pos   xyz
+        
+  The file "xyz" will be read and interpreted accordingly.
+
+
+FORMAT:
+
+- dissimilarity file: 
+    N lines 
+    N dissimilarity values per line (separated by white space)
+
+  example: N=3
+    0 3 4
+    3 0 5
+    4 5 0
+
+- edges file: let K be the number of edges of the graph
+    K lines
+    2 integers between 1 and N per line (separated by white space)
+    optionally: a third (real) value on each line for edge weights
+
+  examples: K=3, N=3                K=2, N=3 with weights
+    1 2                             1 2 1.5
+    2 3                             2 3 4.5
+    3 1
+
+- multivariate data file:
+    N lines
+    p values per line (separated by white space)
+
+  example: p=2, N=3
+    0.0 1.0 
+    0.5 2.0
+    1.0 1.0
+
+The dissimilarity file can contain missing values, represented by the
+strings "na" or "NA" or "."  By making use of specific missing value
+patterns, XGvis can be used to perform "Multidimensional Unfolding."
+
+
+ADDITIONAL OPTIONAL FILES:
+
+- file extensions:
+
+  point labels: either of xyz.label, xyz.row, xyz.case
+  point glyphs: xyz.glyphs
+  point colors: xyz.colors
+  line (edge) colors:  xyz.linecolors
+
+- flags: 
+
+  -labels labelfile
+  -glyphs glyphfile
+  -pointcolors colorfile
+  -linecolors colorfile
+
+- Another method for reading in these files is after startup by using
+  the "Read" function from "File" in the XGobi window of XGvis.
+
+

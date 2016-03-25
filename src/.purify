@@ -1,0 +1,9 @@
+suppress abr _mdbm_fetch; _ns_lookup; _gethostbyname_r; _X11TransSocketINETConnect
+suppress umr _sendmsg
+suppress umr _mdbm_fetch; _ns_lookup; _gethostbyname_r; _X11TransSocketINETConnect
+suppress umr _XRead
+suppress umr StoreLateBindings
+suppress umr ObjectDestroy
+suppress umr PaintCommandWidget
+suppress umr _XReply
+suppress umr GeometryManager

@@ -1,0 +1,8 @@
+Erase
+
+When Erase is activated, the brush is used to cause points to
+become invisible; that is, they are simply not plotted.  This is
+always a persistent operation.
+
+See the help file for the brushing I/O menu for information about
+supplying erase data in a startup file.

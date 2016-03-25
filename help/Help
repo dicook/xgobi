@@ -1,0 +1,18 @@
+Help 
+
+To use XGobi's online help, position the cursor inside the control
+or window about which you'd like information, then click right.  If
+information is available for the control (or widget, in X terminology)
+that you selected, you will be asked to position a help window for that
+control. 
+
+If the information more than fills the screen of the help window,
+use the left or middle mouse button to scroll the window.
+
+You can leave the help window in place for future reference while you
+continue to work with XGobi.
+
+Note:
+Online help is available for pushbuttons, scrollbars, the variable
+selection panel, and the plotting window; it's not available for
+labels.

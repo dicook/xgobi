@@ -1,0 +1,261 @@
+:::corr.c:::
+42d41
+< /*
+47d45
+< */
+49c47
+< /*static int counting_to_stop;*/
+---
+> static int counting_to_stop;
+1770a1769
+>   Boolean y_selected;
+1837a1837
+>   Boolean x_selected;
+
+:::exclusion.c:::
+277a278
+>   Boolean excluded;
+
+:::inference.c:::
+42a43
+> static Boolean inf_bgroup = False;
+44c45
+< static int ntform_cols, *tform_cols = NULL;
+---
+> static int    ntform_cols, *tform_cols = NULL;
+165c166
+<   int j, n;
+---
+>   int j, n, gid;
+167d167
+< /*
+170d169
+< */
+385c384
+<   register int j;
+---
+>   register int j, k;
+
+:::kernel.c:::
+127c127
+<   float tmpf, dm, hf;/* window_width3;*/
+---
+>   float indx_val, tmpf, dm, hf;/* window_width3;*/
+
+:::read_data.c:::
+594c594
+<   static char *suffixes[] = {".vgroups", ".vgroup"};
+---
+>   static char *suffixes[] = {".vgroups"};
+605c605
+<     if ( (fp = open_xgobi_file(data_in, 2, suffixes, "r", true)) != NULL)
+---
+>     if ( (fp = open_xgobi_file(data_in, 1, suffixes, "r", true)) != NULL)
+942,944c942,943
+<             (void) fprintf(stderr,
+<               "!!Error in reading %s.glyphs; using defaults.\n",
+<               data_in);
+---
+>             (void) fprintf(stderr, "!!Error in reading %s; using defaults.\n",
+>               lab_file);
+1221,1222c1220
+<               "behavior during brushing and prevent you from saving colors.\n");
+<             fprintf (stderr, "To read how to set the brushing\n");
+---
+>               "behavior during brushing.  To read how to set the brushing\n");
+1509c1507
+<   int i, j;
+---
+>   int i;
+1510a1509
+>   char *fname;
+1562,1563c1561
+<                   "Error in reading %s.linecolors; using defaults.\n",
+<                   rootname);
+---
+>                   "Error in reading %s; using defaults.\n", fname);
+1577,1579d1574
+<         } else { /* no color name; initialize with default color */
+<           xg->line_color_ids[i] = xg->line_color_now[i] =
+<             xg->line_color_prev[i] = plotcolors.fg;
+1583,1613d1577
+< 
+<       /*
+<        * The colors that were supplied in the .linecolors
+<        * should match the brushing colors (color_nums)
+<        * If they don't, instruct the user to set the color
+<        * resources.
+<       */
+<       for (i=0; i<xg->nlines; i++) {
+<         found = False;
+<         for (j=0; j<ncolors; j++) {
+<           if (xg->line_color_now[i] == color_nums[j]) {
+<             found = True;
+<             break;
+<           }
+<         }
+<         if (!found)
+<           break;
+<       }
+<       if (!found)
+<       {
+<         fprintf(stderr,
+<           "Warning:  Your .linecolors file contains colors that are not\n");
+<         fprintf(stderr,
+<           "available as brushing colors, which will cause weird\n");
+<         fprintf(stderr,
+<           "behavior during brushing and prevent you from saving colors.\n");
+<         fprintf (stderr, "To read how to set the brushing\n");
+<         fprintf(stderr,
+<           "colors, click right on the Color Menu button.\n");
+<       }
+< 
+
+:::save_data.c:::
+1334d1333
+<   XtFree(fname);
+1342a1342
+>       XtFree(fname);
+1392d1391
+<   XtFree(fname);
+1400a1400
+>       XtFree(fname);
+1423d1422
+<   Boolean color_found;
+1472d1470
+<           color_found = False;
+1477d1474
+<               color_found = True;
+1481,1483d1477
+<           if (!color_found) {  /*-- color not found, use Default --*/
+<             (void) strcpy(NAMESV(ir), "Default");
+<           }
+1862d1855
+<       XtFree (fname);
+1873,1874d1865
+< 
+<   XtFree (fname);
+1889d1879
+<   Boolean color_found;
+1912d1901
+<       color_found = False;
+1916c1905
+<           color_found = True;
+---
+>           nameslen = nameslen + strlen(NAMESV(k)) + 1;
+1920,1923d1908
+<       if (!color_found) {  /*-- color not found, use Default --*/
+<         (void) strcpy(NAMESV(k), "Default");
+<       }
+<       nameslen = nameslen + strlen(NAMESV(k)) + 1;
+1927a1913
+>      *
+
+:::sphere.c:::
+192c192
+<   register int j;
+---
+>   register int j, k;
+198a199,200
+>   Dimension maxwidth = 0;
+> 
+259c261
+<       sprintf(npc_lab,"%d", xg->nsph_vars);
+---
+>       sprintf(npc_lab,"%d %",xg->nsph_vars);
+
+:::tour_pp.c:::
+1599c1599
+<   int i;
+---
+>   int i, j;
+
+:::transform.c:::
+181c181
+<   int j;
+---
+>   int j, k;
+322c322
+<   int i;
+---
+>   int i, j, n;
+347c347
+<   int /* i, j, k, n, */ np;
+---
+>   int i, j, k, n, np;
+355c355
+<     j = jvar;
+---
+>     j = jvar;/*cols[n];*/
+360c360
+<   }*/
+---
+> /*  }*/
+876,877c876
+<   int j, n;
+< /*
+---
+>   int j, n, gid;
+879d877
+< */
+946c944
+<   int tfno, j /*, k, groupno*/;
+---
+>   int tfno, j, k, groupno;
+
+:::widgets.c:::
+313d312
+<   /* Find the widest label */
+319a319
+>   /* Find the widest label */
+
+:::xgobi.c:::
+60c60
+< static char *version_date = "November 29, 2001";
+---
+> static char *version_date = "September 15, 2000";
+
+
+:::xgv_help.c:::
+79c79
+<     Widget hpopup, hframe, htext, hdone;
+---
+>    Widget hpopup, hframe, htext, hdone;
+198c198
+<     Widget hpopup, hframe, hform, hfunc, htext, hdone;
+---
+>     Widget hpopup, hframe, htext, hdone;
+272,274d271
+< /*
+<   Dimension height;
+< */
+322a320
+>     Dimension height;
+341d338
+< /*
+343d339
+< */
+413,415d408
+< /*
+<   Dimension height;
+< */
+463a457
+>     Dimension height;
+482d475
+< /*
+484d476
+< */
+
+:::xgv_histogram.c:::
+255a256
+>   /*
+257c258
+< 
+---
+>   */
+
+:::xgvis.h:::
+68c68
+< XGVIS_ Boolean *anchored INIT(= NULL);
+---
+> XGVIS_ Boolean *anchor_group INIT(= NULL); 

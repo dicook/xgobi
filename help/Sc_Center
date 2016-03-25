@@ -1,0 +1,11 @@
+Center
+
+This button toggles between two types of scaling methods.  Clicking on
+the button creates an instantaneous flash and label change between Data
+Center and Plot Center.  When the label is Data Center, the data will
+be scaled from the center (midrange) of the data. This preserves the
+shape of the scatter plot. When the label is Plot Center, the data will
+be scaled from the center of the plotting window.  This facilitates
+shape changes.  For example, when the data are all to one side of the
+center of the window, the points farthest from the center will expand
+out or contract in faster than points near the center.

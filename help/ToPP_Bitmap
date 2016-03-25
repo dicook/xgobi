@@ -1,0 +1,5 @@
+Bitmap
+
+Selecting this button when projection pursuit is running causes
+a miniature copy of the current view of the data to be drawn on
+the projection pursuit window.

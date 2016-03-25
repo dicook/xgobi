@@ -1,0 +1,37 @@
+Hide or exclude groups
+
+Use this panel to manipulate the brushed groups, where each group
+is defined as a set of cases having the same glyph and color.  As
+soon as you open this panel, a new variable, labelled "group," is
+added to the variable selection panel.
+
+Reset brushed groups
+
+  Click here to redefine the groups after brushing some points on
+  the screen.
+
+The groups panel contains one row for each group, and there are
+four columns. 
+
+The group name is assigned to be the group number,
+but you can edit that field.  The names you assign will be retained
+if you press "Reset brushed groups," but it isn't presently saved
+between subsequent xgobi runs.  (We'll have to add a new file
+format to hang on to them.)
+
+The symbol is the glyph and color of the group -- and it's also a
+button.  Clicking on it will reassign the glyph and color for all
+members of a group to the glyph and color currently selected in the
+brushing panel.
+
+Hidden:  Group members are not drawn.
+Excluded:  Group members are excluded from all calculations (scaling,
+  sphering, principal coordinates, projection pursuit) -- and they are
+  <also> not drawn.
+
+We know this is a bit ambiguous -- the interface might be more natural
+if those categories were mutually exclusive, but that's not how the code
+works.  There can be no cases that are excluded and drawn, because all
+the routines that loop over rows pay no attention to the excluded cases,
+which speeds up a lot of computations.  We hope this design will make
+sense to you if you play with it a bit.

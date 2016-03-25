@@ -1,0 +1,12 @@
+Reshape brush btwn modes
+
+If this is on, then each time you enter the Brush mode,
+the brush will be redrawn as a small rectangle in the
+upper left corner of the plotting window.  If it is off,
+any adjustments you made to the shape and position of
+the brush will be retained.
+
+This can be set in the XGobi resource file.  The default is
+
+*reshapeBrush:   True
+

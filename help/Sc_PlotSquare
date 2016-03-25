@@ -1,0 +1,6 @@
+Aspect 1:1
+
+The plot in the main plot window can either be square, with a 1:1
+aspect ratio regardless of the aspect ratio of the window, or it
+can match its aspect ratio to that of the window.
+

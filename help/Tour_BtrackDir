@@ -1,0 +1,6 @@
+B/F: Backward/Forward
+
+This displays the direction of the backtracking.  A left click on this
+button will change the direction of the backtracking.  It is only
+activated when Backtrack is selected.
+

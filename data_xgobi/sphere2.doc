@@ -1,0 +1,6 @@
+The files sphere1 and sphere2 are both 4-dimensional spheres.
+The difference is that one is hollow and one is solid.  To
+determine which is which, select Tour and then Section, and then
+use the scrollbar to adjust the width of the section.  Now it's
+up to you to decide which sphere is solid and which is hollow.
+

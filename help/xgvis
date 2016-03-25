@@ -1,0 +1,112 @@
+
+
+
+XGvis uses multidimensional scaling (MDS) to map a set of objects
+to points in k-space such that:
+   
+  dissimilarity( object i, object j ) ~ distance( point i, point j )
+
+This is made precise by minimizing the above Stress function.
+
+The parameters of the function are:
+
+D = target distance matrix 
+    This is either supplied as a matrix of dissimilarities or
+    distances, or it uses the shortest-path metric if a discrete
+    graph is given in terms of a links file.
+
+p = exponent of the power transformation of D 
+
+l = Minkowski norm used to calculate the current interpoint 
+    distances (l=2 corresponds to the Euclidean metric on k-space)
+
+r = residual power applied to the difference between the target
+    distance D and the interpoint distances
+
+T = threshold above which dissimilarities are removed from the 
+    stress function
+
+The value of the stress function is plotted as a number generally between
+zero and one.
+
+Below the plot of the stress function is a barplot of the distribution
+of D^p.  As you change p, this plot is updated.  Use the left mouse
+button to set the threshold T used in the stress function: the solid
+bars are below the threshold and represent the distances used in MDS;
+the hollow bars correspond to pairs of points that are ignored.
+
+Other parameters available on the control panel are
+
+Dimension (k): the dimensionality of the space into which the data are
+  being mapped.  The default is 3D.  Examine your point configurations
+  with 3D rotations or grand tours in XGobi.
+
+Stepsize: the size of the step taken to bring x[i] and x[j] closer
+  together or to push them farther apart.  You might start with a
+  large stepsize and then reduce it once the structure begins to
+  stabilize.  You can also increase it suddenly in a form of
+  interactive "simulated annealing," to jump out of a local minimum
+  when you think there might be a lower minimum elsewhere.
+
+MDS within subgroups: If you have subgroups in the data that you would
+  like to handle separately from one another, then brush them using
+  XGobi.  Then select this button and restart "Run MDS."  Now only
+  distances between points with the same glyph and color will be
+  considered.
+
+MDS casewise: If you would like to investigate the behavior of a
+  single case, or a small group of cases, then use XGobi to add
+  persistent labels to those cases.  Then select this button and
+  restart "Run MDS."  Now only distances between pairs of points
+  including one of the labelled points will be considered.  (This
+  feature can be used in conjunction with brush groups.  Then only
+  distances between pairs of points with the same color and glyph AND
+  within the same brush group will be considered.)
+
+Shepard diagram:  Launch an XGobi containing a plot of D^p vs
+  the configuration distances.  You can first specify that you
+  would like to start XGobi with an option:  its initial display
+  can be a random sample of the data.  That is, all the data will
+  be written out to a file (configd0.dat, configd1.dat, ...) and
+  then read in by XGobi, but a subset may be chosen for display.
+  (See Subset Data on the XGobi Tools Menu.)
+
+**************************************************************
+
+Input files:
+
+One of these three is required: 
+- a file of dissimilarities,
+- a file of starting positions,
+- a file of links.
+
+Usage:
+
+  xgvis -dist distsfile
+  xgvis -pos posfile
+    A distance matrix of full dimensionality, N by N, is generated.
+
+  xgvis -links linksfile
+    The distance matrix is populated with link distances.  See the
+    XGobi manual page (filename.lines) for a description of this file
+    format.
+
+If files of links and positions are both supplied, link distances are
+used and the positions are used only for starting positions.
+
+Additional optional files:
+
+  -labels labelfile
+  -glyphs glyphfile
+  -pointcolors colorfile
+  -linecolors colorfile
+
+See the XGobi manual page for descriptions of these files.  For a
+description of glyphfile, see filename.glyphs; for labelfile, see
+filename.row; for pointcolors, see filename.colors; for linecolors,
+see filename.linecolors.  Another method for reading these files into
+XGvis is by using the "Read" function from "File" in XGobi.
+
+The input file can contain missing values, represented by the strings
+"na" or "NA" or "."  By making use of specific missing value patterns,
+XGvis can be used to perform "multidimensional unfolding."

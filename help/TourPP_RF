@@ -1,0 +1,5 @@
+Replot Frequency
+
+The *arrows* alter the frequency at which the projection pursuit index
+is calculated for movement in the main plot window. When Replot
+Frequency is 1 it is calculated for every interpolation step.

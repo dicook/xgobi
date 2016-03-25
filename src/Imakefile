@@ -1,0 +1,169 @@
+/**/#
+/**/#	This is an Imakefile for the XGobi program.  The only change that
+/**/#	might need to be made is for the XGOBID variable.
+/**/#
+
+/**/# Remove the comment delimeters on the second to next line to
+/**/# compile for CORBA.
+/**/# Requires some Omegahat code - see README.corba.
+/**/#define USE_CORBA 1
+
+/**/#  Set XGOBID to the directory containing 
+/**/#  the xgobi directories src, help, ps, etc.
+         XGOBID = $(PWD)/..
+
+/**/# Use the gnu C compiler
+            CC = gcc
+     CCOPTIONS = -ansi -w
+
+/**/# Or use the C compiler on your system, and whatever options it requires.
+#             CC = cc
+#      CCOPTIONS = -xansi -n32
+
+             LD = 
+     CDEBUGFLAGS = -g
+#EXTRA_LDOPTIONS = -static
+
+#ifdef USE_CORBA
+#include "Makefile.corba"
+#endif   /* End of USE_CORBA */
+
+
+/**/#
+/**/# RPC: Remote Procedure Calls
+/**/#
+
+/**/# If you plan to use RPC, uncomment this #define
+/**/# RPC is the define for any kind of RPC
+/* #define RPC */
+
+/**/# Special RPCs
+/* #define DCE_RPC */
+/**/# If you plan to use XPLORE, uncomment this #define
+/* #define XPLORE */
+
+#ifdef HPArchitecture
+       CCOPTIONS = -Aa -D_HPUX_SOURCE -DXLIB_ILLEGAL_ACCESS 
+#endif
+
+ LOCAL_LIBRARIES =  XawClientLibs
+#ifdef DCE_RPC
+   SYS_LIBRARIES = -lm -ldce -lpthread
+#else
+   SYS_LIBRARIES = -lm
+#endif
+         DEFINES = -DDEFAULTDIR=\"$(XGOBID)\"
+
+JOINTSRC = xgobi_init.c pipeline.c read_array.c \
+	initialize.c widgets.c callbacks.c getfname.c \
+	xyplot.c make_axes.c line_editor.c missing.c  \
+	spin_cbacks.c spin.c scaling.c scale_cbacks.c \
+	identify.c var_panel.c transform.c sphere.c stdize.c inference.c \
+	brush_init.c brush_cbacks.c brush.c paint.c brush_send.c \
+	help.c prt_plotwin.c subset.c vc_lists.c exclusion.c \
+	plot_once.c plot1d.c texture.c ash1d.c move_points.c \
+	show_message.c smooth.c smooth_fns.c smoothsk.c pspline.c \
+	save_data.c new_data.c read_data.c jitter.c parcoords.c utils.c \
+	tour_init.c tour_util.c tour.c tour_cbacks.c tour_send.c gt_ctls.c \
+	tour_pp.c svd.c kernel.c \
+	legendre.c hermite.c natrl_hermite.c de_indices.c \
+	central_mass.c holes.c skewness.c \
+	tour_section.c corr.c corr_index.c corr_pursuit.c corr_util.c \
+	DrawingA.c mt19937-1.c
+JOINTOBJ = xgobi_init.o pipeline.o read_array.o \
+	initialize.o widgets.o callbacks.o getfname.o \
+	xyplot.o make_axes.o line_editor.o missing.o  \
+	spin_cbacks.o spin.o scaling.o scale_cbacks.o \
+	identify.o var_panel.o transform.o sphere.o stdize.o inference.o \
+	brush_init.o brush_cbacks.o brush.o paint.o brush_send.o \
+	help.o prt_plotwin.o subset.o vc_lists.o exclusion.o \
+	plot_once.o plot1d.o texture.o ash1d.o move_points.o \
+	show_message.o smooth.o smooth_fns.o smoothsk.o pspline.o \
+	save_data.o new_data.o read_data.o jitter.o parcoords.o utils.o \
+	tour_init.o tour_util.o tour.o tour_cbacks.o tour_send.o gt_ctls.o \
+	tour_pp.o svd.o kernel.o \
+	legendre.o hermite.o natrl_hermite.o de_indices.o \
+	central_mass.o holes.o skewness.o \
+	tour_section.o corr.o corr_index.o corr_pursuit.o corr_util.o \
+	DrawingA.o mt19937-1.o
+
+#ifdef RPC
+
+#ifdef XPLORE
+EXTRA_DEFINES = -DRPC_USED -DXPLORE
+RPCSRC = rpc_client.c rpc_functions.c rpc_server_proc.c \
+	rpc_server_svc.c rpc_spatial.c rpc_xgobi.c rpc_xpl.c
+RPCOBJ = rpc_client.o rpc_functions.o rpc_server_proc.o \
+	rpc_server_svc.o rpc_spatial.o rpc_xgobi.o rpc_xpl.o
+
+#else
+#ifdef DCE_RPC
+EXTRA_DEFINES = -DDCE_RPC_USED
+RPCSRC = rpc_client.c rpc_functions.c rpc_server_proc.c \
+	rpc_server_svc.c rpc_spatial.c rpc_xgobi.c rpc_xpl.c
+RPCOBJ = rpc_client.o rpc_functions.o rpc_server_proc.o \
+	rpc_server_svc.o rpc_spatial.o rpc_xgobi.o rpc_xpl.o \
+	rpc_dce_sstub.o rpc_dceclient_cstub.o
+
+rpc_dceclient_sstub.o : rpc_dceclient_sstub.c
+	$(CC) -c -o rpc_dceclient_sstub.o rpc_dceclient_sstub.c $(CFLAGS) -I.
+
+rpc_dceclient_cstub.o : rpc_dceclient_cstub.c
+	$(CC) -c -o rpc_dceclient_cstub.o rpc_dceclient_cstub.c $(CFLAGS) -I.
+
+rpc_dceclient.h rpc_dceclient_cstub.c rpc_dceclient_sstub.c : rpc_dceclient.idl rpc_dceclient.acf
+	idl rpc_dceclient.idl -keep c_source
+
+rpc_dce_sstub.o : rpc_dce_sstub.c
+	$(CC) -c -o rpc_dce_sstub.o rpc_dce_sstub.c $(CFLAGS) -I.
+
+rpc_dce_cstub.o : rpc_dce_cstub.c
+	$(CC) -c -o rpc_dce_cstub.o rpc_dce_cstub.c $(CFLAGS) -I.
+
+rpc_dce.h rpc_dce_cstub.c rpc_dce_sstub.c : rpc_dce.idl rpc_dce.acf
+	idl rpc_dce.idl -keep c_source
+
+#else
+EXTRA_DEFINES = -DRPC_USED
+RPCSRC = rpc_client.c rpc_functions.c rpc_server_proc.c \
+	rpc_server_svc.c rpc_spatial.c rpc_xgobi.c rpc_xpl.c
+RPCOBJ = rpc_client.o rpc_functions.o rpc_server_proc.o \
+	rpc_server_svc.o rpc_spatial.o rpc_xgobi.o rpc_xpl.o
+#endif
+#endif
+
+#else
+RPCSRC =
+RPCOBJ =
+#endif
+
+XGOBISRC = xgobi.c $(JOINTSRC) $(RPCSRC) $(CORBASRC)
+XGOBIOBJ = xgobi.o $(JOINTOBJ) $(RPCOBJ) $(CORBAOBJ)
+
+XGVISSRC = xgvis.c xgv_histogram.c xgv_qsort.c xgv_mds.c \
+	xgv_read_data.c xgv_help.c \
+	xgv_stressplot.c xgv_cbacks.c xgv_widgets.c xgv_anchor.c $(JOINTSRC) 
+XGVISOBJ = xgvis.o xgv_histogram.o xgv_qsort.o xgv_mds.o \
+	xgv_read_data.o xgv_help.o \
+	xgv_stressplot.o xgv_cbacks.o xgv_widgets.o xgv_anchor.o $(JOINTOBJ) 
+
+all:: xgvis xgobi
+
+foo:
+	echo $(USRLIBDIR)
+	echo "$(LDPRELIBS) $(origin LDPRELIBS)"
+
+SingleProgramTarget(xgobi, $(XGOBIOBJ), NullParameter, $(CORBA_LIBRARIES) $(LOCAL_LIBRARIES))
+SingleProgramTarget(xgvis, $(XGVISOBJ), NullParameter, $(LOCAL_LIBRARIES))
+
+purexgobi: xgobi.o $(JOINTOBJ)
+	purify -cache-dir=/tmp  -always-use-cache-dir=yes \
+	${CC} ${CFLAGS} ${LD} ${LDOPTIONS} -o xgobi ${XGOBIOBJ} ${LOCAL_LIBRARIES} \
+	${SYS_LIBRARIES}
+
+purexgvis: xgvis.o $(XGVISOBJ)
+	purify -cache-dir=/tmp  -always-use-cache-dir=yes \
+	${CC} ${CFLAGS} ${LD} ${LDOPTIONS} -o xgvis ${XGVISOBJ} ${LOCAL_LIBRARIES} \
+	${SYS_LIBRARIES}
+
+

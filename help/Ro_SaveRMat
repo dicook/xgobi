@@ -1,0 +1,31 @@
+Save or Read Rotation Matrix:  save or read in a 3x3 rotation matrix
+
+This operation allows a user to save the rotation matrix in
+use at that moment -- but only if oblique axis rotation is
+selected.
+  
+If you select this button, rotation pauses and a window pops up that
+asks you to type in a file name.  (You must position the cursor inside
+the box in the lower right of the popup window to have your typing
+acknowledged.) You can erase typed characters using whatever delete or
+backspace operation you are used to. When you have entered the file
+name, hit return.
+
+If XGobi is initiated from the shell, the rotation matrix is written
+as a three-column matrix.
+    
+If XGobi is initiated within S, the matrix is written out as a
+vector.  (This vector can be transformed into a matrix using the
+following S command: array(rmat, c(3, 3)), where rmat is the
+vector created by XGobi.)
+
+Behavior of the "Solicit File Name" window:
+
+ The editing behavior in this window follows emacs conventions.
+ These instructions may help you if you aren't familiar with emacs:
+   Use the cursor to position the caret between two letters;
+   as you type, characters are entered at that position.
+   You can use your customary backspace character.
+   Use "Control-k" to delete all characters from the caret
+   to the end of the line.
+

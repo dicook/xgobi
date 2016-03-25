@@ -1,0 +1,79 @@
+Extend current XGobi file set
+
+Root file name
+  Specify fname, the base name for the new file set.  This
+  is likely to be the same as the base name for the current data,
+  but it doesn't have to be.
+
+  If saving S files, don't specify the path.  Otherwise, do.
+
+Save .bin file
+  Save the data in binary format.  This is useful for very large
+  data files, because it speeds up initialization quite noticeably.
+
+Save .colors file
+ 'fname.colors' contains strings representing the color names.
+ The names used will be the same as those appearing on the Color Menu. 
+
+ If you started XGobi from inside S, a character vector of color
+ names is created.
+
+Save .glyphs file
+ 'fname.glyphs' contains integers (one per row) representing the
+ glyphs used -- the same numbers that can be found at the right of
+ the glyph menu.  (Plusses are 1-5, Xes are 6-10, open rectangles
+ are 11-15, filled rectangles are 16-20, open circles are 21-25,
+ filled circles are 26-30, and the point is 31.);
+
+ If you started XGobi from inside S, an integer vector is created.
+
+Save .erase file
+ 'fname.erase' contains 1s and 0s, where 1s are erased points.
+
+ If you started XGobi from inside S, an integer vector is created.
+
+Save .lines file
+
+  The file you create consists of pairs of numbers on separate lines,
+  where the pair indicates the row numbers of the points to be connected,
+  for example:
+
+  1 3
+  1 4
+  2 5
+
+
+ If you're in S, then you can turn the S vector you save into a
+ .lines array like this:
+   t(matrix(fname.lines, nrow=2))
+
+Save .linecolors file
+  Generate a file like the .colors file described above, where
+  the first color corresponds to the first line defined, and so on.
+
+ If you started XGobi from inside S, a character vector of color
+ names is created.
+
+Save .resources file
+  Store a few critical layout features for this data (the width and
+  height of the plotting window, the width of the variable selection
+  panel) and several logical variables set using the options menu
+  (showAxes, showPoints, etcetera).  Store that information in a file
+  named fname.resources (where fname is the name of the current data)
+  and it will be retrieved when you next start XGobi using this same
+  data.
+
+  That file can be directly edited as well, to change other
+  resources on a data-specific basis, for example:
+
+  *XGobi.title:    XGobi: Hourly Residential Telephone Usage
+  *XGobi.iconName: XGobi: Usage Data
+  *plotFont: -*-lucida-medium-r-normal-sans-20-*-*-*-*-*-*-*
+  *glyphType: 2
+  *glyphSize: 3
+  *brushColor0: white
+  *brushColor1: red
+  *brushColor2: green
+  *VarLabel.width:  30
+  *VarWindow.width: 30
+

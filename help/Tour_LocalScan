@@ -1,0 +1,6 @@
+Local Scan
+
+When Local Scan is selected, the current position is chosen to be 
+the anchor position.  Now tour continues choosing new bases and
+projecting new views of the data, but it returns to the anchor
+position after each new view.

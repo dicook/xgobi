@@ -1,0 +1,7 @@
+Step and Go
+
+In this mode, the tour runs smoothly until it reaches the next
+selected plane.  At that point, it stops and waits for the user
+to click the Go button.
+
+The Go button is only enabled when Step has been selected.

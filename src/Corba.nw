@@ -1,0 +1,233 @@
+@
+<<*>>=
+<<Includes>>
+<<Globals>>
+<<Initialization>>
+<<Create Server>>
+<<Event Loop>>
+<<Error>>
+<<Parse Corba Name>>
+
+@
+<<Global Declarations>>=
+extern char **CorbaNameElements;
+extern int    CorbaNameLength;
+
+@
+<<Globals>>=
+  char *DefaultCorbaName[] = {"XGobi"};
+    /* The elements of the name to use to register the CORBA name server. */
+  char **CorbaNameElements = NULL;
+    /* The number of elements in the name to use for the CORBA server. */
+  int  CorbaNameLength = -1;
+
+@ 
+<<Header>>=
+#ifndef XGOBI_CORBA_H
+#define XGOBI_CORBA_H
+
+#include <Corba/RSCorba.h>
+
+  // the basic xgobi 
+#include "xincludes.h"
+#include "xgobitypes.h"
+
+  // the auto-generated file from the IDL source.
+#include "XGobiCorbaServer.h"
+#include "XGobiCorbaServer_skel.h"
+
+#include <Corba/CorbaGlobals.h> // for the CORBACOnnection struct
+
+#include "stdarg.h" // for Error.
+
+<<Global Declarations>>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+<<C Prototypes>>
+
+#ifdef __cplusplus
+}
+#endif
+
+<<Prototypes>>
+
+#endif
+
+
+@ 
+<<Globals>>=
+ CORBAConnection *LocalCorbaGlobals = NULL;
+
+@
+<<C Prototypes>>=
+XGobi_XGobi_skel *
+initCorba(char **argv, long length, char **name, long nameLength,
+            XtAppContext *Xcontext,
+              xgobidata *xgobi);
+
+@ 
+  This is called after the X11 application context
+  has been constructed. This is then used to setup
+  the corba server and the X11 reactor/event handler
+  which takes care of both the CORBA events and the X
+  events.
+
+   This is Orbacus specific. See X11 Reactor and 
+   customized event handlers (page 124) in the 
+   Orbacus manual. 
+      (http://www.ooc.com/ob/download/OB-3.1.3.pdf.gz)
+
+   This returns the newly generated CORBA server.
+<<Initialization>>=
+XGobi_XGobi_skel *
+initCorba(char **argv, long length,  char **name, long nameLength,
+          //           CORBAConnection *LocalcorbaGlobals,
+             XtAppContext *Xcontext,
+               xgobidata *xgobi)
+{
+  OBX11Init(*Xcontext);
+
+
+  if(CorbaNameElements == NULL) {
+    parseCorbaName((const char *)NULL);
+  }
+
+  if(LocalCorbaGlobals == NULL) {
+    LocalCorbaGlobals = new CORBAConnection();
+  }
+
+ bool both = true;
+  InitializeLocalOrb(argv, length, LocalCorbaGlobals, both);
+
+  XGobi_XGobi_skel *corbaServer =  createServer(xgobi, LocalCorbaGlobals);
+  if(name == NULL || nameLength == 0) {
+    extern char *DefaultCorbaName[];
+    extern int CorbaNameLength;
+    /*
+      char *defaultServerName[] = {"XGobi"};
+      name = defaultServerName;
+      nameLength = sizeof(defaultServerName)/sizeof(defaultServerName[0]);
+    */
+    name = DefaultCorbaName;
+    nameLength = CorbaNameLength;  
+  }
+  registerObject((const char **)name, nameLength, corbaServer, LocalCorbaGlobals);
+
+  
+ return(corbaServer);
+}
+
+
+@ 
+<<Prototypes>>=
+XGobi_XGobi_skel *createServer(xgobidata *xgobi, CORBAConnection *corbaGlobals);
+
+@ 
+<<Create Server>>=
+XGobi_XGobi_skel *
+createServer(xgobidata *xgobi, CORBAConnection *corbaGlobals)
+{
+
+  return(new XGobiServer(xgobi)); //, corbaGlobals));
+  //  return(new XGobiServer(xgobi, corbaGlobals));
+}
+
+
+@
+<<C Prototypes>>=
+int parseCorbaName(const char *name);
+
+
+@
+<<Parse Corba Name>>=
+/*
+  Here we parse the specified name into different components
+  that identify the nested path in the CORBA naming context.
+
+  The basic idea is that 
+ */
+int
+parseCorbaName(const char *name)
+{
+  if(name == NULL) {
+   if(CorbaNameLength < 0) {
+     CorbaNameLength = sizeof(DefaultCorbaName)/sizeof(DefaultCorbaName[0]);
+     CorbaNameElements  = DefaultCorbaName;
+   }
+   return(CorbaNameLength);
+  }
+    
+
+  if(strchr(name, '*') == NULL) {
+    CorbaNameLength = 1;
+    CorbaNameElements = DefaultCorbaName; 
+    CorbaNameElements[0] = (char *)name;
+  } else {
+   char *tmp, *ptr;
+   int i;
+    name = strdup(name);
+    CorbaNameLength = 0;
+
+    tmp = (char*)name;
+    while(tmp < name + strlen(name)) {
+     CorbaNameLength++;
+     ptr = strchr(tmp, '*');
+     if(ptr == NULL)
+      break;
+     tmp = ptr+1;
+    }
+
+   CorbaNameElements = (char**)calloc(CorbaNameLength, sizeof(char*));
+    tmp = (char *)name;
+    for(i = 0; i < CorbaNameLength -1; i++) {
+     ptr =  strchr(tmp, '*');
+     ptr[0]  = '\0';
+     CorbaNameElements[i] = tmp;
+     tmp = ptr + 1;
+    }
+    CorbaNameElements[i] = tmp;
+  }
+
+ return(CorbaNameLength);
+}
+
+@ 
+<<Prototypes>>=
+void Error(char *str, ...);
+
+@ 
+<<Error>>=
+void Error(char *str, ...)
+{
+  fprintf(stderr, "Problem: %s", str);
+  fflush(stderr);
+}
+
+
+@ 
+<<C Prototypes>>=
+void CorbaEventLoop(xgobidata *xgobidata);
+
+@ 
+<<Event Loop>>=
+void
+CorbaEventLoop(xgobidata *xgobidata) {
+
+  LocalCorbaGlobals->boa->impl_is_ready(CORBANil); 
+
+}
+
+@ 
+<<Includes>>=
+#include "Corba.h"
+#include <OB/X11.h>
+
+#include "XGobiServer.h"
+
+#include "CORBAinit.h"    // for the InitializeLocalOrb()
+#include "NamingService.h" // for the registerObject()
+
+#include <stdio.h>

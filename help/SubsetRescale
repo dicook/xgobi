@@ -1,0 +1,6 @@
+Rescale when subsetting
+
+If this is selected, then the axes will be redetermined
+each time a new subset is chosen.  If it is not, then
+the axes will only be redetermined when the "Include
+all data" button is selected.

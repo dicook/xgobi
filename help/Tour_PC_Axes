@@ -1,0 +1,15 @@
+PC Axes
+
+Selecting this button performs a principal components transformation
+of the active variables in the data.
+
+When projection pursuit is selected, this is automatically activated:
+the 2-dimensional projection pursuit indices are designed for sphered
+data, and currently this sphering is done by principal components.
+
+There is no restriction in XGobi against using the projection pursuit
+guided tour with unsphered data, but beware:  it may not produce sensible
+results.
+
+When sphering is turned on the tour history list is cleared because
+the previous history pertained to the unsphered data.

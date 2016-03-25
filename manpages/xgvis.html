@@ -1,0 +1,161 @@
+<HTML>
+<title>
+XGVis man page
+</title>
+<BODY>
+
+<center>
+<b>
+xgvis man page
+</b>
+</center>
+
+<p>
+ <B>NAME</B>
+<br>
+  <B>xgvis</B> - interactive multidimensional scaling using xgobi for
+  display
+
+<p>
+ <B>SYNOPSIS</B>
+<br>
+  <B>xgvis</B> [<B>-dims</B> n] [<B>-stepsize</B> x] fname
+
+<p>
+ <B>DESCRIPTION</B>
+<br>
+  <I>xgvis</I> is an interactive multidimensional scaling
+  (MDS) program that consists of a control panel to
+  manipulate the parameters of the MDS stress function and an
+  xgobi window for data display.  It can be used either for
+  visualization of dissimilarity data, for dimension
+  reduction, or for graph layout.  Graph layout is usually
+  done in 2D, but xgvis allows layouts in arbitrary
+  dimensions, 3D being the default.  It permits missing
+  values, which can be used to implement multidimensional
+  unfolding.
+
+<p>
+  It is used as follows:
+
+<ul>
+<li>
+    Start up with a user-supplied or random starting configuration.
+<li>
+    Initiate MDS optimization.  As the optimization algorithm
+    does its work, observe both the changing stress
+      values and the animated point configuration.
+<li>
+    Examine the optimized configuration with 3D rotations and
+    grand tours and drill-down operations such as labeling and
+    linked brushing.
+<li>
+    Enhance the configuration with glyphs, colors and lines
+    for interpretation.
+<li>
+    Modifiy the dissimilarities, the stress function, and/or
+    the configuration by
+<ul>
+        transforming the dissimilarities
+<li>
+        choosing weights or cutting extreme dissimilarities
+<li>
+        restricting MDS to subsets
+<li>
+        hand editing the existing configuration or
+<li>
+        selecting a new random configuration
+</ul>
+</ul>
+
+<p>
+ <B>OPTIONS</B>
+
+<p>
+<B>-dims</B> n
+<br>
+Specify n, the dimensionality of the embedding space.
+By default, its value is 3.
+
+<p>
+<B>-stepsize</B> x
+<br>
+Specify the initial stepsize; its default value is 0.1.
+
+<p>
+ <B>FILES</B>
+<br>
+  XGVis uses a set of input files with a common root (which
+  we'll call <B>fname</B> in the man page) and a suffix.  First, each
+  set must contain a file with the suffix .edges, .dat or
+  .dist.
+<ul>
+<li>
+  <B>fname.dist</B>
+<br>
+    Distance matrix: an n x n matrix, with entries separated
+    by white space and one row per line.
+<li>
+  <B>fname.edges</B>
+<br>
+    Line segments: specifications for the pattern of line
+    segments which connect pairs of points.  The file must
+    contain at least two numbers per line.  The first two numbers
+    represent the row numbers of the two points that should be
+    connected.  (This is exactly like the structure of a
+    fname.lines file in xgobi.)  In addition, if a third number
+    is present, it is taken to be an edge weight.
+<p>
+    If this line is present and the distance matrix is absent,
+    then the distance matrix is computed from it, with each
+    edge representing a distance of one.
+<li>
+  <B>fname.dat</B>
+<br>
+  <B>fname.pos</B>
+<br>
+    Starting positions:  an n x p matrix, with entries separated
+    by white space and one row per line.
+<p>
+    If this file is present and a distance file is absent, the
+    distance matrix is computed from it.
+<li>
+  <B>fname.lines</B>
+<br>
+    Line segments: specifications for the pattern of line
+    segments which connect pairs of points.  If this file is
+    present, then the edges file is used to create the distance
+    matrix but the lines file is used to draw the edges.
+</ul>
+  Many additional files can be specified.  See the xgobi man
+  page for descriptions of <B>fname.col</B> (variable labels),
+  <B>fname.row</B> (case labels), <B>fname.colors</B> (glyph colors), and
+  <B>fname.linecolors</B> (line colors), in particular.
+
+<p>
+ <B>AUTHORS</B>
+<br>
+  Andreas Buja
+  <a href="mailto:andreas@research.att.com"> (andreas@research.att.com) </a>
+<br>
+  Deborah Swayne
+  <a href="mailto:dfs@research.att.com"> (dfs@research.att.com) </a>
+
+<p>
+ <B>SEE ALSO</B>
+<br>
+  Sample data files are included in the XGVis distribution.
+<p>
+  For papers and further pointers, check the following web
+  page: <a href=http://www.research.att.com/areas/stat/xgobi/>
+  http://www.research.att.com/areas/stat/xgobi/ </a>
+<p>
+ <B>BUGS</B>
+<br>
+  Probably too numerous to mention, but you do the authors a
+  favor if you report the ones you notice.
+
+
+<HR>
+</BODY>
+</HTML>

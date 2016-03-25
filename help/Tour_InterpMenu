@@ -1,0 +1,15 @@
+Tour Interp Menu
+
+This menu gives a choice of interpolation type for the tour.  The
+default is geodesic interpolation, which interpolates between
+planes along the shortest path.  The two additional types,
+Householder and Givens interpolate between specific bases in the
+planes.
+
+For more information see Buja, A., Asimov, D., Hurley, C. (1989)
+"Methods for Subspace Interpolation in Dynamic Graphics", Bellcore
+Technical Memorandum. This has no information on the Householder and
+Givens methods, but a review including these is underway and 
+may be requested from dicook@iastate.edu.
+
+

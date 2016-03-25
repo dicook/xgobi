@@ -1,0 +1,23 @@
+Subset data
+
+Subset the current data in five different ways:
+
+  Consecutive block:  Specify the first and last row of the block
+  Random sample without replacement:  Specify the size of the sample
+  Every nth row:  Specify the interval and the first row
+  Use sticky label ids:  Enter 'Identify' mode and make one or
+     more row labels 'sticky.'  This defines the subset of all
+     cases having any one of those labels.
+  Use row id:  Specify a row label as it would appear when using
+    'Identify' to define the subset of all cases with the same row label.
+
+Select one of those five, and set its parameters.  Then click on
+"Subset the data" in the bottom row of the popup.  If you want
+to re-include all rows, select the "Include all data" button in
+the bottom row.
+
+The purpose of this is to enable the use of XGobi on data matrices
+that are so large that dynamic and interactive operations begin to
+become painfully slow.  By selecting a smaller subset, a user can
+work on that subset at a comfortable speed of rotation and
+interaction.

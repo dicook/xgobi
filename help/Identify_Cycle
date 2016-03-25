@@ -1,0 +1,16 @@
+Identify cycling
+
+Clicking on `Cycle' will cause the row label of one point after
+another to be displayed, and the associated case profile plot will
+be updated as well.
+
+`Change Direction':  Clicking here causes the direction of the
+cycling to change.   That is, if the cycling routine is working
+upward through the row numbers, it will start to work downward, and
+vice versa.
+
+`All pts' or `Brushed pts':  The default is that the routine cycles
+through all points.  If `Brushed pts' is selected, the routine will
+instead cycle through only brushed points.  That is, no matter how
+many different colors and glyphs have been used, only the points in
+the default glyph and color will be skipped.

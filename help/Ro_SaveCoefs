@@ -1,0 +1,34 @@
+Save Coeffs: save rotation coefficients in a file
+
+This operation allows a user to save the coefficients of rotation in
+use at that moment.
+
+If you select this button, rotation pauses and a window pops up that
+asks you to type in a file name.  (You must position the cursor inside
+the box in the lower right of the popup window to have your typing
+acknowledged.) You can erase typed characters using whatever delete or
+backspace operation you are used to. When you have entered the file
+name, hit return.
+
+If XGobi is initiated from the shell, the coefficients are written as
+two columns, where the first column contains the coefficients of the
+variables plotted on the horizontal axis and the second column those
+on the vertical.  (This is true whichever axis type is selected.)
+
+If XGobi is initiated within S, the coefficients are written out as a
+vector.  (This vector can be transformed into a matrix using the
+following S command: t(array(coefs, c(2, ncols))), where coefs is the
+vector of coefficients and ncols is the number of columns in the
+current data matrix.)
+
+Behavior of the "Solicit File Name" window:
+
+ The editing behavior in this window follows emacs conventions.
+ These instructions may help you if you aren't familiar with emacs:
+   Use the cursor to position the caret between two letters;
+   as you type, characters are entered at that position.
+   You can use your customary backspace character.
+   Use "Control-k" to delete all characters from the caret
+   to the end of the line.
+
+

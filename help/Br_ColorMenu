@@ -1,0 +1,28 @@
+Color Menu: choose a brushing color
+
+Press and hold on the menu button, then drag the mouse and
+release when the label for the color you want is highlighted.
+
+The Color Menu is only active if you are using hardware
+that supports color.
+
+The brushing colors can be set in the XGobi resource file.
+The defaults are:
+
+  *brushColor0: Red
+  *brushColor1: Green
+  *brushColor2: Yellow
+  *brushColor3: Orange
+  *brushColor4: YellowGreen
+  *brushColor5: HotPink
+  *brushColor6: SkyBlue
+  *brushColor7: SlateBlue
+  *brushColor8: Orchid
+  *brushColor9: Peru
+
+The available colors can be found by executing the X command
+xcolors.
+
+See the help file for the brushing I/O menu for information
+about supplying point glyph, point color and line color
+data in startup files.

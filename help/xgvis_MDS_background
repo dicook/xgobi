@@ -1,0 +1,32 @@
+
+XGvis uses Multidimensional Scaling (MDS) 
+  to map a set of N objects 
+  to N points in k-space 
+  such that a given set of target distances or dissimilarities are 
+  approximated as well as possible:
+   
+    DISSIMILARITY( object i, object j ) ~ DISTANCE( point i, point j )
+
+  The pairwise dissimilarities are the input data;
+  the positions of the points are the parameters to be optimized.
+
+MDS optimizes the point positions by minimizing a 
+STRESS FUNCTION or a STRAIN FUNCTION.  
+See the help windows for the formulae.
+
+The matrix of target distances or dissimilarities should be symmetric 
+of size NxN.
+
+It is either 
+
+    - read from a file containing such a matrix 
+        ("file.dist"), or
+
+    - calculated as the shortest-path distances of a discrete graph  
+        ("file.edges"), or
+
+    - calculated as the Euclidean distances of a multivariate dataset
+        ("file.pos" or "file.dat")
+
+See the help window for input file formats.
+

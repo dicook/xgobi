@@ -1,0 +1,8 @@
+Tour Path Length Choices
+
+The fraction of geodesic distance between two basis planes completed
+can be changed adjusted between 1/10-infinity. The smaller the length
+the more often the tour will change paths, so this is useful for
+scanning the local neighbourhood of a plane. When the path length is
+infinity the tour will continue the current direction indefinitely.
+

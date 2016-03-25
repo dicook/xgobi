@@ -1,0 +1,15 @@
+Optimz
+
+When this button is selected, the tour is following the gradient of the
+projection pursuit index to find more interesting 2-dimensional views
+of the data. 
+
+When the guided tour obtains a maximum, it may turn itself off. It does
+this when the derivatives are all within a tolerance level of zero,
+meaning a better new direction cannot be found. To turn the tour back
+on you need to turn "Optimz" off.
+
+When this button is not selected, the projection pursuit index is still
+being plotted, but the guided tour is not taking place.  Instead the
+viewer is watching a grand tour, with new directions of rotation being
+chosen at random.

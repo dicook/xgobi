@@ -1,0 +1,4 @@
+Store
+
+Record the current projection in the history list for use in
+reconstructing a path, backtracking or simply record keeping.

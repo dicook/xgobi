@@ -1,0 +1,176 @@
+Variable selection panel
+
+These are the variable selection boxes, each of which is associated
+with one variable, that is, one column of the input matrix.  The
+variable selection boxes act as buttons which respond to mouse clicks
+by selecting and 'deselecting' variables for plotting.  A selected
+variable is indicated by a highlighted label in the corresponding
+variable selection box.
+
+Above the variable panel is a bit of text to remind the user of the
+mouse actions to perform to select and deselect variables.  This
+behavior depends on whether XGobi is in a two-variable plotting mode,
+initiated by selecting XY Plot, a three-variable mode, initiated by
+selecting Rotate, or in Tour, with three or more variables.
+
+In XY Plot, a horizontal line is drawn in the variable circle of the X
+variable and a vertical line in that of the Y variable.
+
+In the three-variable mode, if "Y Axis" is selected, one Y variable is
+plotted vertically against a linear combination of two X variables, and
+the horizontal lines appearing in the variable circles are proportional
+in length to the coefficients of the two X variables.  If "X Axis" is
+selected, a linear combination of two variables rotates about the
+horizontal axis in the plane of the screen; now the vertical lines are
+proportional in length to the coefficients of the Y variables.
+
+In Tour mode, the lines in the variable circles are oblique, and
+provide information about the magnitude and direction of the
+contribution of each variable. The circle interior to one of the
+variable circles indicates that this variable is available for manual
+manipulation (see help under the Manip menu for more information on
+variable manipulation). It is also possible to "freeze" a variable's
+contribution to the tour, and when frozen the variable circle has a
+smaller dashed interior circle.
+
+In Corr mode, the lines in the variable circles are horizontal or
+vertical, indicating the magnitude of the contribution of the variable
+to either horizontal or vertical directions in the plot. The small
+arcs interior to the variable circles indicate variables available for
+manipulation. Arcs at top and bottom mean that the variable's
+contribution can be manipulated vertically, and arcs at left and right
+indicate that horizontal manipulation. It is also possible to "freeze"
+a variable's contribution to the tour, and when frozen the variable
+circle has a smaller dashed interior arc.
+
+
+Here is a more detailed description of the selection behavior in each
+of the three modes.
+
+One-variable plotting, initiated as Plot1D:
+
+  Click
+   the active variable    if making textured dot plots, generate a new
+                          plot for this variable
+   an inactive variable   this variable replaces the active variable
+
+  If the click is a left click, plot horizontally; if a middle
+  click, plot vertically.
+
+Two-variable plotting, initiated as XYPlot:
+
+  Left click
+   an inactive variable    this variable replaces the active X
+   the active Y variable   X and Y are exchanged
+
+  Middle click
+   an inactive variable    this variable replaces the active Y
+   the active X variable   X and Y are exchanged
+
+Three-variable plotting, initiated as Rotate:
+
+ In this mode, we use the idea that a variable can be the
+ "last touched," and then it is targeted for replacement.  The
+ "last touched" variable is indicated with a small circle in the
+ center of its variable circle, suggesting a target.
+
+ Y axis:
+
+  Here, only the horizontally plotted variables can be
+  last_touched.
+
+  Left click
+   an X variable           this variable becomes the last touched
+   an inactive variable    replaces the last touched X
+   the active Y variable   is exchanged with the last touched X
+
+  Middle click
+   an inactive variable    this variable replaces Y
+   an X variable           the selected X is exchanged with Y
+
+ X axis:
+
+  Here, only the vertically plotted variables can be
+  last_touched.
+
+  Left click
+   an inactive variable    this variable replaces X
+   a Y variable            the selected Y is exchanged with X     
+
+  Middle click
+   a Y variable            this variables becomes the last touched
+   an inactive variable    replaces the last touched Y
+   the active X variable   is exchanged with the last touched Y
+
+ Oblique axis:
+
+  Any click
+   an active variable      becomes last touched
+   an inactive variable    replaces the last touched variable
+
+Tour:
+
+  Left or middle click:
+   an inactive variable    this variable becomes part of the next basis
+   an active variable      this variable is removed from the next basis
+  Holding Shift with a left or middle click:
+   the manip variable      nothing
+   any other variable      this variable becomes the manip variable
+  Holding Ctrl with a left or middle click:
+   a frozen variable       unfreezes this variable, so its contribution
+                           to the tour is unrestricted
+   any other ACTIVE var    this variable's contribution becomes frozen
+
+Corr:
+
+  Left click:
+   active X variable       this variable is removed from the next basis
+                             unless it is the only active X variable
+   inactive variable       this variable is added the the active X list
+   active Y variable       this variable is removed from the active Y
+                             list and added to the active X list
+  Middle click:
+   active Y variable       this variable is removed from the next basis
+                             unless it is the only active Y variable
+   inactive variable       this variable is added the the active Y list
+   active X variable       this variable is removed from the active X
+                             list and added to the active Y list
+ Holding Shift with left click:
+   X manip variable        nothing
+   any other variable      this variable becomes the X manip variable
+ Holding Shift with right click:
+   Y manip variable        nothing
+   any other variable      this variable becomes the Y manip variable
+
+ Holding Ctrl with a left click:
+   a frozen X variable     unfreezes this variable, so its contribution
+                           to the horizontal is unrestricted
+   any ACTIVE X var        this variable's contribution horizontally 
+                           becomes frozen
+ Holding Ctrl with a middle click:
+   a frozen Y variable     unfreezes this variable, so its contribution
+                           to the vertical is unrestricted
+   any ACTIVE Y var        this variable's contribution vertically 
+                           becomes frozen
+
+The partitioning of the space between the control panels, the plot
+window, the variable selection panel can be made by positioning the
+cursor above the little rectangles (called grips) that are at the
+bottom of the lines separating these regions, then pressing one of the
+mouse buttons and moving the cursor to the left or right.  If this
+still doesn't result in a good division of space between the plot
+window and the variable selection panel, you might want to adjust
+the height and width of PlotWindow or VarPanel using your XGobi
+resource file.
+
+Of special interest are these resources:
+
+To set the width of the entire panel:
+    *XGobi*VarPanel.width: 200
+
+To set the width of the variable circles:
+    *XGobi*VarLabel.width: 34
+    *XGobi*VarWindow.width: 34
+
+Column labels can be supplied in a file named fname.col, where fname
+or fname.data is the name of the data file, one label per row.

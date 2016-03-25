@@ -1,0 +1,27 @@
+XGobi has experimental CORBA facilities. CORBA is a high-level
+mechanism for communicating dynamically between applications,
+potentially on different machines, written in different languages.
+While a general interface, it has been tested by controlling and
+querying XGobi from R and S4, using the CORBA facilities developed for
+those environments.
+
+To install this, you need some additional software. While these
+requirements appear significant, they amount to installing CORBA on
+an entire machine and allows communication between any CORBA
+facilities, rather than just XGobi and R/S.
+
+1) Download the Omegahat CORBA facilities
+     http://www.omegahat.org/Downloads/Config.tar.gz
+   and follow the instructions for installing that.
+
+2) There are two configuration options
+     a) edit the Imakefile and ucomment the line
+           #define USE_CORBA 1 
+        (near the top of the file)
+        xmkmf
+        make
+
+     b) ./configure --enable-corba
+
+        (only available if you pick up the source from cvs)
+

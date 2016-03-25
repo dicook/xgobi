@@ -1,0 +1,4 @@
+Sync Axes
+
+Synchronize the coefficients of the vertical and horizontal axes. The
+ordering depends on the variable ordering: x_1=y_1, x_2=y_2, etc.

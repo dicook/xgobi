@@ -1,0 +1,21 @@
+Cycle
+
+Selecting the "Cycle" button will start XGobi cycling through the
+one-variable plots.
+
+The scrollbar allows control of the delay between plots:  moving the
+scrollbar to the right will shorten the delay.
+
+To control the scrollbar, position the cursor about where you'd like
+the new delay to be, then click the left or middle mouse button.  You
+can also move the cursor with the mouse button held down to adjust the
+delay interactively.
+
+The 'p' key turns cycling on and off, as well as toggling Pause
+in the rotation modes.
+
+Change Direction
+
+Clicking on this button changes the direction of the cycle:  that is,
+the next variable to be plotted is either the one before or the one
+after the currently plotted variable.

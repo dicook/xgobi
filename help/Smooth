@@ -1,0 +1,28 @@
+Smooth
+
+This functionality allows a user to smooth the current view in the
+plot window. The data will remain visible, but a smoothed line will be
+drawn overlaid on the data.  (If "Show Points" is turned off using
+the Options menu, the smoothed line can appear even when the points
+do not.)
+
+Various controls are used. A menu of smoother types, which at present
+contain only two simple smoothers: mean and median of a running
+window. The smoothing window size and the amount of the step are set
+by two scrollbars.
+
+Smoothing is done in a regression sense, on vertical with the window
+based on horizontal distance, at the world data level. Differently
+colored points are separately smoothed, that is, each color is treated
+as a group.
+
+Plot1D - variable values are smoothed in windows on the texturing
+  variable (if dotplotting), or on the density plot (if using average
+  shifted histograms).
+
+XYPlot - Y values are smoothed in windows based on X distance.
+
+Rotate, Tour, Corr - current projection is smoothed.
+
+NOTE, the smoothed lines are somewhat transient.  Changing plot modes
+or exposing or resizing the XGobi window will erase the lines.

@@ -1,0 +1,4 @@
+Hist On
+
+When this button is highlighted XGobi stores the basis planes of the
+tour path for use in backtracking over the path.

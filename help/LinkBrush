@@ -1,0 +1,44 @@
+Link points<->points
+Link lines<->lines
+Link points<->lines
+
+These first three control the coordination of linked brushing
+between a pair of XGobis.  **If linking isn't working, make sure
+the menus of the sending and receiving XGobi are in agreement.**
+
+Link points<->points:
+  When a pair of XGobis have the same number of rows *or*
+  have the same value of `fname.nlinkable', then brushing
+  case j in one will cause case j in the other to be 
+  painted as well.  
+
+  This will apply to color, glyph, or erasing if they are on.
+  The functions on the Erase Menu are also linked across points.
+
+Link lines<->lines:
+  When a pair of XGobis have the same number of lines, 
+  then color brushing line j in one will cause line j in
+  the other to be colored as well.  (Glyph and erase
+  brushing are undefined for lines.)
+
+Link points<->lines:
+  Now we're getting tricky.  When one XGobi has the same
+  number of points that another has lines, then they can
+  be linked for points->lines and lines->points brushing.
+  (Again, glyph and erase brushing are undefined.)
+
+Note:  If you find that the response is too slow, make sure the
+receiving XGobi isn't doing any more work than necessary.  It
+does the least work in XYPlot, Plot1D, or paused in Rotate or Tour;
+it works pretty hard in Identify, Brush, or Scale.
+
+Link color brushing
+Link glyph brushing
+Link erase brushing
+
+These variables can be set in the XGobi resource file.  The defaults
+are:
+
+*linkGlyphBrush: True
+*linkColorBrush: True
+*linkEraseBrush: True

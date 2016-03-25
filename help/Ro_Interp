@@ -1,0 +1,10 @@
+Interpolate
+
+Selecting Interpolate causes the plot to rock between a plot of Y vs X1
+and Y vs X2 if "Y Axis" is selected, or between a plot of X vs Y1 and X
+vs Y2 if "X Axis" is selected.
+
+The states set by the Rock and Interpolate buttons are mutually
+exclusive, that is, selecting one causes the other to be 'deselected.'
+
+Note:  Interpolate doesn't work when rotation is about an oblique axis.

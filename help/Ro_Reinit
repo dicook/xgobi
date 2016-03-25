@@ -1,0 +1,6 @@
+Reinit: Re-initialize rotation
+
+Clicking on the "Reinit" button resets the coefficients to
+the values they would have if you had just entered "Rotate"
+with the currently selected variables.
+

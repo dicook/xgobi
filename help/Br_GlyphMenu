@@ -1,0 +1,29 @@
+Glyph Menu
+
+Press and hold on the menu button, then drag the mouse and
+release when the label for the glyph you want is highlighted.
+
+The choices are five sizes each of plusses, Xes, rectangles,
+open circles and filled circles, as well as a single pixel
+point.
+
+You can set the glyph used by XGobi as a default glyph using
+your resource file.  The default value is
+
+*glyphType: 6
+*glyphSize: 1
+
+The glyph types are
+ 1 plus
+ 2 X
+ 3 open rectangle
+ 4 filled rectangle
+ 5 open circle
+ 6 filled circle
+ 7 point
+and the sizes range from 1 to 5.
+
+See the help file for the brushing I/O menu for information
+about supplying point glyph, point color and line color
+data in startup files.
+

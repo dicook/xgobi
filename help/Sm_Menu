@@ -1,0 +1,9 @@
+Smoother Menu
+
+There are two types of smoothers implemented: mean and median.
+
+These do the smoothing in two ways. One is by using a fixed window
+width and step size (all points in the sliding window are used), and
+the other by using a fixed number of points (computation is done on a
+sliding window of the next x number of points).
+

@@ -1,0 +1,24 @@
+7-DIMENSIONAL PARTICLE PHYSICS DATA 
+
+source: Friedman and Tukey, 1974 "A Projection Pursuit Algorithm for 
+          Exploratory Data Analysis" IEEE Trans. Comput. C, 23, 881-889.
+
+There are 500 observations taken from a high energy particle physics
+scattering experiment which yields four particles. The reaction can be
+described completely by 7 independent measurements. The important
+features of the data are short-lived intermediate reaction stages
+which appear as protuberant ``arms'' in the point cloud.
+
+The projection pursuit guided tour is the tool to use to understand
+this data set. Using all 7 variables turn on projection pursuit and
+optimize with the Holes index until a view is found that has a
+triangle and two arms crossing each other off one edge (this is very
+clear once you see it but the Holes index has a tendency to get stuck
+in another local maximum which doesn't have much structure). Brush the
+arms separate colours and glyphs. Change to the Central Mass index and
+optimize. As new arms are revealed brush them and continue. When you
+have either run out of colours or time turn off projection pursuit and
+watch the data touring. Then it becomes clear that the underlying
+structure is a triangle with 5 or 6 arms (some appear to be
+1-dimensional, some 2-dimensional) extending from the vertices.
+

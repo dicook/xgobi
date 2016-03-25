@@ -1,0 +1,13 @@
+Deviation
+
+This scrollbar affects the second two data standardization
+methods.  It controls the number of deviations (either standard
+deviation or median absolute deviation) in the denominator.
+
+To control the scrollbar, position the cursor about where you'd
+like the new deviation to be, then click the left or middle
+mouse button.  You can also move the cursor with the mouse
+button held down to adjust the deviation interactively.
+
+For finer control, click left on one of the arrows at the ends
+of the scrollbar.

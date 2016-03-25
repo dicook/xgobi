@@ -1,0 +1,5 @@
+Show Window
+
+When highlighted a rectangle is drawn in the top left of the plot
+window with the width corresponding to the smoothing window width, and
+a small line starting from the left corresponding to the step size.

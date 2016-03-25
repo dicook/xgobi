@@ -1,0 +1,31 @@
+Backtrack
+
+The Backtrack mechanism for the correlation tour works almost
+identically to that for the tour. The mechanism is as follows:
+  1. Generate 2 p-dimensional normalized vectors: one will be used to 
+project a group of variables in the horizontal direction and the other 
+to project a separate group of variables in the vertical direction.
+Call these the horizontal and vertical basis vectors.
+  2. Interpolate through the horizontal and vertical vectors independently 
+from the current projection to the new ones generated in 1.
+
+As correlation tour runs, a history file of the basis vectors passed
+is saved.  When Backtrack is selected the correlation tour runs
+backward through this path.  Simultaneously, the number in the box to
+the right of the Backtrack button changes to display the number of the
+plane in the history file that the correlation tour is approaching.
+
+When the correlation tour has backtracked to the first plane in the
+history file, it turns around and moves forward through the history
+file.  This is indicated by the button to the right of Backtrack which
+instantaneously changes from B (Backward) to F (Forward). Similarly,
+when the correlation tour has reached the end of the history file, it
+reverses direction again and begins to move backward through the
+recorded planes, and the button to the right of Backtrack
+correspondingly changes to B.  When Backtrack is deactivated the
+correlation tour begins again from the current projection overwriting
+the history file from this position onward.
+
+During Backtrack it is not possible to add or remove variables, since
+the purpose is to retrace old steps.
+

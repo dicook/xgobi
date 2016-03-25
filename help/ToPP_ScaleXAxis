@@ -1,0 +1,5 @@
+Scale X Axis
+
+Expand or contract the X axis in the Projection Pursuit plot with
+the *arrows*.  If the plot is using the entire window and the current scale
+is 1 it is not possible to change the scale.

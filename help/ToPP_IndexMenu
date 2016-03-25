@@ -1,0 +1,59 @@
+PP Index Menu
+
+This menu allows you to select among various projection pursuit
+functions.
+
+The "Natural Hermite" index is by constructed by comparing the
+projected data density with a normal density by an L2-distance wrt
+Normal measure. The projected data density and the normal density is
+expanded using Hermite polynomials. 
+
+The "Holes" index is responsive to projections containing very few
+data points in the center.
+
+The "Central Mass" index is responsive to projections containing a
+heavy concentration of mass in the center.
+
+The "Skewness" index is responsive to projections exhibiting skewness.
+
+See Cook, Buja, Cabrera (JCGS, 1993a,b) for more details on the above
+indices.
+
+The "Legendre" index is constructed by inverting the density through a
+normal cdf, and then comparing the resultant density with that of a
+Unif[-1,1] using an L2-distance. Legendre polynomials are used to
+expand the unknown data density.  This is a good general index, and
+fast to compute.  This index was proposed by Friedman (JASA, 1987).
+
+The "Hermite" index is constructed using Hermite polynomials for the
+expansion. The data density is compared to a standard normal density
+using an L2-distance wrt Lebesgue measure.  This index works best when
+few terms are used in the expansion.  The idea of using Hermite
+polynomials instead of Legendre was proposed by Hall (Ann. Stat.,
+1989).
+
+The "Friedman-Tukey" index is similar to the original projection
+pursuit index proposed by Friedman and Tukey in 1974. It is based on
+an L2-norm of a local kernel density estimate.
+
+The "Entropy" index is an extension of the Friedman-Tukey index in
+that it is constructed by the negative entropy of a kernel density
+estimate. This index was proposed by Jones, in his PhD thesis, Bath,
+1983.
+
+"Binned Friedman-Tukey" and "Binned Entropy" are the same as the last
+two indices except they are computed faster because binning is used for
+the kernel density estimate.
+
+In the indices based on kernel methods the size of the bandwidth is
+drawn in relation to the data on the plot window when the tour is
+paused. 
+
+For further information we'll direct you to "Direction and Motion
+Control in the Grand Tour," by Cook, Buja, and Cabrera, available as a
+Bellcore Technical Memorandum or in the proceedings of the 1991
+Interface conference. Also there is an Iowa State University preprint
+"Grand Tour and Projection Pursuit" by Cook, Buja, Cabrera (1993), and a
+forthcoming Institute of Statistics, Catholic University of Louvain,
+Belgium, Technical Report "Improvement of Computational Speed for
+Kernel-based Indices in XGobi" by Klinke and Cook.

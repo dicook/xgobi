@@ -1,0 +1,13 @@
+Jump size scrollbar
+
+The first scrollbar controls the tour "jump size", that is, the
+distance between the starting and ending plane.  Its effect is to
+control the frequency of the derivative calculations.  When the
+jumpsize is large the tour is allowed to move further before a new
+direction, based on the derivative, is calculated.  (This is a
+primitive, manually-controlled derivative-based optimization method).
+
+To control the scrollbar, position the cursor about where you'd like
+the new jump size to be, then click the left or middle mouse button.
+You can also move the cursor with the mouse button held down to adjust
+the jump size interactively.

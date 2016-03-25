@@ -1,0 +1,154 @@
+01.00 0 RPC_Send_Colnames: OK.
+01.01 F RPC_Send_Colnames: Call RPC_Init_Data or RPC_Init_CDF_Data first.
+01.02 F RPC_Send_Colnames: Submit number of columns many column names (separated by space).
+
+02.00 0 RPC_Send_Rownames: OK.
+02.01 F RPC_Send_Rownames: Call RPC_Init_Data or RPC_Init_CDF_Data first.
+02.02 F RPC_Send_Rownames: Submit number of rows many row names (separated by space).
+
+03.00 0 RPC_Clone_XGobi: OK.
+03.01 F RPC_Clone_XGobi: Call RPC_Make_XGobi, RPC_Make_CDF_XGobi, RPC_Make_VARIO_XGobi, or RPC_Make_LAG_XGobi first.
+03.02 W RPC_Clone_XGobi: Can not clone XGobi - set environment variable AV2XGOBI_HOME first.
+
+11.00 0 RPC_Init_Data: OK.
+11.01 F RPC_Init_Data: Submit a name, number of columns, and number of rows (separated by space).
+
+12.00 0 RPC_Send_Init_Data: OK.
+12.01 F RPC_Send_Init_Data: Call RPC_Init_Data first.
+12.02 F RPC_Send_Init_Data: Submit (number of rows x number of columns) many values (separated by space).
+
+13.00 0 RPC_Send_Init_Symbols: OK.
+13.01 F RPC_Send_Init_Symbols: Call RPC_Send_Init_Data first.
+13.02 F RPC_Send_Init_Symbols: Submit number of rows many values (separated by space).
+13.03 R RPC_Send_Init_Symbols: Wrong value for color/glyph/size.
+
+14.00 0 RPC_Make_XGobi: OK.
+14.01 F RPC_Make_XGobi: Call RPC_Send_Init_Symbols first.
+14.02 F RPC_Make_XGobi: Can not evoke XGobi.
+
+15.00 0 RPC_Update_All_Symbols: OK.
+15.01 F RPC_Update_All_Symbols: Call RPC_Send_Init_Symbols and RPC_Make_XGobi first.
+15.02 F RPC_Update_All_Symbols: Submit number of rows many values (separated by space).
+15.03 R RPC_Update_All_Symbols: Wrong value for color/glyph/size.
+
+16.00 0 RPC_Update_Some_Symbols: OK.
+16.01 F RPC_Update_Some_Symbols: Call RPC_Send_Init_Symbols and RPC_Make_XGobi first.
+16.02 F RPC_Update_Some_Symbols: Submit a list of number:color/glyph/size (separated by space).
+16.03 R RPC_Update_Some_Symbols: Wrong value for number.
+16.04 R RPC_Update_Some_Symbols: Wrong value for color/glyph/size.
+
+21.00 0 RPC_Init_CDF_Data: OK.
+21.01 F RPC_Init_CDF_Data: Submit a name, number of columns, and number of rows (separated by space).
+
+22.00 0 RPC_Send_Init_CDF_Data: OK.
+22.01 F RPC_Send_Init_CDF_Data: Call RPC_Init_CDF_Data first.
+22.02 F RPC_Send_Init_CDF_Data: Submit number of rows many values (separated by space).
+22.03 F RPC_Send_Init_CDF_Data: Submit (number of rows x (number of columns  - 1)) many values (separated by space).
+
+23.00 0 RPC_Send_Init_CDF_Symbols: OK.
+23.01 F RPC_Send_Init_CDF_Symbols: Call RPC_Send_Init_CDF_Data first.
+23.02 F RPC_Send_Init_CDF_Symbols: Submit NCDFTYPES many values (separated by space).
+23.03 R RPC_Send_Init_CDF_Symbols: Wrong value for color/glyph/size.
+
+24.00 0 RPC_Make_CDF_XGobi: OK.
+24.01 F RPC_Make_CDF_XGobi: Call RPC_Send_Init_CDF_Symbols first.
+24.02 F RPC_Make_CDF_XGobi: Can not evoke XGobi.
+
+25.00 0 RPC_Add_CDF_Bitmap: OK.
+25.01 F RPC_Add_CDF_Bitmap: Call RPC_Send_Init_CDF_Symbols and RPC_Make_CDF_XGobi first.
+25.02 F RPC_Add_CDF_Bitmap: Submit pointcolor and number of rows many values (separated by space).
+25.03 R RPC_Add_CDF_Bitmap: Wrong value for pointcolor (must be {0, ..., NCOLORS-1}).
+
+26.00 0 RPC_Add_CDF_Type: OK.
+26.01 F RPC_Add_CDF_Type: Call RPC_Add_CDF_Bitmap and RPC_Make_CDF_XGobi first.
+26.02 F RPC_Add_CDF_Type: Submit pointcolor and cdftype (separated by space).
+26.03 R RPC_Add_CDF_Type: Wrong value for pointcolor (must be {0, ..., NCOLORS-1}).
+26.04 R RPC_Add_CDF_Type: Bitmap for the given pointcolor does not exist.
+26.05 R RPC_Add_CDF_Type: Wrong value for cdftype (must be {0, 1, 2}).
+
+27.00 0 RPC_Delete_CDF_Bitmap_and_Type: OK.
+27.01 F RPC_Delete_CDF_Bitmap_and_Type: Call RPC_Add_CDF_Bitmap and RPC_Make_CDF_XGobi first.
+27.02 R RPC_Delete_CDF_Bitmap_and_Type: Submit pointcolor.
+27.03 R RPC_Delete_CDF_Bitmap_and_Type: Wrong value for pointcolor (must be {0, ..., NCOLORS-1}).
+
+28.00 0 RPC_Brush_All_CDF_Symbols: OK.
+28.01 F RPC_Brush_All_CDF_Symbols: Call RPC_Send_Init_CDF_Symbols and RPC_Make_CDF_XGobi first.
+28.02 R RPC_Brush_All_CDF_Symbols: Submit (NCDFTYPES + number of rows) many values (separated by space).
+28.03 R RPC_Brush_All_CDF_Symbols: Wrong value for color/glyph/size.
+
+29.00 0 RPC_Send_CDF_Weights: OK.
+29.01 F RPC_Send_CDF_Weights: Call RPC_Send_Init_CDF_Symbols first.
+29.02 F RPC_Send_CDF_Weights: Submit number of rows many values (separated by space).
+
+31.00 0 RPC_Init_VARIO_Data: OK.
+31.01 F RPC_Init_VARIO_Data: Submit a name, parameter p, parameter n, and cutoff distance (separated by space).
+
+32.00 0 RPC_Send_Init_VARIO_Data: OK.
+32.01 F RPC_Send_Init_VARIO_Data: Call RPC_Init_VARIO_Data first.
+32.02 F RPC_Send_Init_VARIO_Data: Submit (n x (p + 2)) many values (separated by space).
+
+33.00 0 RPC_Send_Init_VARIO_Symbols: OK.
+33.01 F RPC_Send_Init_VARIO_Symbols: Call RPC_Init_VARIO_Data first.
+33.02 F RPC_Send_Init_VARIO_Symbols: Submit one value.
+33.03 R RPC_Send_Init_VARIO_Symbols: Wrong value for color/glyph/size.
+
+34.00 0 RPC_Make_VARIO_XGobi: OK.
+34.01 F RPC_Make_VARIO_XGobi: Call RPC_Send_Init_VARIO_Symbols first.
+34.02 F RPC_Make_VARIO_XGobi: Can not evoke XGobi.
+
+35.00 0 RPC_Update_Some_VARIO_Symbols: OK.
+35.01 F RPC_Update_Some_VARIO_Symbols: Call RPC_Send_Init_VARIO_Symbols and RPC_Make_VARIO_XGobi first.
+35.02 F RPC_Update_Some_VARIO_Symbols: Submit brushtype and a list of number:color/glyph/size (separated by space).
+35.03 R RPC_Update_Some_VARIO_Symbols: Wrong value for brushtype (must be {0, 1, 2, 3}).
+35.04 R RPC_Update_Some_VARIO_Symbols: Wrong value for number.
+35.05 R RPC_Update_Some_VARIO_Symbols: Wrong value for color/glyph/size.
+
+41.00 0 RPC_Init_LAG_Data: OK.
+41.01 F RPC_Init_LAG_Data: Submit a name, parameter p, parameter n, and cutoff distance (separated by space).
+
+42.00 0 RPC_Send_Init_LAG_Data: OK.
+42.01 F RPC_Send_Init_LAG_Data: Call RPC_Init_LAG_Data first.
+42.02 F RPC_Send_Init_LAG_Data: Submit (n x (p + 2)) many values (separated by space).
+
+43.00 0 RPC_Send_Init_LAG_Symbols: OK.
+43.01 F RPC_Send_Init_LAG_Symbols: Call RPC_Init_LAG_Data first.
+43.02 F RPC_Send_Init_LAG_Symbols: Submit one value.
+43.03 R RPC_Send_Init_LAG_Symbols: Wrong value for color/glyph/size.
+
+44.00 0 RPC_Make_LAG_XGobi: OK.
+44.01 F RPC_Make_LAG_XGobi: Call RPC_Send_Init_LAG_Symbols first.
+44.02 F RPC_Make_LAG_XGobi: Can not evoke XGobi.
+
+45.00 0 RPC_Update_Some_LAG_Symbols: OK.
+45.01 F RPC_Update_Some_LAG_Symbols: Call RPC_Send_Init_LAG_Symbols and RPC_Make_LAG_XGobi first.
+45.02 F RPC_Update_Some_LAG_Symbols: Submit brushtype and a list of number:color/glyph/size (separated by space).
+45.03 R RPC_Update_Some_LAG_Symbols: Wrong value for brushtype (must be {0, 1, 2, 3}).
+45.04 R RPC_Update_Some_LAG_Symbols: Wrong value for number.
+45.05 R RPC_Update_Some_LAG_Symbols: Wrong value for color/glyph/size.
+
+46.00 0 RPC_Send_LAG_Colnames: OK.
+46.01 F RPC_Send_LAG_Colnames: Call RPC_Send_Init_LAG_Data first.
+46.02 F RPC_Send_LAG_Colnames: Submit p many column names (separated by space).
+
+51.00 0 RPC_Init_VARIO2_Data: OK.
+51.01 F RPC_Init_VARIO2_Data: Submit a name, parameter p, parameter n, and cutoff distance (separated by space).
+
+52.00 0 RPC_Send_Init_VARIO2_Data: OK.
+52.01 F RPC_Send_Init_VARIO2_Data: Call RPC_Init_VARIO2_Data first.
+52.02 F RPC_Send_Init_VARIO2_Data: Submit (n x (p + 2)) many values (separated by space).
+
+53.00 0 RPC_Send_Init_VARIO2_Symbols: OK.
+53.01 F RPC_Send_Init_VARIO2_Symbols: Call RPC_Init_VARIO2_Data first.
+53.02 F RPC_Send_Init_VARIO2_Symbols: Submit one value.
+53.03 R RPC_Send_Init_VARIO2_Symbols: Wrong value for color/glyph/size.
+
+54.00 0 RPC_Make_VARIO2_XGobi: OK.
+54.01 F RPC_Make_VARIO2_XGobi: Call RPC_Send_Init_VARIO2_Symbols first.
+54.02 F RPC_Make_VARIO2_XGobi: Can not evoke XGobi.
+
+55.00 0 RPC_Update_Some_VARIO2_Symbols: OK.
+55.01 F RPC_Update_Some_VARIO2_Symbols: Call RPC_Send_Init_VARIO2_Symbols and RPC_Make_VARIO2_XGobi first.
+55.02 F RPC_Update_Some_VARIO2_Symbols: Submit brushtype and a list of number:color/glyph/size (separated by space).
+55.03 R RPC_Update_Some_VARIO2_Symbols: Wrong value for brushtype (must be {0, 1, 2, 3}).
+55.04 R RPC_Update_Some_VARIO2_Symbols: Wrong value for number.
+55.05 R RPC_Update_Some_VARIO2_Symbols: Wrong value for color/glyph/size.

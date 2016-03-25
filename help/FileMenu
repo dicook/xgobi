@@ -1,0 +1,19 @@
+File Menu
+
+Various types of I/O live on this menu, as well as printing.
+
+Read ...
+
+  Read specified files in to the current session.  This allows
+  colors, glyphs and lines to be changed on the fly.
+
+Save (extend current file set) ...
+
+  Write specified files as part of the current set of files --
+  or rename the files as you wish.
+
+Save (create new file set) ...
+
+  Generate a new set of xgobi files:  You would use this panel
+  particularly in order to save a subset of the data, specifying
+  rows or columns.

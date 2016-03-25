@@ -1,0 +1,9 @@
+Delete
+
+Click here to enable the interactive deletion of connecting line
+segments.  As you move the cursor in the plot window, the nearest line
+segment is highlighted by being drawn boldly.  When the segment you
+want to delete is highlighted, click left.
+
+If you realize that you didn't want to delete that point after all,
+then click middle and it will be restored.

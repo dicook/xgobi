@@ -1,0 +1,14 @@
+Shift Controls
+
+The four buttons appearing below the Reset Shift button all change the
+data translation when they are held down:
+
+up arrow      shift the plot upward
+down arrow    shift the plot downward
+
+right arrow   shift the plot to the right
+left arrow    shift the plot to the left
+
+In addition, the shift can be adjusted by dragging left inside the
+plotting window. This allows the user to grab the point cloud and move
+it around the plotting window synchronously with the cursor.

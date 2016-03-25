@@ -1,0 +1,413 @@
+% Start of postscript setup
+% $Header: /home/anoncvs/src/xgobi/ps/xgobi.head.ps,v 1.1.1.1 2000/01/03 18:14:30 root Exp $
+
+/Helvetica findfont pointsize scalefont setfont
+/ticksize pointsize 2 div def
+/gobiinit {  % fg.r fg.g fg.b bg.r bg.g bg.b xmin ymin xmax ymax -> init state
+	/ymax exch def /xmax exch def
+	/ymin exch def /xmin exch def
+	/blue exch def /green exch def /red exch def
+	/fblue exch def /fgreen exch def /fred exch def
+	newpath
+	xmin ymin moveto
+	xmin ymax lineto
+	xmax ymax lineto
+	xmax ymin lineto
+	closepath
+	clip
+	% fill background
+	red green blue setrgbcolor clippath fill
+	fred fgreen fblue setrgbcolor
+	newpath clippath stroke
+} def
+
+% use a dictionary so we can index into an array of functions
+% addglyph
+%/gobobdict 7 dict def
+/gobobdict 8 dict def
+
+/plus {	% size -> plus on page in that size at current point
+	save
+	exch
+	/size exch def
+	/incr size 2 div def
+	save
+	0 incr rmoveto
+	0 0 size sub  rlineto
+	stroke
+	restore
+	0 incr sub 0 rmoveto
+	size 0 rlineto
+	stroke
+	restore
+} def
+gobobdict 1 /plus cvx put
+
+/xglyph { 	% size -> x drawn at current point
+	save
+	exch
+	/size exch def
+	/incr size 2 div def
+	save
+	incr incr rmoveto
+	0 size sub dup rlineto
+	stroke
+	restore
+	0 incr sub incr rmoveto
+	size 0 size sub rlineto
+	stroke
+	restore
+} def
+gobobdict 2 /xglyph cvx put
+
+% addglyph
+/opensquare	% size -> opensquare at current point
+{
+	save
+	exch
+	/size exch def
+ 	/incr size 2 div def
+ 	incr incr rmoveto
+ 	0 size sub 0 rlineto
+ 	0 0 size sub rlineto
+ 	size 0 rlineto
+	closepath
+	stroke
+	restore
+} def
+gobobdict 3 /opensquare cvx put
+
+% addglyph
+/filledsquare	% size -> filledsquare at current point
+{
+	save
+	exch
+	/size exch def
+ 	/incr size 2 div def
+ 	incr incr rmoveto
+ 	0 size sub 0 rlineto
+ 	0 0 size sub rlineto
+ 	size 0 rlineto
+    fill  % will this do it?  dfs
+	closepath
+	stroke
+	restore
+} def
+gobobdict 4 /filledsquare cvx put
+
+/opencircle { % size -> circle on page in that size at current point
+	save
+	exch
+	/dotsize exch def
+	currentpoint /myy exch def /myx exch def
+	% put out a point at currentpoint
+	newpath myx myy dotsize 2 div 0 360  arc closepath stroke
+	restore
+} def
+% addglyph
+gobobdict 5 /opencircle cvx put
+
+/filledcircle { % size -> circle on page in that size at current point
+	save
+	exch
+	/dotsize exch def
+	currentpoint /myy exch def /myx exch def
+	% put out a point at currentpoint
+	newpath myx myy dotsize 2 div 0 360 arc fill closepath stroke
+	restore
+} def
+% addglyph
+gobobdict 6 /filledcircle cvx put
+
+/point { % size -> dot on page in that size at current point
+% Realize a point as a 1x1 filled rectangle.
+%	save
+%	exch
+%	/dotsize exch def
+%	currentpoint /myy exch def /myx exch def
+%	put out a point at currentpoint
+%	newpath myx myy dotsize 360 0  arc closepath fill
+%	restore
+	save
+	exch
+	/size exch def
+ 	/incr size 2 div def
+ 	incr incr rmoveto
+ 	0 size sub 0 rlineto
+ 	0 0 size sub rlineto
+ 	size 0 rlineto
+	closepath
+    fill
+	stroke
+	restore
+} def
+% addglyph
+gobobdict 7 /point cvx put
+
+% r g b type size x y pg -> print it
+/pg { 
+	save
+	8 1 roll	% put save obj at bottom of our args
+	/y exch def /x exch def /size exch def /type exch def
+    /myblue exch def /mygreen exch def /myred exch def
+	% got args, now do something
+	
+	myred mygreen myblue setrgbcolor
+	x y moveto 
+	size
+	gobobdict type get
+	exec
+	restore
+
+} def
+
+% ln: red green blue width x1 y1 x2 y2
+/ln {
+    save
+    9 1 roll    % put save obj at bottom of our args
+    /y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /width exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    myred mygreen myblue setrgbcolor
+    newpath
+    x1 y1 moveto
+    x2 y2 lineto
+    width setlinewidth
+    stroke
+    restore
+} def
+
+/lndashed {
+    [2] 1 setdash
+	save
+	8 1 roll	% put save obj at bottom of our args
+	/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /myblue exch def /mygreen exch def /myred exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x1 y1 moveto
+	x2 y2 lineto
+	stroke
+	restore
+    [] 0 setdash
+} def
+
+/arbax { % arbitrary axis; label r g b x1 y1 x2 y2
+	save
+	9 1 roll	% put save obj at bottom of our args
+	/y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /myblue exch def /mygreen exch def /myred exch def
+	/label exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x1 y1 moveto
+	x2 y2 lineto
+	stroke
+	x2 y2 moveto
+	pointsize 2 div dup rmoveto
+	label show
+	restore
+} def
+
+/yax { % yax: (label) red green blue x1 y1 x2 y2
+	save
+	9 1 roll	% put save obj at bottom of our args
+    /y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x1 y1 moveto
+	x2 y2 lineto
+	stroke
+% axis label
+	newpath
+	x1 y1 moveto
+	/diff y2 y1 sub def
+	0 diff 2 div rmoveto
+	label stringwidth	% wx wy on stack
+	pop
+	2 div neg
+	0 exch rmoveto
+	save
+	90 rotate
+	0 pointsize 3.0 mul rmoveto
+	label show
+	restore
+	restore
+} def
+
+/xax { % xax: (label) red green blue x1 y1 x2 y2
+	save
+	9 1 roll	% put save obj at bottom of our args
+    /y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x1 y1 moveto
+	x2 y2 lineto
+	stroke
+% axis label
+	newpath
+	x1 y1 moveto
+	/diff x2 x1 sub def
+	diff 2 div 0 rmoveto
+	label stringwidth	% wx wy on stack
+	pop
+	2 div 
+	neg 0 rmoveto
+	0 pointsize -3.3 mul rmoveto
+	label show
+	restore
+} def
+
+/ytx { % ytx: (label) red green blue x y
+	save
+	7 1 roll	% put save  obj at bottom of our args
+    /y exch def /x exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x y moveto
+	ticksize neg 0 rlineto stroke
+	x y moveto
+	save
+	label stringwidth	% wx wy on stack
+	pop
+	2 div
+	90 rotate
+	%neg pointsize 1.5 mul rmoveto
+	neg pointsize 1.2 mul rmoveto
+	label show
+	restore
+	restore
+} def
+
+/xtx { % xtx: (label) red green blue x y
+	save
+	7 1 roll
+    /y exch def /x exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+	myred mygreen myblue setrgbcolor
+	newpath
+	x y moveto
+	0 ticksize neg rlineto stroke
+	x y moveto
+	label stringwidth	% wx wy on stack
+	pop
+	2 div
+	%neg pointsize neg 2 mul rmoveto
+	neg pointsize neg 1.6 mul rmoveto
+	label show
+	restore
+} def
+
+/sticky { % sticky: (string) red green blue x y
+	save
+	7 1 roll	% put save obj at bottom of our args
+    /y exch def /x exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+	myred mygreen myblue setrgbcolor
+	x y moveto
+	pointsize 4 div dup rlineto stroke
+	x y moveto
+	pointsize 4 div dup rmoveto
+	label show
+	restore
+} def
+
+% Routine for drawing the bitmaps
+% r g b size x y bitmap -> print it
+/bitmap {
+    save
+    7 1 roll    % put save obj at bottom of our args
+    /y exch def /x exch def /size exch def
+    /myblue exch def /mygreen exch def /myred exch def
+
+    myred mygreen myblue setrgbcolor
+    x y moveto
+ 	0 0 size sub rlineto
+ 	0 size sub 0 rlineto
+ 	0 size rlineto
+	closepath
+	stroke
+	restore
+} def
+
+% Routine for drawing the arcs on the projection pursuit window
+% r g b radius ang1 ang2 x y pparc -> print it
+/pparc {
+    save
+    9 1 roll    % put save obj at bottom of our args
+    /y exch def /x exch def
+    /ang2 exch def /ang1 exch def
+    /radius exch def
+    /myblue exch def /mygreen exch def /myred exch def
+
+    myred mygreen myblue setrgbcolor
+    x y moveto
+    x y radius ang1 ang2 arc
+	closepath
+	fill
+    stroke
+	restore
+} def
+
+% Routine for drawing y axis and label for projection pursuit plot
+% ppyax: (label) red green blue x1 y1 x2 y2
+/ppyax {
+    save
+    9 1 roll    % put save obj at bottom of our args
+    /y2 exch def /x2 exch def /y1 exch def /x1 exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+    myred mygreen myblue setrgbcolor
+    newpath
+    x1 y1 moveto
+    x2 y2 lineto
+    stroke
+% axis label
+    newpath
+    x1 y1 moveto
+    /diff y2 y1 sub def
+    0 diff 2 div rmoveto
+    label stringwidth   % wx wy on stack
+    pop
+    2 div neg
+    0 exch rmoveto
+    save
+    90 rotate
+    0 pointsize 3.0 mul rmoveto
+    label show
+    restore
+    restore
+} def
+
+% Routine for drawing y-axis tick marks and labels on pp plot
+% ppytx: (label) red green blue x y
+/ppytx {
+    save
+    7 1 roll    % put save  obj at bottom of our args
+    /y exch def /x exch def
+    /myblue exch def /mygreen exch def /myred exch def
+    /label exch def
+    myred mygreen myblue setrgbcolor
+    newpath
+    x y moveto
+    ticksize neg 0 rlineto stroke
+    x y moveto
+    save
+    label stringwidth   % wx wy on stack
+    pop
+    2 div
+    90 rotate
+    %neg pointsize 1.5 mul rmoveto
+    neg pointsize 1.2 mul rmoveto
+    label show
+    restore
+    restore
+} def

@@ -1,0 +1,29 @@
+/* rpc_dceclient.idl */
+/***********************************************************************
+ * Permission is hereby granted to any individual or institution       *
+ * for use, copying, or redistribution of the rpc_dce C code           *
+ * and associated documentation, provided such code and documentation  *
+ * are not sold for profit and the following copyright notice is       *
+ * retained in the code and documentation:                             *
+ *                                                                     *
+ *   Copyright (c) 1999 George Mason University                        *
+ *                                                                     *
+ * We encourage you to share questions, comments and modifications.    *
+ *                                                                     *
+ *   Martin Schneider (maschn@informatik.uni-marburg.de)               *
+ *   Juergen Symanzik (symanzik@galaxy.gmu.edu)                        *
+ ***********************************************************************/
+
+[
+uuid(b32b5f3c-cf33-1022-8901-0800690559d0),
+version(1.0)
+]
+
+#define STR_OUTSIZE 100
+
+interface xgobi_dceclient
+{
+
+void Xfer_Brushinfo ([in, string, ref] char *instr);
+
+} /* von Interface */

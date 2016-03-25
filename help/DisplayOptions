@@ -1,0 +1,45 @@
+Display Menu
+
+Add axes to plot
+
+  Highlight to display plotting axes.
+
+  This can be set in the XGobi resource file.  The default is
+    *showAxes:   True
+
+Center axes in 3D+ modes
+
+  In rotation and the tour modes, turning this option
+  on causes the axes to be displayed in the lower left
+  corner instead of at the plot center.
+
+  It has no effect on Plot1D or XYPlot.
+
+Plot the points
+
+  Display the points.
+
+  This can be set in the XGobi resource file.  The default is
+    *showPoints:   True
+
+Plot the lines
+
+  Display the connected line segments.  By default,
+  those line segments connect the first point in the
+  datafile to the second, the second to the third, etc.
+
+  This value can be set in the XGobi resource file.  The default is
+    *showLines:   False
+
+Carry variables between views
+
+  If this entry is off, then each of the viewing modes has its own
+  idea of which variables it is plotting, and is not influenced by
+  variable selection actions occurring in the other modes.  If it
+  is on, an attempt is made to establish continuity of selected
+  variables between modes.  For example, if you select a particular
+  three variables in Rotate, then move to Grand Tour, the Grand Tour
+  will begin with those same three variables.
+
+  This can be set in the XGobi resource file.  The default is
+    *carryVars:   False

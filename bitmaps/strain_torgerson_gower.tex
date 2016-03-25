@@ -1,0 +1,103 @@
+% process as follows:
+%   cd bitmaps
+%   laps strain_torgerson_gower  (for postscript)
+%   convert +antialiasing -density 100x100 strain_torgerson_gower.ps strain_torgerson_gower.xbm
+%   ee strain_torgerson_gower.xbm  (for cropping)
+%   cd ../src
+%   rm xgv_help.o
+%   make
+%   ./xgvis ../data_xgvis/morsecodes &
+
+\documentclass[12pt]{article}
+\hyphenation{XGobi}
+
+
+\begin{document}
+
+\newcommand{\Reals}   {{\rm I \! R}}
+\newcommand{\vx}      {{\mbox{\bf x}}}
+
+\begin{center}
+{\Large \bf Torgerson-Gower Dot-Product Scaling}
+\end{center}
+
+\begin{eqnarray*}
+&& {\rm STRAIN}_D(\vx_1,...,\vx_N) ~=~ \left( 1 - \cos^2 \right)^{1/2}
+\\
+&& ~~~~~~~~ 
+\cos^2 ~=~ 
+    \frac{ 
+      \left( \; 
+        \sum_{ (i,j) \in I } ~
+          w_{i,j} \cdot f(-D_{i,j}^2) \cdot {\langle \vx_i , \vx_j \rangle}
+      \; \right)^2
+    }{
+      \left( \sum_{ (i,j) \in I } ~w_{i,j} \cdot f(-D_{i,j}^2) \right) 
+      \left( \sum_{ (i,j) \in I } ~w_{i,j} \cdot {\langle \vx_i , \vx_j \rangle} \right)
+    }
+\\
+~
+\\
+~
+\\
+&& D_{i,j} \in \Reals,~ \ge 0, ~ N \times N ~ {\rm matrix~of~dissimilarity~data}
+\\
+~
+\\
+&& f(-D_{i,j}^2) ~=~ \left\{ \begin{array}{ll}
+                  -D_{i,j}^{2p}~,               ~~~& {\rm for~metric~MDS}
+                  \\
+                  {\rm Isotonic}(-D_{i,j})~, ~~~& {\rm for~nonmetric~MDS}
+                  \end{array} \right.
+\\
+&& ~~~~~~~~~~~~~~~
+\begin{array}{l}
+0 \le p \le 6, ~{\rm default:}~1~({\rm no~transformation}) \\
+{\rm Isotonic} = {\rm monotone~transformation~estimated} \\
+{\rm ~~~~~~~~~~~~~~ with~isotonic~regression}
+\end{array}
+\\
+~
+\\
+&& \vx_1,...,\vx_N \in \Reals^k, ~ {\rm configuration~points,~constrained~to} ~\sum \vx_i = 0
+\\
+&& ~~~~~~~~~~~~~~~~~
+1 \le k \le 12, ~{\rm default:}~3~({\rm use~3D~Rotations~or~Grand~Tour})
+\\
+~
+\\
+&& {\langle \vx_i , \vx_j \rangle} ~=~ 
+   \sum_{\nu=1,...,k}  x_{i,\nu} \cdot x_{j,\nu} ,
+~~~~~~
+{\rm configuration~dot~products,}
+\\
+~
+\\
+&& 
+w_{i,j} ~=~ D_{i,j}^r \cdot \left\{ \begin{array}{ll}
+                            w     ~, ~~~~~& {\rm if~color/glyph~of}~i,j~{\rm is~same}      \\
+                            (2-w) ~, ~~~~~& {\rm if~color/glyph~of}~i,j~{\rm is~different}
+			    \end{array} \right. 
+\\
+&& ~~~~~~~~~~~~~~~
+\begin{array}{l}
+-4 \le r \le +4,  ~{\rm default:}~0 ~ ({\rm equal~weights})
+\\
+0 \le w \le 2, ~{\rm default:}~1 ~ ({\rm ignore~grps};~w=2:~{\rm within};~w=0:~{\rm between~grps})
+\end{array}
+\\
+~
+\\
+&& I ~=~ \{ \; (i,j) \; |~ i \neq j ,~D_{i,j} \neq NA ,~T_0 < D_{i,j} < T_1 ,~~{\rm Runif}(i,j)<\alpha ,~ ...~ \}~
+\\
+&& ~~~~~~~~~~~~~~~
+\begin{array}{l}
+0 \le T_0 \le T_1, ~{\rm thresholds,~defaults:}~0,~\infty          \\
+{\rm Runif} = {\rm uniform~random~numbers} \in [ 0,1 ] \\
+\alpha = {\rm selection~probability,~ default:}~1      \\
+... = {\rm conditions~based~on~color/glyph~groups}
+\end{array}
+\end{eqnarray*}
+
+\end{document}
+

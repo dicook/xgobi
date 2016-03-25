@@ -1,0 +1,2679 @@
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgvis.c -o xgvis.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_histogram.c -o xgv_histogram.o
+cc-1116 cc: WARNING File = xgv_histogram.c, Line = 221
+  Non-void function "thr_expose_cback" (declared at line 218) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_histogram.c, Line = 280
+  Non-void function "thr_motion" (declared at line 262) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_histogram.c, Line = 306
+  Non-void function "thr_button" (declared at line 284) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_histogram.c, Line = 396
+  Non-void function "thr_resize_cback" (declared at line 377) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_qsort.c -o xgv_qsort.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_mds.c -o xgv_mds.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_read_data.c -o xgv_read_data.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_help.c -o xgv_help.o
+cc-1116 cc: WARNING File = xgv_help.c, Line = 23
+  Non-void function "xgvis_help_done_cback" (declared at line 20) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 50
+  Non-void function "xgvis_help_MDS_background_cback" (declared at line 27)
+          should return a value.
+
+        return;
+              ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 141
+  Non-void function "xgvis_help_MDS_background_cback" (declared at line 27)
+          should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 169
+  Non-void function "xgvis_help_controls_cback" (declared at line 146) should
+          return a value.
+
+        return;
+              ^
+
+cc-1174 cc: WARNING File = xgv_help.c, Line = 198
+  The variable "hform" was declared but never referenced.
+
+      Widget hpopup, hframe, hform, hfunc, htext, hdone;
+                             ^
+
+cc-1174 cc: WARNING File = xgv_help.c, Line = 198
+  The variable "hfunc" was declared but never referenced.
+
+      Widget hpopup, hframe, hform, hfunc, htext, hdone;
+                                    ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 260
+  Non-void function "xgvis_help_controls_cback" (declared at line 146) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 290
+  Non-void function "xgvis_help_torgerson_gower_cback" (declared at line 265)
+          should return a value.
+
+        return;
+              ^
+
+cc-1552 cc: WARNING File = xgv_help.c, Line = 319
+  The variable "hfunc" is set but never used.
+
+      Widget hpopup, hframe, hform, hfunc, hdone;
+                                    ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 401
+  Non-void function "xgvis_help_torgerson_gower_cback" (declared at line 265)
+          should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 431
+  Non-void function "xgvis_help_kruskal_shepard_cback" (declared at line 406)
+          should return a value.
+
+        return;
+              ^
+
+cc-1552 cc: WARNING File = xgv_help.c, Line = 460
+  The variable "hfunc" is set but never used.
+
+      Widget hpopup, hframe, hform, hfunc, hdone;
+                                    ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 542
+  Non-void function "xgvis_help_kruskal_shepard_cback" (declared at line 406)
+          should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 570
+  Non-void function "xgvis_help_input_file_formats_cback" (declared at line 547)
+          should return a value.
+
+        return;
+              ^
+
+cc-1116 cc: WARNING File = xgv_help.c, Line = 661
+  Non-void function "xgvis_help_input_file_formats_cback" (declared at line 547)
+          should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_stressplot.c -o xgv_stressplot.o
+cc-1116 cc: WARNING File = xgv_stressplot.c, Line = 151
+  Non-void function "str_expose_cback" (declared at line 147) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_stressplot.c, Line = 166
+  Non-void function "str_resize_cback" (declared at line 155) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_cbacks.c -o xgv_cbacks.o
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 56
+  Non-void function "mds_dimsleft_cback" (declared at line 43) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 73
+  Non-void function "mds_dimsright_cback" (declared at line 60) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 101
+  Non-void function "PopUpDistMenu" (declared at line 77) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 111
+  Non-void function "PopDownDistMenu" (declared at line 105) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 161
+  Non-void function "choose_dist_cback" (declared at line 115) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 179
+  Non-void function "reset_cback" (declared at line 165) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 191
+  Non-void function "scramble_cback" (declared at line 183) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 204
+  Non-void function "center_cback" (declared at line 195) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 230
+  Non-void function "run_cback" (declared at line 208) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 237
+  Non-void function "turn_off_scaling" (declared at line 234) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 250
+  Non-void function "Quit" (declared at line 242) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 276
+  Non-void function "mds_lnorm_cback" (declared at line 254) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 318
+  Non-void function "mds_power_cback" (declared at line 279) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 345
+  Non-void function "mds_distpow_cback" (declared at line 322) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 369
+  Non-void function "mds_weightpow_cback" (declared at line 349) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 392
+  Non-void function "mds_within_between_cback" (declared at line 373) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 416
+  Non-void function "mds_rand_select_cback" (declared at line 396) should return
+          a value.
+
+  }
+  ^
+
+cc-1174 cc: WARNING File = xgv_cbacks.c, Line = 403
+  The variable "i" was declared but never referenced.
+
+    int i;
+        ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 427
+  Non-void function "mds_rand_select_new_cback" (declared at line 419) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 450
+  Non-void function "mds_perturb_cback" (declared at line 431) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 472
+  Non-void function "mds_perturb_new_cback" (declared at line 454) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 491
+  Non-void function "mds_stepsize_cback" (declared at line 476) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 504
+  Non-void function "mds_iterate_cback" (declared at line 495) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 515
+  Non-void function "fcancel_cback" (declared at line 508) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 559
+  Non-void function "save_distance_matrix_go" (declared at line 519) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 655
+  Non-void function "save_distance_matrix" (declared at line 563) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_cbacks.c, Line = 784
+  Non-void function "mds_launch_cback" (declared at line 660) should return a
+          value.
+
+  } /* end mds_launch_cback(... */
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_widgets.c -o xgv_widgets.o
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 189
+  Non-void function "set_mds_group_cback" (declared at line 139) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 197
+  Non-void function "freeze_0_cback" (declared at line 194) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 204
+  Non-void function "freeze_1_cback" (declared at line 201) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 211
+  Non-void function "freeze_2_cback" (declared at line 208) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 236
+  Non-void function "setMetricCback" (declared at line 216) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 257
+  Non-void function "setNonmetricCback" (declared at line 240) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 285
+  Non-void function "setKruskalShepardCback" (declared at line 262) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_widgets.c, Line = 312
+  Non-void function "setClassicCback" (declared at line 289) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgv_anchor.c -o xgv_anchor.o
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 147
+  Non-void function "xgv_hide_cback" (declared at line 116) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 348
+  Non-void function "xgv_exclude_cback" (declared at line 302) should return a
+          value.
+
+  }
+  ^
+
+cc-1174 cc: WARNING File = xgv_anchor.c, Line = 305
+  The variable "excluded" was declared but never referenced.
+
+    Boolean excluded;
+            ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 361
+  Non-void function "xgv_symbol_expose_cb" (declared at line 352) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 371
+  Non-void function "xgv_close_cback" (declared at line 365) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 388
+  Non-void function "xgv_anchor_cback" (declared at line 375) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 499
+  Non-void function "xgv_symbol_reset_cb" (declared at line 393) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 736
+  Non-void function "xgv_open_anchor_popup_cback" (declared at line 618) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xgv_anchor.c, Line = 751
+  Non-void function "xgv_reset_clusters_cback" (declared at line 740) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgobi_init.c -o xgobi_init.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c pipeline.c -o pipeline.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c read_array.c -o read_array.o
+cc-1552 cc: WARNING File = read_array.c, Line = 359
+  The variable "ch" is set but never used.
+
+    int i, file_row, ch;  /* ch is used, no matter what the compiler says */
+                     ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c initialize.c -o initialize.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c widgets.c -o widgets.o
+cc-1116 cc: WARNING File = widgets.c, Line = 545
+  Non-void function "KeyFileMenu" (declared at line 537) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = widgets.c, Line = 735
+  Non-void function "view_menu_cback" (declared at line 711) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = widgets.c, Line = 769
+  Non-void function "SetPlotMode" (declared at line 761) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = widgets.c, Line = 1009
+  Non-void function "display_menu_cback" (declared at line 950) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = widgets.c, Line = 1019
+  Non-void function "KeyDisplayMenu" (declared at line 1013) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = widgets.c, Line = 1030
+  Non-void function "KeyToolMenu" (declared at line 1022) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c callbacks.c -o callbacks.o
+cc-1116 cc: WARNING File = callbacks.c, Line = 52
+  Non-void function "expose_cback" (declared at line 45) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 138
+  Non-void function "resize_cback" (declared at line 56) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 146
+  Non-void function "exit_panel_cback" (declared at line 142) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 155
+  Non-void function "exit_solo_cback" (declared at line 150) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 172
+  Non-void function "varselect" (declared at line 159) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 241
+  Non-void function "varexpose" (declared at line 230) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 346
+  Non-void function "clone_xgobi_cback" (declared at line 343) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 452
+  Non-void function "scatmat_xgobi_cback" (declared at line 449) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 461
+  Non-void function "start_xplore_cback" (declared at line 456) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = callbacks.c, Line = 470
+  Non-void function "stop_xplore_cback" (declared at line 465) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c getfname.c -o getfname.o
+cc-1116 cc: WARNING File = getfname.c, Line = 72
+  Non-void function "file_save_done" (declared at line 37) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = getfname.c, Line = 100
+  Non-void function "fcancel_cback" (declared at line 76) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xyplot.c -o xyplot.o
+cc-1116 cc: WARNING File = xyplot.c, Line = 144
+  Non-void function "xy_cycle_delay_cback" (declared at line 139) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xyplot.c, Line = 152
+  Non-void function "xy_fixx_cback" (declared at line 148) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xyplot.c, Line = 160
+  Non-void function "xy_fixy_cback" (declared at line 156) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xyplot.c, Line = 364
+  Non-void function "xy_cycle_cback" (declared at line 351) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = xyplot.c, Line = 371
+  Non-void function "xy_chdir_cback" (declared at line 368) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c make_axes.c -o make_axes.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c line_editor.c -o line_editor.o
+cc-1116 cc: WARNING File = line_editor.c, Line = 542
+  Non-void function "add_line_button" (declared at line 460) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 602
+  Non-void function "delete_line_button" (declared at line 546) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 640
+  Non-void function "add_lines_cback" (declared at line 615) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 668
+  Non-void function "delete_lines_cback" (declared at line 644) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 710
+  Non-void function "show_all_lines_cback" (declared at line 685) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 724
+  Non-void function "remove_all_lines_cback" (declared at line 714) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = line_editor.c, Line = 734
+  Non-void function "plot_imputed_cback" (declared at line 728) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c missing.c -o missing.o
+cc-1116 cc: WARNING File = missing.c, Line = 108
+  Non-void function "set_vars_to_impute" (declared at line 87) should return a
+          value.
+
+  }
+  ^
+
+cc-1552 cc: WARNING File = missing.c, Line = 92
+  The variable "nvgroups" is set but never used.
+
+    int j, nvgroups;
+           ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 200
+  Non-void function "rescale_cback" (declared at line 197) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 434
+  Non-void function "launch_missing_cback" (declared at line 349) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 649
+  Non-void function "impute_cback" (declared at line 578) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 660
+  Non-void function "use_groups_cback" (declared at line 653) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 767
+  Non-void function "pct_above_cback" (declared at line 763) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 775
+  Non-void function "pct_below_cback" (declared at line 771) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 783
+  Non-void function "specify_cback" (declared at line 779) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 853
+  Non-void function "choose_imputation_cback" (declared at line 832) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 876
+  Non-void function "imp_scroll_cback" (declared at line 857) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 883
+  Non-void function "close_imp_cback" (declared at line 880) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 940
+  Non-void function "set_varspec_cback" (declared at line 930) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = missing.c, Line = 1254
+  Non-void function "open_imputation_popup_cback" (declared at line 986) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c spin_cbacks.c -o spin_cbacks.o
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 163
+  Non-void function "rspeed_cback" (declared at line 153) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 173
+  Non-void function "rchdir_cback" (declared at line 167) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 210
+  Non-void function "rinterp_cback" (declared at line 177) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 241
+  Non-void function "rock_cback" (declared at line 214) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 260
+  Non-void function "spin_pause_on_cback" (declared at line 245) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 296
+  Non-void function "spin_reinit_cback" (declared at line 264) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 330
+  Non-void function "spin_xaxis_on_cback" (declared at line 300) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 363
+  Non-void function "spin_yaxis_on_cback" (declared at line 334) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin_cbacks.c, Line = 407
+  Non-void function "spin_oblique_on_cback" (declared at line 375) should return
+          a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c spin.c -o spin.o
+cc-1116 cc: WARNING File = spin.c, Line = 785
+  Non-void function "ob_button" (declared at line 682) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin.c, Line = 809
+  Non-void function "spin_place_save_coefs_popup" (declared at line 797) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin.c, Line = 938
+  Non-void function "spin_place_save_rmat_popup" (declared at line 926) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = spin.c, Line = 1006
+  Non-void function "spin_place_read_rmat_popup" (declared at line 994) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c scaling.c -o scaling.o
+cc-1116 cc: WARNING File = scaling.c, Line = 265
+  Non-void function "scale_button_event" (declared at line 218) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c scale_cbacks.c -o scale_cbacks.o
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 65
+  Non-void function "scale_type_cback" (declared at line 52) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 75
+  Non-void function "scale_release_cback" (declared at line 69) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 103
+  Non-void function "scale_reset_cback" (declared at line 79) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 113
+  Non-void function "shift_release_cback" (declared at line 107) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 142
+  Non-void function "shift_reset_cback" (declared at line 117) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 164
+  Non-void function "scale_press_cback" (declared at line 148) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 184
+  Non-void function "shift_press_cback" (declared at line 168) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 193
+  Non-void function "StopScaleByArrow" (declared at line 188) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = scale_cbacks.c, Line = 209
+  Non-void function "StartScaleByArrow" (declared at line 197) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c identify.c -o identify.o
+cc-1116 cc: WARNING File = identify.c, Line = 66
+  Non-void function "pack_ids_done" (declared at line 60) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 76
+  Non-void function "pack_ids_lose" (declared at line 70) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 130
+  Non-void function "pack_ids" (declared at line 94) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 191
+  Non-void function "unpack_ids" (declared at line 134) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 245
+  Non-void function "rm_sticky_cback" (declared at line 225) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 275
+  Non-void function "all_sticky_cback" (declared at line 249) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 294
+  Non-void function "NullNearestPoint" (declared at line 279) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 511
+  Non-void function "set_sticky" (declared at line 451) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 542
+  Non-void function "id_linkopt_menu_cback" (declared at line 528) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = identify.c, Line = 694
+  Non-void function "copy_label" (declared at line 663) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c var_panel.c -o var_panel.o
+cc-1116 cc: WARNING File = var_panel.c, Line = 58
+  Non-void function "set_focus_var" (declared at line 49) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 87
+  Non-void function "set_var_tform_label" (declared at line 62) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 367
+  Non-void function "varsel_choose_cback" (declared at line 264) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 378
+  Non-void function "rm_varsel_menu" (declared at line 371) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 445
+  Non-void function "add_varsel_menu" (declared at line 382) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 892
+  Non-void function "ShowTarget" (declared at line 877) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = var_panel.c, Line = 914
+  Non-void function "DontShowTarget" (declared at line 896) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c transform.c -o transform.o
+cc-1116 cc: WARNING File = transform.c, Line = 975
+  Non-void function "stage1_tform_cback" (declared at line 944) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1018
+  Non-void function "reduce_exp_cback" (declared at line 1014) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1025
+  Non-void function "increase_exp_cback" (declared at line 1021) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1050
+  Non-void function "exp_sbar_cback" (declared at line 1029) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1059
+  Non-void function "var_cback" (declared at line 1054) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1077
+  Non-void function "set_domain_incr_cback" (declared at line 1063) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1091
+  Non-void function "reset_vgroups_cback" (declared at line 1081) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1216
+  Non-void function "stage2_tform_cback" (declared at line 1189) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1224
+  Non-void function "close_cback" (declared at line 1220) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = transform.c, Line = 1516
+  Non-void function "open_tform_popup_cback" (declared at line 1230) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c sphere.c -o sphere.o
+cc-1116 cc: WARNING File = sphere.c, Line = 55
+  Non-void function "close_sphere_cback" (declared at line 50) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = sphere.c, Line = 63
+  Non-void function "scree_expose_cback" (declared at line 59) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = sphere.c, Line = 116
+  Non-void function "select_npc_cback" (declared at line 67) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = sphere.c, Line = 183
+  Non-void function "do_sph_cback" (declared at line 120) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = sphere.c, Line = 425
+  Non-void function "open_sphere_popup_cback" (declared at line 187) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c stdize.c -o stdize.o
+cc-1116 cc: WARNING File = stdize.c, Line = 43
+  Non-void function "choose_stdview_cback" (declared at line 11) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c inference.c -o inference.o
+cc-1116 cc: WARNING File = inference.c, Line = 215
+  Non-void function "close_cback" (declared at line 211) should return a value.
+
+  }
+  ^
+
+cc-1164 cc: WARNING File = inference.c, Line = 235
+  Argument of type "int (*)(float *, float *)" is incompatible with parameter of
+          type "int (*)(const void *, const void *)".
+
+      qsort((char *) sort_data, xg->nrows, sizeof(float), sort_compare);
+                                                          ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 244
+  Non-void function "sort_cback" (declared at line 219) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 287
+  Non-void function "perm_cback" (declared at line 281) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 297
+  Non-void function "perm_anim_cback" (declared at line 291) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 307
+  Non-void function "perm_mult_cback" (declared at line 301) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 317
+  Non-void function "perm_nmult_cback" (declared at line 311) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 327
+  Non-void function "norm_cback" (declared at line 321) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 337
+  Non-void function "norm_anim_cback" (declared at line 331) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 347
+  Non-void function "brush_cback" (declared at line 341) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 357
+  Non-void function "vgroup_cback" (declared at line 351) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 367
+  Non-void function "restor_cback" (declared at line 361) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 375
+  Non-void function "var_cback" (declared at line 370) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = inference.c, Line = 709
+  Non-void function "open_infer_popup_cback" (declared at line 380) should
+          return a value.
+
+  }
+  ^
+
+cc-1174 cc: WARNING File = inference.c, Line = 44
+  The variable "ntform_cols" was declared but never referenced.
+
+  static int ntform_cols, *tform_cols = NULL;
+             ^
+
+cc-1552 cc: WARNING File = inference.c, Line = 44
+  The variable "tform_cols" is set but never used.
+
+  static int ntform_cols, *tform_cols = NULL;
+                           ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c brush_init.c -o brush_init.o
+cc-1116 cc: WARNING File = brush_init.c, Line = 147
+  Non-void function "glyph_expose" (declared at line 144) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_init.c, Line = 218
+  Non-void function "choose_color_cback" (declared at line 182) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_init.c, Line = 352
+  Non-void function "choose_glyph_cback" (declared at line 318) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_init.c, Line = 635
+  Non-void function "br_linkopt_menu_cback" (declared at line 571) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_init.c, Line = 743
+  Non-void function "br_opt_menu_cback" (declared at line 723) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c brush_cbacks.c -o brush_cbacks.o
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 42
+  Non-void function "brush_points_cback" (declared at line 36) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 52
+  Non-void function "brush_active_cback" (declared at line 46) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 62
+  Non-void function "brush_lines_cback" (declared at line 56) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 88
+  Non-void function "br_perst_cback" (declared at line 66) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 117
+  Non-void function "br_trans_cback" (declared at line 92) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 129
+  Non-void function "br_undo_cback" (declared at line 121) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 169
+  Non-void function "br_update_cback" (declared at line 133) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 177
+  Non-void function "reset_brush_cback" (declared at line 173) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 204
+  Non-void function "reset_point_colors_cback" (declared at line 181) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 223
+  Non-void function "reset_line_colors_cback" (declared at line 208) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 244
+  Non-void function "reset_glyphs_cback" (declared at line 227) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_cbacks.c, Line = 362
+  Non-void function "delete_erased_cback" (declared at line 328) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c brush.c -o brush.o
+cc-1116 cc: WARNING File = brush.c, Line = 362
+  Non-void function "brush_motion" (declared at line 305) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush.c, Line = 519
+  Non-void function "brush_button" (declared at line 374) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c paint.c -o paint.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c brush_send.c -o brush_send.o
+cc-1116 cc: WARNING File = brush_send.c, Line = 247
+  Non-void function "pack_brush_done" (declared at line 247) should return a
+          value.
+
+  pack_brush_done(Widget w, Atom *selection, Atom *target) { }
+                                                             ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 251
+  Non-void function "pack_brush_lose" (declared at line 251) should return a
+          value.
+
+  pack_brush_lose(Widget w, Atom *selection, XtPointer xgobi) { }
+                                                                ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 301
+  Non-void function "pack_brush_data" (declared at line 269) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 444
+  Non-void function "unpack_brush_data" (declared at line 305) should return a
+          value.
+
+  }
+  ^
+
+cc-1552 cc: WARNING File = brush_send.c, Line = 318
+  The variable "nrgroups" is set but never used.
+
+    int link_p2p, nrgroups, link_p2l;
+                  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 507
+  Non-void function "pack_rowsinplot_data" (declared at line 475) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 612
+  Non-void function "unpack_rowsinplot_data" (declared at line 511) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 631
+  Non-void function "pack_line_brush_done" (declared at line 631) should return
+          a value.
+
+  pack_line_brush_done(Widget w, Atom *selection, Atom *target) { }
+                                                                  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 635
+  Non-void function "pack_line_brush_lose" (declared at line 635) should return
+          a value.
+
+  pack_line_brush_lose(Widget w, Atom *selection, XtPointer xgobi) { }
+                                                                     ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 708
+  Non-void function "pack_line_brush_data" (declared at line 653) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = brush_send.c, Line = 785
+  Non-void function "unpack_line_brush_data" (declared at line 712) should
+          return a value.
+
+  }
+  ^
+
+cc-1552 cc: WARNING File = brush_send.c, Line = 724
+  The variable "nlinkable" is set but never used.
+
+    int nlines, nlinkable;
+                ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c help.c -o help.o
+cc-1116 cc: WARNING File = help.c, Line = 96
+  Non-void function "HelpSelect" (declared at line 53) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = help.c, Line = 103
+  Non-void function "help_cback" (declared at line 100) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = help.c, Line = 110
+  Non-void function "about_xgobi_cback" (declared at line 107) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = help.c, Line = 123
+  Non-void function "help_done_cback" (declared at line 120) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = help.c, Line = 305
+  Non-void function "kill_splash" (declared at line 301) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c prt_plotwin.c -o prt_plotwin.o
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 93
+  Non-void function "Bell" (declared at line 86) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 1206
+  Non-void function "print_to_file_cback" (declared at line 1199) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 1217
+  Non-void function "print_to_printer_cback" (declared at line 1210) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 1224
+  Non-void function "close_print_cback" (declared at line 1221) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 1237
+  Non-void function "win_menu_cback" (declared at line 1228) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = prt_plotwin.c, Line = 1502
+  Non-void function "print_panel_cback" (declared at line 1241) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c subset.c -o subset.o
+cc-1116 cc: WARNING File = subset.c, Line = 140
+  Non-void function "rescale_cback" (declared at line 136) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 198
+  Non-void function "ahead_block_cback" (declared at line 177) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 221
+  Non-void function "back_block_cback" (declared at line 201) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 370
+  Non-void function "subset_cback" (declared at line 225) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 394
+  Non-void function "restore_cback" (declared at line 374) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 401
+  Non-void function "close_cback" (declared at line 398) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 423
+  Non-void function "stype_menu_cback" (declared at line 405) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = subset.c, Line = 766
+  Non-void function "subset_panel_cback" (declared at line 428) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c vc_lists.c -o vc_lists.o
+cc-1116 cc: WARNING File = vc_lists.c, Line = 60
+  Non-void function "persistent_casemode_cback" (declared at line 56) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 90
+  Non-void function "select_all_vars_cback" (declared at line 64) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 119
+  Non-void function "select_all_cases_cback" (declared at line 94) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 149
+  Non-void function "deselect_all_cases_cback" (declared at line 123) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 344
+  Non-void function "ToggleCurrentLine" (declared at line 230) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 356
+  Non-void function "PopdownCaselist" (declared at line 348) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 366
+  Non-void function "PopdownVarlist" (declared at line 360) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 584
+  Non-void function "PopupVarlist" (declared at line 553) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = vc_lists.c, Line = 792
+  Non-void function "PopupCaselist" (declared at line 754) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c exclusion.c -o exclusion.o
+cc-1116 cc: WARNING File = exclusion.c, Line = 205
+  Non-void function "symbol_expose_cb" (declared at line 196) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 236
+  Non-void function "close_cback" (declared at line 230) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 271
+  Non-void function "hide_cback" (declared at line 240) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 320
+  Non-void function "exclude_cback" (declared at line 275) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 430
+  Non-void function "symbol_reset_cb" (declared at line 324) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 670
+  Non-void function "open_exclusion_popup_cback" (declared at line 565) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = exclusion.c, Line = 685
+  Non-void function "reset_clusters_cback" (declared at line 674) should return
+          a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c plot_once.c -o plot_once.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c plot1d.c -o plot1d.o
+cc-1116 cc: WARNING File = plot1d.c, Line = 290
+  Non-void function "ptype_dotplot_cback" (declared at line 286) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = plot1d.c, Line = 297
+  Non-void function "ptype_ash_cback" (declared at line 293) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = plot1d.c, Line = 320
+  Non-void function "nASHes_cback" (declared at line 301) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = plot1d.c, Line = 340
+  Non-void function "plot1d_cycle_cback" (declared at line 324) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = plot1d.c, Line = 351
+  Non-void function "plot1d_cycle_delay_cback" (declared at line 344) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = plot1d.c, Line = 361
+  Non-void function "plot1d_chdir_cback" (declared at line 355) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c texture.c -o texture.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c ash1d.c -o ash1d.o
+cc-1552 cc: WARNING File = ash1d.c, Line = 28
+  The variable "icheck" is set but never used.
+
+    int i, k, icheck;
+              ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c move_points.c -o move_points.o
+cc-1116 cc: WARNING File = move_points.c, Line = 92
+  Non-void function "mp_button" (declared at line 66) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 261
+  Non-void function "reset_all_cback" (declared at line 244) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 277
+  Non-void function "reset_one_cback" (declared at line 265) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 312
+  Non-void function "setMoveTypePointCback" (declared at line 306) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 322
+  Non-void function "setMoveTypeGroupCback" (declared at line 316) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 331
+  Non-void function "setMoveTypeAllCback" (declared at line 325) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = move_points.c, Line = 357
+  Non-void function "set_mpdir_cback" (declared at line 335) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c show_message.c -o show_message.o
+cc-1116 cc: WARNING File = show_message.c, Line = 40
+  Non-void function "dismiss_message_cback" (declared at line 33) should return
+          a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c smooth.c -o smooth.o
+cc-1116 cc: WARNING File = smooth.c, Line = 473
+  Non-void function "smooth_on_cback" (declared at line 468) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 480
+  Non-void function "smooth_data_cback" (declared at line 477) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 494
+  Non-void function "fixd_window_cback" (declared at line 484) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 500
+  Non-void function "fixd_pts_cback" (declared at line 498) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 522
+  Non-void function "choose_smooth_cback" (declared at line 504) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 546
+  Non-void function "dummy_smooth_cback" (declared at line 526) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 586
+  Non-void function "step_cback" (declared at line 550) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 610
+  Non-void function "width_cback" (declared at line 590) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 620
+  Non-void function "usegps_cback" (declared at line 614) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 630
+  Non-void function "show_window_cback" (declared at line 624) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 715
+  Non-void function "close_cback" (declared at line 710) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = smooth.c, Line = 906
+  Non-void function "open_smooth_popup_cback" (declared at line 719) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c smooth_fns.c -o smooth_fns.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c smoothsk.c -o smoothsk.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c pspline.c -o pspline.o
+cc-1116 cc: WARNING File = pspline.c, Line = 147
+  Non-void function "bsplvbfn_" (declared at line 106) should return a value.
+
+  } /* bsplvbfn_ */
+  ^
+
+cc-1552 cc: WARNING File = pspline.c, Line = 922
+  The variable "lp1" is set but never used.
+
+      static integer ilim, i, k, l, kp1, lp1, mp1, ipk, ipl;
+                                         ^
+
+cc-1552 cc: WARNING File = pspline.c, Line = 1038
+  The variable "nworksiz" is set but never used.
+
+      static integer nmnorder, iyoffset, nworksiz, i, j, l, m, nband;
+                                         ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c save_data.c -o save_data.o
+cc-1116 cc: WARNING File = save_data.c, Line = 122
+  Non-void function "save_toggle_cback" (declared at line 117) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 137
+  Non-void function "set_data_cback" (declared at line 126) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 152
+  Non-void function "set_format_cback" (declared at line 141) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 168
+  Non-void function "set_row_cback" (declared at line 156) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 184
+  Non-void function "set_col_cback" (declared at line 172) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 200
+  Non-void function "set_missing_cback" (declared at line 188) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 207
+  Non-void function "close_npopup_cback" (declared at line 204) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 783
+  Non-void function "create_xgobi_file_set" (declared at line 437) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 970
+  Non-void function "open_new_xgobi_popup_cback" (declared at line 787) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 1010
+  Non-void function "close_epopup_cback" (declared at line 1007) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 1072
+  Non-void function "write_selected_xgobi_files" (declared at line 1014) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = save_data.c, Line = 1240
+  Non-void function "open_extend_xgobi_popup_cback" (declared at line 1076)
+          should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c new_data.c -o new_data.o
+cc-1116 cc: WARNING File = new_data.c, Line = 391
+  Non-void function "read_data_from_file" (declared at line 307) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c read_data.c -o read_data.o
+cc-1116 cc: WARNING File = read_data.c, Line = 61
+  Non-void function "read_toggle_cback" (declared at line 56) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = read_data.c, Line = 1773
+  Non-void function "read_selected_xgobi_files" (declared at line 1620) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = read_data.c, Line = 1781
+  Non-void function "close_epopup_cback" (declared at line 1778) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = read_data.c, Line = 1961
+  Non-void function "open_import_xgobi_popup_cback" (declared at line 1785)
+          should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c jitter.c -o jitter.o
+cc-1116 cc: WARNING File = jitter.c, Line = 201
+  Non-void function "normal_jitter_cback" (declared at line 191) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 215
+  Non-void function "uniform_jitter_cback" (declared at line 205) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 231
+  Non-void function "jitfac_cback" (declared at line 224) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 254
+  Non-void function "rejitter_cback" (declared at line 235) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 261
+  Non-void function "close_jit_cback" (declared at line 258) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 270
+  Non-void function "use_vgroups_cback" (declared at line 265) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = jitter.c, Line = 423
+  Non-void function "open_jitter_popup_cback" (declared at line 274) should
+          return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c parcoords.c -o parcoords.o
+cc-1116 cc: WARNING File = parcoords.c, Line = 1201
+  Non-void function "pcr_resize_cback" (declared at line 1176) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1213
+  Non-void function "pcr_expose_cback" (declared at line 1205) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1221
+  Non-void function "plot_imputed_cback" (declared at line 1217) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1238
+  Non-void function "pcr_close_cback" (declared at line 1225) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1271
+  Non-void function "link_menu_cback" (declared at line 1257) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1340
+  Non-void function "cases_menu_cback" (declared at line 1324) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1364
+  Non-void function "scale_menu_cback" (declared at line 1348) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1430
+  Non-void function "display_menu_cback" (declared at line 1403) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1502
+  Non-void function "buffer_menu_cback" (declared at line 1489) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = parcoords.c, Line = 1743
+  Non-void function "cprof_plot_cback" (declared at line 1506) should return a
+          value.
+
+  }
+  ^
+
+cc-1552 cc: WARNING File = parcoords.c, Line = 87
+  The variable "pcr_ytick_segs" is set but never used.
+
+  static XSegment pcr_ytick_segs[100];
+                  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c utils.c -o utils.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_init.c -o tour_init.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_util.c -o tour_util.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour.c -o tour.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_cbacks.c -o tour_cbacks.o
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 111
+  Non-void function "tour_speed_cback" (declared at line 107) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 136
+  Non-void function "tour_pause_cback" (declared at line 115) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 331
+  Non-void function "tour_backtrack_cback" (declared at line 184) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 403
+  Non-void function "tour_cycleback_cback" (declared at line 335) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 415
+  Non-void function "tourhist_on_cback" (declared at line 407) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 425
+  Non-void function "tour_storbas_cback" (declared at line 419) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 454
+  Non-void function "tour_step_cback" (declared at line 429) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 466
+  Non-void function "tour_step_go_cback" (declared at line 458) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 540
+  Non-void function "tour_local_cback" (declared at line 470) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 589
+  Non-void function "tour_reinit_cback" (declared at line 544) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 986
+  Non-void function "choose_tour_io_cback" (declared at line 957) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 1015
+  Non-void function "choose_tour_interp_cback" (declared at line 990) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 1126
+  Non-void function "set_tour_link_state_cback" (declared at line 1019) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_cbacks.c, Line = 1137
+  Non-void function "tour_update_cback" (declared at line 1130) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_send.c -o tour_send.o
+cc-1116 cc: WARNING File = tour_send.c, Line = 40
+  Non-void function "pack_tour_done" (declared at line 34) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_send.c, Line = 50
+  Non-void function "pack_tour_lose" (declared at line 44) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_send.c, Line = 135
+  Non-void function "pack_tour_data" (declared at line 68) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_send.c, Line = 243
+  Non-void function "unpack_tour_data" (declared at line 139) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c gt_ctls.c -o gt_ctls.o
+cc-1116 cc: WARNING File = gt_ctls.c, Line = 125
+  Non-void function "set_tour_manip_type_cback" (declared at line 93) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = gt_ctls.c, Line = 229
+  Non-void function "set_tour_cont_fact_cback" (declared at line 129) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = gt_ctls.c, Line = 700
+  Non-void function "interact_gt" (declared at line 465) should return a value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_pp.c -o tour_pp.o
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1121
+  Non-void function "princ_comp_cback" (declared at line 978) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1134
+  Non-void function "pc_axes_cback" (declared at line 1125) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1166
+  Non-void function "ppexpose_cback" (declared at line 1158) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1302
+  Non-void function "ppresize_cback" (declared at line 1200) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1590
+  Non-void function "tour_optimz_cback" (declared at line 1525) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1857
+  Non-void function "tour_pp_cback" (declared at line 1594) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 1993
+  Non-void function "tour_termsinexpan_cback" (declared at line 1963) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2067
+  Non-void function "tour_termsinexpan_rightarr_cback" (declared at line 1997)
+          should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2158
+  Non-void function "tour_termsinexpan_leftarr_cback" (declared at line 2071)
+          should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2203
+  Non-void function "tour_makebitmap_cback" (declared at line 2162) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2411
+  Non-void function "choose_index_cback" (declared at line 2297) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2424
+  Non-void function "pp_showlines_cback" (declared at line 2415) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2437
+  Non-void function "pp_showpoints_cback" (declared at line 2428) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2460
+  Non-void function "pp_linewidth_down_cback" (declared at line 2441) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2483
+  Non-void function "pp_linewidth_up_cback" (declared at line 2464) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2545
+  Non-void function "pp_bwpoints_down_cback" (declared at line 2487) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2606
+  Non-void function "pp_bwpoints_up_cback" (declared at line 2549) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2639
+  Non-void function "pp_bitmapsz_down_cback" (declared at line 2610) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2671
+  Non-void function "pp_bitmapsz_up_cback" (declared at line 2643) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2692
+  Non-void function "pp_replot_down_cback" (declared at line 2675) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2712
+  Non-void function "pp_replot_up_cback" (declared at line 2696) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2739
+  Non-void function "tour_retnbm_cback" (declared at line 2716) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2834
+  Non-void function "tour_recordbm_cback" (declared at line 2806) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_pp.c, Line = 2904
+  Non-void function "pp_button_press" (declared at line 2838) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c svd.c -o svd.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c kernel.c -o kernel.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c legendre.c -o legendre.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c hermite.c -o hermite.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c natrl_hermite.c -o natrl_hermite.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c de_indices.c -o de_indices.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c central_mass.c -o central_mass.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c holes.c -o holes.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c skewness.c -o skewness.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c tour_section.c -o tour_section.o
+cc-1116 cc: WARNING File = tour_section.c, Line = 220
+  Non-void function "tour_section_eps_cback" (declared at line 215) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = tour_section.c, Line = 280
+  Non-void function "tour_section_cback" (declared at line 259) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c corr.c -o corr.o
+cc-1116 cc: WARNING File = corr.c, Line = 705
+  Non-void function "interact_corr" (declared at line 557) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 1474
+  Non-void function "corr_speed_cback" (declared at line 1469) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 1491
+  Non-void function "corr_pause_cback" (declared at line 1478) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 1527
+  Non-void function "corr_reinit_cback" (declared at line 1495) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 1557
+  Non-void function "set_corr_manip_type_cback" (declared at line 1531) should
+          return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 2017
+  Non-void function "corr_bt_cback" (declared at line 1905) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 2073
+  Non-void function "corr_cycleback_cback" (declared at line 2021) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 2113
+  Non-void function "corr_sync_axes_cback" (declared at line 2077) should return
+          a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 2135
+  Non-void function "corr_sphere_cback" (declared at line 2117) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr.c, Line = 2361
+  Non-void function "set_corr_cont_fact_cback" (declared at line 2274) should
+          return a value.
+
+  }
+  ^
+
+cc-1174 cc: WARNING File = corr.c, Line = 2671
+  The variable "x_cvarno" was declared but never referenced.
+
+    int y_cvarno, x_cvarno;
+                  ^
+
+cc-1174 cc: WARNING File = corr.c, Line = 2674
+  The variable "x_selected" was declared but never referenced.
+
+    Boolean y_selected, x_selected;
+                        ^
+
+cc-1174 cc: WARNING File = corr.c, Line = 2781
+  The variable "y_cvarno" was declared but never referenced.
+
+    int y_cvarno, x_cvarno;
+        ^
+
+cc-1174 cc: WARNING File = corr.c, Line = 2784
+  The variable "y_selected" was declared but never referenced.
+
+    Boolean y_selected, x_selected;
+            ^
+
+cc-1552 cc: WARNING File = corr.c, Line = 55
+  The variable "max_cnhist_list" is set but never used.
+
+  static int cnhist_list, old_cnhist_list, max_cnhist_list, cbt_dir;
+                                           ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c corr_index.c -o corr_index.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c corr_pursuit.c -o corr_pursuit.o
+cc-1116 cc: WARNING File = corr_pursuit.c, Line = 493
+  Non-void function "cpresize_cback" (declared at line 414) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr_pursuit.c, Line = 505
+  Non-void function "cpexpose_cback" (declared at line 497) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr_pursuit.c, Line = 511
+  Non-void function "null_cback" (declared at line 509) should return a value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr_pursuit.c, Line = 643
+  Non-void function "corr_optimz_cback" (declared at line 609) should return a
+          value.
+
+  }
+  ^
+
+cc-1116 cc: WARNING File = corr_pursuit.c, Line = 731
+  Non-void function "corr_pursuit_cback" (declared at line 659) should return a
+          value.
+
+  }
+  ^
+
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c corr_util.c -o corr_util.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c DrawingA.c -o DrawingA.o
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c mt19937-1.c -o mt19937-1.o
+rm -f xgvis
+cc -o xgvis -g -xansi -n32       xgvis.o xgv_histogram.o xgv_qsort.o xgv_mds.o xgv_read_data.o xgv_help.o xgv_stressplot.o xgv_cbacks.o xgv_widgets.o xgv_anchor.o xgobi_init.o pipeline.o read_array.o initialize.o widgets.o callbacks.o getfname.o xyplot.o make_axes.o line_editor.o missing.o spin_cbacks.o spin.o scaling.o scale_cbacks.o identify.o var_panel.o transform.o sphere.o stdize.o inference.o brush_init.o brush_cbacks.o brush.o paint.o brush_send.o help.o prt_plotwin.o subset.o vc_lists.o exclusion.o plot_once.o plot1d.o texture.o ash1d.o move_points.o show_message.o smooth.o smooth_fns.o smoothsk.o pspline.o save_data.o new_data.o read_data.o jitter.o parcoords.o utils.o tour_init.o tour_util.o tour.o tour_cbacks.o tour_send.o gt_ctls.o tour_pp.o svd.o kernel.o legendre.o hermite.o natrl_hermite.o de_indices.o central_mass.o holes.o skewness.o tour_section.o corr.o corr_index.o corr_pursuit.o corr_util.o DrawingA.o mt19937-1.o   -nostdlib -L/usr/lib32/mips3 -L/usr/lib32  -lm   -lXaw -lXmu -lXt -lSM -lICE -lXext -lX11 
+cc -g -xansi -n32     -nostdinc -I/usr/include -DSYSV -DSVR4   -DFUNCPROTO=7 -DNARROWPROTO  -DDEFAULTDIR=\"/usr/dfs/xgobi/xgobi/src/..\"   -c xgobi.c -o xgobi.o
+cc-1178 cc: WARNING File = xgobi.c, Line = 386
+  Argument is incompatible with the corresponding format string conversion.
+
+          (void) sscanf (&av[2][1], "%[^']s", &xgobi.vtitle);
+                                              ^
+
+cc-1178 cc: WARNING File = xgobi.c, Line = 388
+  Argument is incompatible with the corresponding format string conversion.
+
+          (void) sscanf (&av[2][1], "%[^\"]s", &xgobi.vtitle);
+                                               ^
+
+cc-1178 cc: WARNING File = xgobi.c, Line = 390
+  Argument is incompatible with the corresponding format string conversion.
+
+          (void) sscanf (av[2], "%s", &xgobi.vtitle);
+                                      ^
+
+cc-1174 cc: WARNING File = xgobi.c, Line = 266
+  The variable "server_number" was declared but never referenced.
+
+    unsigned long server_number = 0L;
+                  ^
+
+cc-1174 cc: WARNING File = xgobi.c, Line = 514
+  The variable "xgobidb" was declared but never referenced.
+
+    XrmDatabase xgobidb;
+                ^
+
+cc-1174 cc: WARNING File = xgobi.c, Line = 59
+  The variable "message" was declared but never referenced.
+
+  static char message[MSGLENGTH];
+              ^
+
+rm -f xgobi
+cc -o xgobi -g -xansi -n32       xgobi.o xgobi_init.o pipeline.o read_array.o initialize.o widgets.o callbacks.o getfname.o xyplot.o make_axes.o line_editor.o missing.o spin_cbacks.o spin.o scaling.o scale_cbacks.o identify.o var_panel.o transform.o sphere.o stdize.o inference.o brush_init.o brush_cbacks.o brush.o paint.o brush_send.o help.o prt_plotwin.o subset.o vc_lists.o exclusion.o plot_once.o plot1d.o texture.o ash1d.o move_points.o show_message.o smooth.o smooth_fns.o smoothsk.o pspline.o save_data.o new_data.o read_data.o jitter.o parcoords.o utils.o tour_init.o tour_util.o tour.o tour_cbacks.o tour_send.o gt_ctls.o tour_pp.o svd.o kernel.o legendre.o hermite.o natrl_hermite.o de_indices.o central_mass.o holes.o skewness.o tour_section.o corr.o corr_index.o corr_pursuit.o corr_util.o DrawingA.o mt19937-1.o     -nostdlib -L/usr/lib32/mips3 -L/usr/lib32  -lm    -lXaw -lXmu -lXt -lSM -lICE -lXext -lX11 

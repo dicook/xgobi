@@ -1,0 +1,18 @@
+Link line brushing
+
+When this is on, then two or more XGobis that were initiated with
+the same data (or have the same number of rows) *or* have the same
+value of `fname.nlinkable' *and* have the same number of connected
+lines are linked for line brushing.  That is, line brushing actions
+performed in one of the XGobis is promptly reflected in the
+others.
+
+This is most frequently used when the XGobi plotting windows
+display different views of the same data.
+
+Note:  For computational efficiency, the receiving XGobis should be
+in XYPlot, Plot1D, or paused in Rotate or Tour.
+
+This can be set in the XGobi resource file.  The default is
+
+*linkLineBrush:   True

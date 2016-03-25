@@ -1,0 +1,50 @@
+
+                  MORSECODE DATA
+
+These data were used in the basic XGvis paper
+
+  "XGvis: Interactive Data Visualization with Multidimensional Scaling" 
+  Buja, Swayne, Littman, Dean (1998)
+
+A symmetric dissimilarity matrix was computed from Rothkoph's
+confusion rates observed by exposing subjects to pairs of morsecodes.
+The data files are:
+
+  morsecodes.dist             dissimilarity matrix
+  morsecodes.dat              initial configuration (see morsecodes.col)
+  morsecodes.colors           point colors
+  morsecodes.glyphs           point glyphs
+  morsecodes.lines            lines
+  morsecodes.linecolors       line colors
+  morsecodes.row              labels of the form "A .-"
+  morsecodes.col              column names of the initial configuration
+			      (not used by XGvis, but used by XGobi)
+
+Follow these steps for running multidimensional scaling (MDS) on these data:
+
+  1) Start up XGvis by typing "xgvis morsecodes" in the shell.
+  2) Show lines by hitting "l" with the mouse over the plot.
+  3) Examine morsecode labels by hitting "i" and mousing around on the plot.
+  4) Run MDS in 3D by clicking "Run MDS".
+  5) Speed up the optimization by increasing the "Stepsize" with the slider.
+     The "Stress function" value may go as low as 0.1931.
+  6) When the optimization calms down, click "Run MDS" to toggle MDS off.
+  7) Rotate the MDS configuration in 3D by hitting "r" with mouse over plot.
+  8) Increase the rotation speed with the slider in the top left and
+     control the rotation direction by dragging the mouse on the plot.
+  9) You can check out the initial configuration by typing "xgobi
+     morsecodes" in the shell.  This XGobi window will be linked with
+     the XGvis window for glyph-color brushing and labeling.
+
+Other files of interest:
+
+  morsecodes.raw              the raw Rothkopf data of confusion rates
+  morsecodes.sim              symmetric similarity data
+
+The formulas for deriving morsecodes.sim and morsecodes.dist from
+morsecodes.raw are:
+
+  sim_ij = (raw_ij + raw_ji)/2
+
+  dist_ij = sim_ii + sim_jj - 2*sim_ij
+

@@ -1,0 +1,7 @@
+Reinit: Re-initialize correlation tour
+
+Clicking on the "Reinit" button resets the correlation tour
+coefficients. The first X variable's coefficient is set to 1.0 and the
+rest to 0.0, likewise the first Y variable's coefficient is set to 1.0
+and the remaining coefficients are zeroed.
+

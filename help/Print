@@ -1,0 +1,22 @@
+Print
+
+Save the contents of the plotting window in a postscript file or send
+it directly to a postscript printer, after making some color adjustments
+if they are needed.
+
+Use the "Filename" text entry window to specify a filename or the
+"Postscript printer" window to specify a printer, then select "Write
+to file" or "Send to printer" from the buttons at the bottom of the
+print popup.
+
+Some facility for color adjustment has been provided.  Many people
+use XGobi with a dark background because that seems to highten the
+sense of depth in a multidimensional plot.  When printing, however,
+we want to print dark points on a light background.  Defaults are
+provided to handle that conversion, and the resulting postscript file
+should print successfully either on a color or a monochrome printer.
+
+The set of adjustments is not yet complete:  if you are using a color
+workstation, for instance, and some of your points are yellow, then
+those points will vanish when you produce a black and white plot:
+they will be converted to white and disappear on a white background.

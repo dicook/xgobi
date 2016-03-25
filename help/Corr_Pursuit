@@ -1,0 +1,23 @@
+Correlation Pursuit
+
+Selecting this button generates a window in which a projection pursuit
+index for the current two dimensional view of the data is plotted.  As
+the correlation tour progresses the index is plotted continuously.
+The value is also displayed directly beneath this button.
+
+Selecting this button also turns on the "Sphere" button and spheres
+the data by sphering each of the two sets of variables. For the one
+index currently available sphering is not necessary.
+
+When "Optimz" is selected, the correlation tour is guided by the
+gradient of the coreelation pursuit index, so that XGobi begins to
+search for views with high index values.  Hopefully these views will
+expose interesting features of the data.  When a maximum value of the
+index is reached the tour may turn itself off (this occurs when the
+gradients are all close to zero, meaning we have gone as far as
+possible in this direction to capture a maximum, and it is not
+possible to find any better direction).  To restart the correlation
+tour turn "Optimz" off.
+
+The only index currently available is the correlation between the two
+projections (horizontal and vertical) displayed.

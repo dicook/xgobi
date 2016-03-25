@@ -1,0 +1,43 @@
+Parallel Coordinates Plot
+
+The parallel coordinates plot shows a single line (a set of
+connected segments) for each case.  Each case is shown using the
+color and glyph of the corresponding point in the main plotting
+window.
+
+Show cases menu:
+  You may either show the line for each case, or you may choose
+  to show only the cases you label in Identify.
+
+Variable scales menu:
+  Either scale all variables (or variable groups) using a common
+  scale, or scale each variable independently.  If a common scale
+  is used, tick marks will be drawn on the leftmost axis.
+
+Double buffer:
+  In double buffering, drawing is done offscreen, and the final
+  drawing is copied to the screen.  This results in much smoother
+  transitions, without flicker, but it can be prohibitively slow
+  if thousands of lines are being drawn.
+
+Display
+  You can choose independently whether to have the points and the
+  lines drawn in the case profile window.
+
+  You may also decline to have the vertical coordinates drawn,
+  if you find them cluttering the screen.
+
+  Or you may choose to add horizontal gridlines to help you
+  in estimating values; this only applies when a common scale
+  is used.
+
+Link
+  By default, this window is linked to the plotting window for
+  brushing and identification.  if you're looking at all profiles
+  and you have many many points, you might want to unlink it,
+  because it can get quite slow.
+
+Display Missings
+  Display missings (or imputed values) or leave them out.  This
+  can provide an interesting view of the distribution of the
+  missing values.

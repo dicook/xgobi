@@ -1,0 +1,15 @@
+Case List
+
+The case list allows a user a different interface for identification.
+
+Click the *left* button in the case list to highlight a single case
+label.  That point will then be labelled in the plotting window.
+Drag the left button slowly to cycle through the cases.
+
+Persistent Labels
+
+  Select this to make the labels 'sticky.'
+
+You can also click on `Select All' or `Deselect All' to
+select/deselect faster than you would be able to using the mouse.
+

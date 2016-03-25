@@ -1,0 +1,18 @@
+Step
+
+This scrollbar allows the step size of the smoothing window to be
+changed. The step is the distance that the window is moved between
+smoothing calculations It can be set by the plot window distance or
+number of points.
+
+Smoothing is done on the view of the data in the plotting window, for
+example, it will work on an arbitrary projection shown in the tour.
+
+In terms of distance the smallest width provided by the scrollbar is
+min(100,width/10), and the maximum is max(32768/9~3641,width/3) .
+
+In terms of number of points the smallest is 1 and the largest is
+width/3.
+
+The step size does depend on the actual window size so the two
+scrollbars don't always work independently.
