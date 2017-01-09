@@ -6,9 +6,7 @@
 #include "xgobiexterns.h"
 #include "xgvis.h"
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
+#include "xgobi_config.h"
 
 /* bitmaps: */
 #include "../bitmaps/stress_kruskal_shepard.xbm"
@@ -37,13 +35,13 @@ xgvis_help_MDS_background_cback(Widget w, XtPointer client_data, XtPointer callb
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);
@@ -156,13 +154,13 @@ xgvis_help_controls_cback(Widget w, XtPointer client_data, XtPointer callback_da
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);
@@ -277,13 +275,13 @@ xgvis_help_torgerson_gower_cback(Widget w, XtPointer client_data, XtPointer call
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);
@@ -418,13 +416,13 @@ xgvis_help_kruskal_shepard_cback(Widget w, XtPointer client_data, XtPointer call
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);
@@ -557,13 +555,13 @@ xgvis_help_input_file_formats_cback(Widget w, XtPointer client_data, XtPointer c
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);

@@ -29,11 +29,7 @@
 #include "xgobivars.h"
 #include "xgobiexterns.h"
 
-
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
+#include "xgobi_config.h"
 
 #define NMENUS NCOLS+40
 #define NSBARS 32
@@ -136,13 +132,13 @@ help(Widget popup_pop, char *helpfile, xgobidata *xg)
   if (xgobidir == NULL || strlen(xgobidir) == 0)
   {
     xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-    (void) strcpy(xgobidir, DEFAULTDIR);
+    (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     if (xgobidir == NULL || strlen(xgobidir) == 0)
     {
       sprintf(message,
        "XGOBID is not defined in your environment, and\n");
       strcat(message,
-       "DEFAULTDIR is not defined in the XGobi Makefile;\n");
+       "XGOBI_DEFAULTDIR is not defined in the XGobi Makefile;\n");
       strcat(message,
         "see the person who installed XGobi for help.\n");
       show_message(message, &xgobi);

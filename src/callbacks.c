@@ -32,10 +32,7 @@
 #include "xgobivars.h"
 #include "xgobiexterns.h"
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
+#include "xgobi_config.h"
 
 /* CORBA */
 Boolean selectVariable(xgobidata *xg, int j, int button, int state);
@@ -306,7 +303,7 @@ void Clone_XGobi ()
     xgobidir = getenv("XGOBID");
     if (xgobidir == NULL || strlen(xgobidir) == 0) {
       xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-      (void) strcpy(xgobidir, DEFAULTDIR);
+      (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     }
     sprintf(xgobi_exec, "%s/bin/xgobi", xgobidir);
     
@@ -410,7 +407,7 @@ void Clone_XGobi_Scatmat ()
     xgobidir = getenv("XGOBID");
     if (xgobidir == NULL || strlen(xgobidir) == 0) {
       xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-      (void) strcpy(xgobidir, DEFAULTDIR);
+      (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
     }
     sprintf(xgobi_exec, "%s/bin/xgobi", xgobidir);
     
