@@ -36,10 +36,7 @@
 #include "xgobivars.h"
 #include "xgobiexterns.h"
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"
-#endif
-
+#include "xgobi_config.h"
 
 static Boolean use_brush_groups = False;
 
@@ -394,7 +391,7 @@ launch_missing_cback(Widget w, xgobidata *xg, XtPointer callback_data)
       xgobidir = getenv("XGOBID");
       if (xgobidir == NULL || strlen(xgobidir) == 0) {
         xgobidir = (char *) XtMalloc((Cardinal) 150 * sizeof(char));
-        (void) strcpy(xgobidir, DEFAULTDIR);
+        (void) strcpy(xgobidir, XGOBI_DEFAULTDIR);
       }
 
       sprintf(xgobi_exec, "%s/bin/xgobi", xgobidir);
