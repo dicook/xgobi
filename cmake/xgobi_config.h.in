@@ -1,0 +1,4 @@
+#ifndef XGOBI_DEFAULTDIR
+#define XGOBI_DEFAULTDIR "@XGOBI_DEFAULTDIR@"
+#endif
+
